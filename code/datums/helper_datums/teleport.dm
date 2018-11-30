@@ -23,7 +23,7 @@
 	// if the precision is not specified, default to 0, but apply BoH penalties
 	if (isnull(precision))
 		precision = 0
-				
+
 	switch(channel)
 		if(TELEPORT_CHANNEL_BLUESPACE)
 			if(istype(teleatom, /obj/item/storage/backpack/holding))
@@ -51,14 +51,17 @@
 	var/turf/destturf = get_teleport_turf(get_turf(destination), precision)
 
 	if(!destturf || !curturf || destturf.is_transition_turf())
+		to_chat(teleatom, "fuck")
 		return FALSE
 
 	var/area/A = get_area(curturf)
 	var/area/B = get_area(destturf)
 	if(A.noteleport || B.noteleport)
+		to_chat(teleatom, "shit")
 		return FALSE
-		
+
 	if(SEND_SIGNAL(destturf, COMSIG_ATOM_INTERCEPT_TELEPORT, channel, curturf, destturf))
+		to_chat(teleatom, "piss")
 		return FALSE
 
 	tele_play_specials(teleatom, curturf, effectin, asoundin)
