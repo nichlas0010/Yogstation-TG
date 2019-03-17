@@ -644,8 +644,11 @@
 			log_telecomms(log_text)
 		if(LOG_OOC)
 			log_ooc(log_text)
+<<<<<<< HEAD
 		if(LOG_LOOC) // yogs - LOOC log
 			log_looc(log_text) // yogs - LOOC log
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(LOG_ADMIN)
 			log_admin(log_text)
 		if(LOG_ADMIN_PRIVATE)

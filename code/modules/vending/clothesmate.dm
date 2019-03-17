@@ -102,7 +102,10 @@
 		              /obj/item/clothing/mask/balaclava = 1,
 		              /obj/item/clothing/head/ushanka = 1,
 		              /obj/item/clothing/under/soviet = 1,
+<<<<<<< HEAD
 		              /obj/item/clothing/under/yogs/soviet_dress_uniform = 1, //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		              /obj/item/storage/belt/fannypack/black = 2,
 		              /obj/item/clothing/suit/jacket/letterman_syndie = 1,
 		              /obj/item/clothing/under/jabroni = 1,

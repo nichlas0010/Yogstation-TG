@@ -194,7 +194,10 @@
 	value = -1
 	gain_text = "<span class='danger'>You seem to make a big deal out of everything.</span>"
 	lose_text = "<span class='notice'>You don't seem to make a big deal out of everything anymore.</span>"
+<<<<<<< HEAD
 	mood_quirk = TRUE //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /datum/quirk/hypersensitive/add()
 	GET_COMPONENT_FROM(mood, /datum/component/mood, quirk_holder)
@@ -240,7 +243,11 @@
 
 /datum/quirk/nyctophobia/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
+<<<<<<< HEAD
 	if((H.dna.species.id in list("shadow", "nightmare")) || (H.mind && (H.mind.has_antag_datum(ANTAG_DATUM_THRALL) || H.mind.has_antag_datum(ANTAG_DATUM_SLING)))) //yogs - thrall & sling check
+=======
+	if(H.dna.species.id in list("shadow", "nightmare"))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		return //we're tied with the dark, so we don't get scared of it; don't cleanse outright to avoid cheese
 	var/turf/T = get_turf(quirk_holder)
 	var/lums = T.get_lumcount()
@@ -261,6 +268,7 @@
 	lose_text = "<span class='notice'>You think you can defend yourself again.</span>"
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
 
+<<<<<<< HEAD
 
 /datum/quirk/paraplegic
 	name = "Paraplegic"
@@ -297,6 +305,42 @@
 			quirk_holder.put_in_hands(I)
 
 
+=======
+/datum/quirk/paraplegic
+	name = "Paraplegic"
+	desc = "Your legs do not function. Nothing will ever fix this. But hey, free wheelchair!"
+	value = -3
+	human_only = TRUE
+	gain_text = null // Handled by trauma.
+	lose_text = null
+	medical_record_text = "Patient has an untreatable impairment in motor function in the lower extremities."
+
+/datum/quirk/paraplegic/add()
+	var/datum/brain_trauma/severe/paralysis/paraplegic/T = new()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(T, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/paraplegic/on_spawn()
+	if(quirk_holder.buckled) // Handle late joins being buckled to arrival shuttle chairs.
+		quirk_holder.buckled.unbuckle_mob(quirk_holder)
+
+	var/turf/T = get_turf(quirk_holder)
+	var/obj/structure/chair/spawn_chair = locate() in T
+
+	var/obj/vehicle/ridden/wheelchair/wheels = new(T)
+	if(spawn_chair) // Makes spawning on the arrivals shuttle more consistent looking
+		wheels.setDir(spawn_chair.dir)
+
+	wheels.buckle_mob(quirk_holder)
+
+	// During the spawning process, they may have dropped what they were holding, due to the paralysis
+	// So put the things back in their hands.
+
+	for(var/obj/item/I in T)
+		if(I.fingerprintslast == quirk_holder.ckey)
+			quirk_holder.put_in_hands(I)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/quirk/poor_aim
 	name = "Poor Aim"
 	desc = "You're terrible with guns and can't line up a straight shot to save your life. Dual-wielding is right out."
@@ -517,7 +561,11 @@
 /datum/quirk/unstable
 	name = "Unstable"
 	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
+<<<<<<< HEAD
 	value = 0 // yogs - haha no free points for you
+=======
+	value = -2
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	mob_trait = TRAIT_UNSTABLE
 	gain_text = "<span class='danger'>There's a lot on your mind right now.</span>"
 	lose_text = "<span class='notice'>Your mind finally feels calm.</span>"

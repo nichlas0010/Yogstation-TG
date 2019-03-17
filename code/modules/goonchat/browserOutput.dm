@@ -174,7 +174,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 				var/list/row = src.connectionHistory[i]
 				if (!row || row.len < 3 || (!row["ckey"] || !row["compid"] || !row["ip"])) //Passed malformed history object
 					return
-				if (world.IsBanned(row["ckey"], row["compid"], row["ip"], real_bans_only=TRUE))
+				if (world.IsBanned(row["ckey"], row["ip"], row["compid"], real_bans_only=TRUE))
 					found = row
 					break
 
@@ -224,8 +224,13 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		// Do the double-encoding outside the loop to save nanoseconds
 		var/twiceEncoded = url_encode(url_encode(message))
 		for(var/I in target)
+<<<<<<< HEAD
 			message = to_utf8(message, I) // yogs - LibVG
 			var/client/C = CLIENT_FROM_VAR(I) //Grab us a client if possible
+=======
+			var/client/C = CLIENT_FROM_VAR(I) //Grab us a client if possible
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			if (!C)
 				continue
 
@@ -243,10 +248,16 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 			C << output(twiceEncoded, "browseroutput:output")
 	else
 		var/client/C = CLIENT_FROM_VAR(target) //Grab us a client if possible
+<<<<<<< HEAD
 		if (!C)
 			return
 
 		message = to_utf8(message, target) // yogs - LibVG
+=======
+
+		if (!C)
+			return
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 		//Send it to the old style output window.
 		SEND_TEXT(C, original_message)

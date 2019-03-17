@@ -14,9 +14,13 @@
 
 /obj/item/projectile/bullet/c38
 	name = ".38 bullet"
+<<<<<<< HEAD
 	damage = 15 // yogs - Nerfed revolver damage
 	//knockdown = 60 //yogs - commented out
 	stamina = 60 // yogs - Buffed revolver 
+=======
+	damage = 25
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/item/projectile/bullet/c38/trac
 	name = ".38 TRAC bullet"

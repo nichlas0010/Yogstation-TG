@@ -131,7 +131,12 @@
 	if(iscarbon(L))
 		var/mob/living/carbon/M = L
 		. = TRUE
+<<<<<<< HEAD
 		for(var/I in M.held_items)
+=======
+
+		for(var/obj/item/I in M.held_items)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			wash_obj(I)
 
 		if(M.back && wash_obj(M.back))

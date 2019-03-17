@@ -145,6 +145,7 @@ GLOBAL_PROTECT(exp_specialmap)
 	job = mine_expand.Replace(job, "shaft miner")
 	job = chef_expand.Replace(job, "cook")
 	job = borg_expand.Replace(job, "cyborg")
+<<<<<<< HEAD
 	// yogs start - Yog jobs
 	job = tour_expand.Replace(job, "tourist")
 	job = mm_expand.Replace(job, "mining medic")
@@ -152,4 +153,6 @@ GLOBAL_PROTECT(exp_specialmap)
 	job = clerk_expand.Replace(job, "clerk")
 	job = para_expand.Replace(job, "paramedic")
 	// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	return job

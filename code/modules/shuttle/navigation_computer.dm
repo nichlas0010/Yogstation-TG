@@ -63,9 +63,12 @@
 		shuttle_port = null
 		return
 
-	eyeobj = new /mob/camera/aiEye/remote/shuttle_docker()
+	eyeobj = new /mob/camera/aiEye/remote/shuttle_docker(null, src)
 	var/mob/camera/aiEye/remote/shuttle_docker/the_eye = eyeobj
+<<<<<<< HEAD
 	the_eye.origin = src
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	the_eye.setDir(shuttle_port.dir)
 	var/turf/origin = locate(shuttle_port.x + x_offset, shuttle_port.y + y_offset, shuttle_port.z)
 	for(var/V in shuttle_port.shuttle_areas)
@@ -79,7 +82,7 @@
 			I.loc = locate(origin.x + x_off, origin.y + y_off, origin.z) //we have to set this after creating the image because it might be null, and images created in nullspace are immutable.
 			I.layer = ABOVE_NORMAL_TURF_LAYER
 			I.plane = 0
-			I.mouse_opacity = 0
+			I.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			the_eye.placement_images[I] = list(x_off, y_off)
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/give_eye_control(mob/user)
@@ -256,6 +259,10 @@
 /obj/machinery/computer/camera_advanced/shuttle_docker/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
 	if(port && (shuttleId == initial(shuttleId) || override))
 		shuttleId = port.id
+<<<<<<< HEAD
+=======
+		shuttlePortId = "[port.id]_custom"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(dock)
 		jumpto_ports[dock.id] = TRUE
 
@@ -264,6 +271,10 @@
 	use_static = USE_STATIC_NONE
 	var/list/placement_images = list()
 	var/list/placed_images = list()
+
+/mob/camera/aiEye/remote/shuttle_docker/Initialize(mapload, obj/machinery/computer/camera_advanced/origin)
+	src.origin = origin
+	return ..()
 
 /mob/camera/aiEye/remote/shuttle_docker/setLoc(T)
 	..()

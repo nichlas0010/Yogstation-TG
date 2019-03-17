@@ -264,7 +264,11 @@
 	addtimer(CALLBACK(src, .proc/backup_transmission, signal), 20)
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
+<<<<<<< HEAD
 	var/turf/T = get_turf_global(src) // yogs - get_turf_global instead of get_turf
+=======
+	var/turf/T = get_turf(src)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if (signal.data["done"] && (T.z in signal.levels))
 		return
 

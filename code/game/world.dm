@@ -19,6 +19,11 @@ GLOBAL_VAR(restart_counter)
 	GLOB.revdata = new
 
 	config.Load(params[OVERRIDE_CONFIG_DIRECTORY_PARAMETER])
+<<<<<<< HEAD
+=======
+
+	load_admins()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	//SetupLogs depends on the RoundID, so lets check
 	//DB schema and set RoundID if we can
@@ -30,6 +35,7 @@ GLOBAL_VAR(restart_counter)
 	world.log = file("[GLOB.log_directory]/dd.log")
 #endif
 
+<<<<<<< HEAD
 	load_yogs_stuff() // yogs - Donators
 	refresh_admin_files() //yogs - DB support
 	load_admins()
@@ -38,6 +44,11 @@ GLOBAL_VAR(restart_counter)
 		load_whitelist()
 		
 	setup_pretty_filter() //yogs
+=======
+	LoadVerbs(/datum/verbs/menu)
+	if(CONFIG_GET(flag/usewhitelist))
+		load_whitelist()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
 
@@ -102,6 +113,10 @@ GLOBAL_VAR(restart_counter)
 	GLOB.world_game_log = "[GLOB.log_directory]/game.log"
 	GLOB.world_mecha_log = "[GLOB.log_directory]/mecha.log"
 	GLOB.world_virus_log = "[GLOB.log_directory]/virus.log"
+<<<<<<< HEAD
+=======
+	GLOB.world_asset_log = "[GLOB.log_directory]/asset.log"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	GLOB.world_attack_log = "[GLOB.log_directory]/attack.log"
 	GLOB.world_pda_log = "[GLOB.log_directory]/pda.log"
 	GLOB.world_telecomms_log = "[GLOB.log_directory]/telecomms.log"

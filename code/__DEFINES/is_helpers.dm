@@ -247,4 +247,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
+<<<<<<< HEAD
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
+=======
+#define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

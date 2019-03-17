@@ -122,9 +122,14 @@
 	dna_cost = 1
 
 /obj/item/melee/arm_blade/false
+<<<<<<< HEAD
 	desc = "A grotesque mass of flesh that used to be your arm. On the bright side, at least you can cut wood with this."
 	force = 30 //yogs -- Prevents dual-stinging people with this sting to render them defenseless.
 	//daily reminder that xantam is a closet furry
+=======
+	desc = "A grotesque mass of flesh that used to be your arm. Although it looks dangerous at first, you can tell it's actually quite dull and useless."
+	force = 5 //Basically as strong as a punch
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	fake = TRUE
 
 /datum/action/changeling/sting/false_armblade/can_sting(mob/user, mob/target)
@@ -166,7 +171,11 @@
 	qdel(blade)
 	target.update_inv_hands()
 
+<<<<<<< HEAD
 /*/datum/action/changeling/sting/extract_dna //yogs start - removed extract dna sting
+=======
+/datum/action/changeling/sting/extract_dna
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	name = "Extract DNA Sting"
 	desc = "We stealthily sting a target and extract their DNA. Costs 25 chemicals."
 	helptext = "Will give you the DNA of your target, allowing you to transform into them."
@@ -198,8 +207,12 @@
 
 /datum/action/changeling/sting/mute/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "mute sting")
+<<<<<<< HEAD
 	if(target.reagents)
 		target.reagents.add_reagent("mutetoxin", 17)
+=======
+	target.silent += 30
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	return TRUE
 
 /datum/action/changeling/sting/blind
@@ -230,10 +243,20 @@
 
 /datum/action/changeling/sting/LSD/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "LSD sting")
+<<<<<<< HEAD
 	if(target.reagents)
 		target.reagents.add_reagent("mindbreaker", 30)
 	return TRUE
 
+=======
+	addtimer(CALLBACK(src, .proc/hallucination_time, target), rand(300,600))
+	return TRUE
+
+/datum/action/changeling/sting/LSD/proc/hallucination_time(mob/living/carbon/target)
+	if(target)
+		target.hallucination = max(90, target.hallucination)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/action/changeling/sting/cryo
 	name = "Cryogenic Sting"
 	desc = "We silently sting our victim with a cocktail of chemicals that freezes them from the inside. Costs 15 chemicals."

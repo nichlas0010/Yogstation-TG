@@ -217,6 +217,14 @@
 	else
 		L.log_message("has been shot by [firer] with [src]", LOG_ATTACK, color="orange")
 
+<<<<<<< HEAD
+=======
+	if(ismob(firer))
+		log_combat(firer, L, "shot", src, reagent_note)
+	else
+		L.log_message("has been shot by [firer] with [src]", LOG_ATTACK, color="orange")
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	return L.apply_effects(stun, knockdown, unconscious, irradiate, slur, stutter, eyeblur, drowsy, blocked, stamina, jitter, paralyze, immobilize)
 
 /obj/item/projectile/proc/vol_by_damage()
@@ -540,7 +548,11 @@
 		return FALSE
 	if(!ignore_source_check && firer)
 		var/mob/M = firer
+<<<<<<< HEAD
 		if((target == firer) || ((target == firer.loc) && ismecha(firer.loc)) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target))|| isspacepod(firer.loc)) //cannot shoot yourself or your mech // yogs - or your spacepod)
+=======
+		if((target == firer) || ((target == firer.loc) && ismecha(firer.loc)) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target)))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			return FALSE
 	if(!ignore_loc && (loc != target.loc))
 		return FALSE

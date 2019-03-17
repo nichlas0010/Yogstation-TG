@@ -131,7 +131,11 @@
 	var/CT = cooling_temperature
 
 	if(reac_volume >= 5)
+<<<<<<< HEAD
 		T.MakeSlippery(TURF_WET_WATER, 120 SECONDS, min(reac_volume*3 SECONDS, 300 SECONDS)) //yogs
+=======
+		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume*1.5 SECONDS, 60 SECONDS))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	for(var/mob/living/simple_animal/slime/M in T)
 		M.apply_water()
@@ -219,7 +223,11 @@
 		M.stuttering = min(M.stuttering+4, 10)
 		M.Dizzy(5)
 		if(iscultist(M) && prob(20))
+<<<<<<< HEAD
 			M.say(pick("Av'te Nar'sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
+=======
+			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			if(prob(10))
 				M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 				M.Unconscious(120)
@@ -231,7 +239,7 @@
 					clockwork_say(M, "...[text2ratvar(pick("Engine... your light grows dark...", "Where are you, master?", "He lies rusting in Error...", "Purge all untruths and... and... something..."))]")
 				if("message")
 					to_chat(M, "<span class='boldwarning'>[pick("Ratvar's illumination of your mind has begun to flicker", "He lies rusting in Reebe, derelict and forgotten. And there he shall stay", \
-					"You can't save him. Nothing can save him now", "It seems that Nar-Sie will triumph after all")].</span>")
+					"You can't save him. Nothing can save him now", "It seems that Nar'Sie will triumph after all")].</span>")
 				if("emote")
 					M.visible_message("<span class='warning'>[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")].</span>")
 	if(data >= 60)	// 30 units, 135 seconds
@@ -1138,7 +1146,11 @@
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
 		L.ForceContractDisease(new /datum/disease/tuberculosis(), FALSE, TRUE)
 
+<<<<<<< HEAD
 /* YOGS /datum/reagent/snail
+=======
+/datum/reagent/snail
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	name = "Agent-S"
 	id = "snailserum"
 	description = "Virological agent that infects the subject with Gastrolosis."
@@ -1148,7 +1160,11 @@
 
 /datum/reagent/snail/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
+<<<<<<< HEAD
 		L.ForceContractDisease(new /datum/disease/gastrolosis(), FALSE, TRUE) YOGS */
+=======
+		L.ForceContractDisease(new /datum/disease/gastrolosis(), FALSE, TRUE)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /datum/reagent/fluorosurfactant//foam precursor
 	name = "Fluorosurfactant"

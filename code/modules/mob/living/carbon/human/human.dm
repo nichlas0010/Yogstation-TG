@@ -194,12 +194,15 @@
 		dat += "&nbsp;<A href='?src=[REF(src)];pockets=right'>[(r_store && !(r_store.item_flags & ABSTRACT)) ? "Right (Full)" : "<font color=grey>Right (Empty)</font>"]</A></td></tr>"
 		dat += "<tr><td>&nbsp;&#8627;<B>ID:</B></td><td><A href='?src=[REF(src)];item=[SLOT_WEAR_ID]'>[(wear_id && !(wear_id.item_flags & ABSTRACT)) ? wear_id : "<font color=grey>Empty</font>"]</A></td></tr>"
 
+<<<<<<< HEAD
 	// yogs start - show bandaged parts
 	for (var/obj/item/bodypart/org in bodyparts)
 		if (org.bandaged)
 			dat += "<tr><td><i>[org.name]</i> wrapped with:</td><td><a href='byond://?src=\ref[src];unwrap=\ref[org.bandaged]'>[org.bandaged]</a></td></tr>"
 	// yogs end
 		
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(handcuffed)
 		dat += "<tr><td><B>Handcuffed:</B> <A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'>Remove</A></td></tr>"
 	if(legcuffed)
@@ -827,7 +830,10 @@
 	.["Make slime"] = "?_src_=vars;[HrefToken()];makeslime=[REF(src)]"
 	.["Toggle Purrbation"] = "?_src_=vars;[HrefToken()];purrbation=[REF(src)]"
 	.["Copy outfit"] = "?_src_=vars;[HrefToken()];copyoutfit=[REF(src)]"
+<<<<<<< HEAD
 	.["Make Cluwne"] = "?_src_=vars;[HrefToken()];cluwneing=[REF(src)]" // yogs -- make cluwne
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)
 	//If they dragged themselves and we're currently aggressively grabbing them try to piggyback

@@ -15,7 +15,11 @@
 	anchored = TRUE
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
+<<<<<<< HEAD:code/game/objects/structures/lavaland/necropolis_tendril.dm
 	//var/gps = null - yogs - removed tendril gps
+=======
+	var/gps = null
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf:code/game/objects/structures/lavaland/necropolis_tendril.dm
 	var/obj/effect/light_emitter/tendril/emitted_light
 
 
@@ -33,7 +37,11 @@ GLOBAL_LIST_INIT(tendrils, list())
 		if(ismineralturf(F))
 			var/turf/closed/mineral/M = F
 			M.ScrapeAway(null, CHANGETURF_IGNORE_AIR)
+<<<<<<< HEAD:code/game/objects/structures/lavaland/necropolis_tendril.dm
 	//gps = new /obj/item/gps/internal(src) //yogs - lol
+=======
+	gps = new /obj/item/gps/internal(src)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf:code/game/objects/structures/lavaland/necropolis_tendril.dm
 	GLOB.tendrils += src
 
 /obj/structure/spawner/lavaland/deconstruct(disassembled)
@@ -56,7 +64,11 @@ GLOBAL_LIST_INIT(tendrils, list())
 				SSmedals.SetScore(TENDRIL_CLEAR_SCORE, L.client, 1)
 	GLOB.tendrils -= src
 	QDEL_NULL(emitted_light)
+<<<<<<< HEAD:code/game/objects/structures/lavaland/necropolis_tendril.dm
 	//QDEL_NULL(gps) //yogs - lol
+=======
+	QDEL_NULL(gps)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf:code/game/objects/structures/lavaland/necropolis_tendril.dm
 	return ..()
 
 /obj/effect/light_emitter/tendril

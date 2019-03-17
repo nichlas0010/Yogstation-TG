@@ -75,5 +75,8 @@
 	var/datum/player_details/player_details //these persist between logins/logouts during the same round.
 
 	var/list/char_render_holders			//Should only be a key-value list of north/south/east/west = obj/screen.
+<<<<<<< HEAD
 	
 	var/encoding = "1252" // yogs - LibVG
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

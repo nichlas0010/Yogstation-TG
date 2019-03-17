@@ -31,8 +31,11 @@
 	..()
 	if(in_range(user, src) || isobserver(user))
 		to_chat(user, "<span class='notice'>The status display reads: Radiation pulse accuracy increased by factor <b>[precision_coeff**2]</b>.<br>Radiation pulse damage decreased by factor <b>[damage_coeff**2]</b>.<span>")
+<<<<<<< HEAD
 		if(scan_level >= 3)
 			to_chat(user, "<span class='notice'>Scanner has been upgraded to support autoprocessing.<span>")
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/machinery/dna_scannernew/update_icon()
 

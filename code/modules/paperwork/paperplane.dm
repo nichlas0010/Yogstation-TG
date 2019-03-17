@@ -33,10 +33,24 @@
 
 /obj/item/paperplane/handle_atom_del(atom/A)
 	if(A == internalPaper)
+<<<<<<< HEAD
 		internalPaper = null
 		if(!QDELETED(src))
 			qdel(src)
 	return ..()
+=======
+		internalPaper = null
+		if(!QDELETED(src))
+			qdel(src)
+	return ..()
+
+/obj/item/paperplane/Exited(atom/movable/AM, atom/newLoc)
+	. = ..()
+	if (AM == internalPaper)
+		internalPaper = null
+		if(!QDELETED(src))
+			qdel(src)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/item/paperplane/Destroy()
 	QDEL_NULL(internalPaper)

@@ -392,12 +392,21 @@
 		if(!CTO.escape_objective_compatible)
 			escape_objective_possible = FALSE
 			break
+<<<<<<< HEAD
 	var/changeling_objective = pick(list(1,3)) //yogs - fuck absorb most
 	switch(changeling_objective) //yogs - see above
 		if(1)
 			var/datum/objective/absorb/absorb_objective = new
 			absorb_objective.owner = owner
 			absorb_objective.gen_amount_goal(3, 5) //yogs, 6-8 -> 3-5
+=======
+
+	switch(competitive_objectives ? (team_mode ? rand(1,2) : rand(1,3)) : 1)
+		if(1)
+			var/datum/objective/absorb/absorb_objective = new
+			absorb_objective.owner = owner
+			absorb_objective.gen_amount_goal(6, 8)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			objectives += absorb_objective
 		if(2)
 			var/datum/objective/absorb_most/ac = new

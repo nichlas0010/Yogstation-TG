@@ -119,9 +119,12 @@
 			return
 		storedpda.icon_state = P.icon_state
 		storedpda.desc = P.desc
+<<<<<<< HEAD
 		storedpda.light_color = P.light_color //yogs start - pda flashlight colouring
 		storedpda.icon = P.icon // This is to prevent yogs PDAs from being blank when switched to normal PDAs, and the other way around.
 		storedpda.update_light() //yogs end - pda flashlight colouring
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		ejectpda()
 
 	else

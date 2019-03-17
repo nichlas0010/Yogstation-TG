@@ -35,8 +35,13 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Dsay") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/get_dead_say()
+<<<<<<< HEAD
 	// yogs start - Cancel button
 	var/msg = input(src, null, "dsay \"text\"") as text|null
 	if(msg)
 		dsay(msg)
 	// yogs end
+=======
+	var/msg = input(src, null, "dsay \"text\"") as text
+	dsay(msg)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

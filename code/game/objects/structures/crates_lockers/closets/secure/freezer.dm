@@ -44,7 +44,10 @@
 	..()
 	for(var/i = 0, i < 4, i++)
 		new /obj/item/reagent_containers/food/snacks/meat/slab/monkey(src)
+<<<<<<< HEAD
 	new /obj/item/storage/box/goatcubes(src) // yogs change added goat cubes to meat freezer
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/structure/closet/secure_closet/freezer/meat/open
 	req_access = null

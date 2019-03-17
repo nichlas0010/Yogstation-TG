@@ -1102,7 +1102,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 /obj/effect/hallucination/danger/chasm/Crossed(atom/movable/AM)
 	if(AM == target)
+<<<<<<< HEAD
 		if(istype(target, /obj/effect/dummy/phased_mob) || istype(target, /obj/effect/dummy/crawling))
+=======
+		if(istype(target, /obj/effect/dummy/phased_mob))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			return
 		to_chat(target, "<span class='userdanger'>You fall into the chasm!</span>")
 		target.Paralyze(40)

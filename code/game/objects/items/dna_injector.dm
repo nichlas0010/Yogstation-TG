@@ -98,7 +98,11 @@
 	name = "\improper DNA injector (Anti-X-ray)"
 	desc = "It will make you see harder."
 	remove_mutations = list(XRAY)
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /////////////////////////////////////
 /obj/item/dnainjector/antiglasses
 	name = "\improper DNA injector (Anti-Glasses)"
@@ -359,10 +363,57 @@
 	name = "\improper DNA injector (Anti-Shock Touch)"
 	remove_mutations = list(SHOCKTOUCH)
 
+<<<<<<< HEAD
 /obj/item/dnainjector/geladikinesis
 	name = "\improper DNA injector (Geladikinesis)"
 	add_mutations = list(GELADIKINESIS)
 	
+=======
+/obj/item/dnainjector/spacialinstability
+	name = "\improper DNA injector (Spacial Instability)"
+	add_mutations = list(BADBLINK)
+
+/obj/item/dnainjector/antispacialinstability
+	name = "\improper DNA injector (Anti-Spacial Instability)"
+	remove_mutations = list(BADBLINK)
+
+/obj/item/dnainjector/acidflesh
+	name = "\improper DNA injector (Acid Flesh)"
+	add_mutations = list(ACIDFLESH)
+
+/obj/item/dnainjector/antiacidflesh
+	name = "\improper DNA injector (Acid Flesh)"
+	remove_mutations = list(ACIDFLESH)
+
+/obj/item/dnainjector/gigantism
+	name = "\improper DNA injector (Gigantism)"
+	add_mutations = list(GIGANTISM)
+
+/obj/item/dnainjector/antigigantism
+	name = "\improper DNA injector (Anti-Gigantism)"
+	remove_mutations = list(GIGANTISM)
+
+/obj/item/dnainjector/spastic
+	name = "\improper DNA injector (Spastic)"
+	add_mutations = list(SPASTIC)
+
+/obj/item/dnainjector/antispastic
+	name = "\improper DNA injector (Anti-Spastic)"
+	remove_mutations = list(SPASTIC)
+
+/obj/item/dnainjector/twoleftfeet
+	name = "\improper DNA injector (Two Left Feet)"
+	add_mutations = list(EXTRASTUN)
+
+/obj/item/dnainjector/antitwoleftfeet
+	name = "\improper DNA injector (Anti-Two Left Feet)"
+	remove_mutations = list(EXTRASTUN)
+
+/obj/item/dnainjector/geladikinesis
+	name = "\improper DNA injector (Geladikinesis)"
+	add_mutations = list(GELADIKINESIS)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/dnainjector/antigeladikinesis
 	name = "\improper DNA injector (Anti-Geladikinesis)"
 	remove_mutations = list(GELADIKINESIS)

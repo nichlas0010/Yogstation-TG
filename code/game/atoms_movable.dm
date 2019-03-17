@@ -209,6 +209,7 @@
 		direct = get_dir(src, newloc)
 	setDir(direct)
 
+<<<<<<< HEAD
 	// yogs start - multi tile object handling
 	if(bound_width != world.icon_size || bound_height != world.icon_size)
 		var/list/newlocs = isturf(newloc) ? block(locate(newloc.x+(-bound_x)/world.icon_size,newloc.y+(-bound_y)/world.icon_size,newloc.z),locate(newloc.x+(-bound_x+bound_width)/world.icon_size-1,newloc.y+(-bound_y+bound_height)/world.icon_size-1,newloc.z)) : list(newloc)
@@ -261,6 +262,43 @@
 //
 ////////////////////////////////////////
 
+=======
+	if(!loc.Exit(src, newloc))
+		return
+
+	if(!newloc.Enter(src, src.loc))
+		return
+
+	// Past this is the point of no return
+	SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_MOVE, newloc)
+	var/atom/oldloc = loc
+	var/area/oldarea = get_area(oldloc)
+	var/area/newarea = get_area(newloc)
+	loc = newloc
+	. = TRUE
+	oldloc.Exited(src, newloc)
+	if(oldarea != newarea)
+		oldarea.Exited(src, newloc)
+
+	for(var/i in oldloc)
+		if(i == src) // Multi tile objects
+			continue
+		var/atom/movable/thing = i
+		thing.Uncrossed(src)
+
+	newloc.Entered(src, oldloc)
+	if(oldarea != newarea)
+		newarea.Entered(src, oldloc)
+
+	for(var/i in loc)
+		if(i == src) // Multi tile objects
+			continue
+		var/atom/movable/thing = i
+		thing.Crossed(src)
+//
+////////////////////////////////////////
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /atom/movable/Move(atom/newloc, direct)
 	var/atom/movable/pullee = pulling
 	var/turf/T = loc

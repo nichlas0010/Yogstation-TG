@@ -51,8 +51,13 @@
 /proc/log_dsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
 		WRITE_LOG(GLOB.world_game_log, "ADMIN: DSAY: [text]")
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /* All other items are public. */
 /proc/log_game(text)
 	if (CONFIG_GET(flag/log_game))
@@ -61,11 +66,22 @@
 /proc/log_mecha(text)
 	if (CONFIG_GET(flag/log_mecha))
 		WRITE_LOG(GLOB.world_mecha_log, "MECHA: [text]")
+<<<<<<< HEAD
 
 /proc/log_virus(text)
 	if (CONFIG_GET(flag/log_virus))
 		WRITE_LOG(GLOB.world_virus_log, "VIRUS: [text]")
 
+=======
+
+/proc/log_virus(text)
+	if (CONFIG_GET(flag/log_virus))
+		WRITE_LOG(GLOB.world_virus_log, "VIRUS: [text]")
+
+/proc/log_asset(text)
+	WRITE_LOG(GLOB.world_asset_log, "ASSET: [text]")
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /proc/log_access(text)
 	if (CONFIG_GET(flag/log_access))
 		WRITE_LOG(GLOB.world_game_log, "ACCESS: [text]")

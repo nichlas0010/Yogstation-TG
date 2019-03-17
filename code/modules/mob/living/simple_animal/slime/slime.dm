@@ -62,7 +62,11 @@
 	var/mutator_used = FALSE //So you can't shove a dozen mutators into a single slime
 	var/force_stasis = FALSE
 
+<<<<<<< HEAD
 	//do_footstep = TRUE //yogs change
+=======
+	do_footstep = TRUE
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	var/static/regex/slime_name_regex = new("\\w+ (baby|adult) slime \\(\\d+\\)")
 	///////////TIME FOR SUBSPECIES

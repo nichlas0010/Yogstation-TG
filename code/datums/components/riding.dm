@@ -152,7 +152,11 @@
 		Unbuckle(user)
 		return
 
+<<<<<<< HEAD
 	if(world.time < last_vehicle_move + ((last_move_diagonal? 2 : 1) * vehicle_move_delay * CONFIG_GET(number/movedelay/run_delay))) //yogs - fixed this to work with movespeed
+=======
+	if(world.time < last_vehicle_move + ((last_move_diagonal? 2 : 1) * vehicle_move_delay))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		return
 	last_vehicle_move = world.time
 

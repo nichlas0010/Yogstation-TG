@@ -64,8 +64,11 @@
 	var/medium_burn_msg = "blistered"
 	var/heavy_burn_msg = "peeling away"
 
+<<<<<<< HEAD
 	var/bandaged // yogs - FALSE if the limb is not bandaged, TRUE if the limb is bandaged
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/bodypart/examine(mob/user)
 	..()
 	if(brute_dam > DAMAGE_PRECISION)
@@ -144,6 +147,7 @@
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
+<<<<<<< HEAD
 /obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status = null)
 	if(owner && (owner.status_flags & GODMODE))
 		return FALSE	//godmode
@@ -152,6 +156,19 @@
 		return FALSE
 
 	var/dmg_mlt = CONFIG_GET(number/damage_multiplier)
+=======
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null)
+	var/hit_percent = (100-blocked)/100
+	if((!brute && !burn && !stamina) || hit_percent <= 0)
+		return FALSE
+	if(owner && (owner.status_flags & GODMODE))
+		return FALSE	//godmode
+
+	if(required_status && (status != required_status))
+		return FALSE
+
+	var/dmg_mlt = CONFIG_GET(number/damage_multiplier) * hit_percent
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	brute = round(max(brute * dmg_mlt, 0),DAMAGE_PRECISION)
 	burn = round(max(burn * dmg_mlt, 0),DAMAGE_PRECISION)
 	stamina = round(max(stamina * dmg_mlt, 0),DAMAGE_PRECISION)
@@ -197,8 +214,13 @@
 //Damage cannot go below zero.
 //Cannot remove negative damage (i.e. apply damage)
 /obj/item/bodypart/proc/heal_damage(brute, burn, stamina, required_status, updating_health = TRUE)
+<<<<<<< HEAD
 	// yogs -- line below updated to allow for robotic body part healing override
 	if(!(required_status == BODYPART_ANY) && (required_status && (status != required_status)) ) //So we can only heal certain kinds of limbs, ie robotic vs organic.
+=======
+
+	if(required_status && (status != required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		return
 
 	brute_dam	= round(max(brute_dam - brute, 0), DAMAGE_PRECISION)

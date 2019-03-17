@@ -620,7 +620,11 @@
 			if(do_after(user, 50, target = user))
 				target.narsie_act()
 				uses--
+<<<<<<< HEAD
 				user.visible_message("<span class='warning'>Black ribbons suddenly eminate from [user]'s hand and cling to the airlock - twisting and corrupting it!</span>")
+=======
+				user.visible_message("<span class='warning'>Black ribbons suddenly emanate from [user]'s hand and cling to the airlock - twisting and corrupting it!</span>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 				SEND_SOUND(user, sound('sound/effects/magic.ogg',0,1,25))
 			else
 				return

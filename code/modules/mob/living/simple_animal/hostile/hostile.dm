@@ -100,7 +100,11 @@
 	if(!target || !isturf(target.loc) || !isturf(loc) || stat == DEAD)
 		return
 	var/target_dir = get_dir(src,target)
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/static/list/cardinal_sidestep_directions = list(-90,-45,0,45,90)
 	var/static/list/diagonal_sidestep_directions = list(-45,0,45)
 	var/chosen_dir = 0
@@ -131,7 +135,11 @@
 	if(!search_objects)
 		. = hearers(vision_range, targets_from) - src //Remove self, so we don't suicide
 
+<<<<<<< HEAD
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden, /obj/spacepod)) // yogs - add spacepod
+=======
+		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 		for(var/HM in typecache_filter_list(range(vision_range, targets_from), hostile_machines))
 			if(can_see(targets_from, HM, vision_range))
@@ -296,7 +304,11 @@
 		if(target)
 			if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from)) //If they're next to us, attack
 				MeleeAction()
+<<<<<<< HEAD
 			else
+=======
+			else 
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 				if(rapid_melee > 1 && target_distance <= melee_queue_distance)
 					MeleeAction(FALSE)
 				in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode

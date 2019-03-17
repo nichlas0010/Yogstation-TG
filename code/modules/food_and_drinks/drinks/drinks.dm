@@ -235,19 +235,20 @@
 /obj/item/reagent_containers/food/drinks/mug/coco
 	name = "Dutch hot coco"
 	desc = "Made in Space South America."
-	list_reagents = list("hot_coco" = 30, "sugar" = 5)
+	list_reagents = list("hot_coco" = 15, "sugar" = 5)
 	foodtype = SUGAR
-
 	resistance_flags = FREEZE_PROOF
+	custom_price = 42
 
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
-	desc = "Just add 10ml of water, self heats! A taste that reminds you of your school years."
+	desc = "Just add 5ml of water, self heats! A taste that reminds you of your school years."
 	icon_state = "ramen"
-	list_reagents = list("dry_ramen" = 30)
+	list_reagents = list("dry_ramen" = 15)
 	foodtype = GRAIN
 	isGlass = FALSE
+	custom_price = 38
 
 /obj/item/reagent_containers/food/drinks/beer
 	name = "space beer"
@@ -399,6 +400,7 @@
 	reagent_flags = NONE
 	spillable = FALSE
 	isGlass = FALSE
+	custom_price = 10
 
 /obj/item/reagent_containers/food/drinks/soda_cans/suicide_act(mob/living/carbon/human/H)
 	if(!reagents.total_volume)

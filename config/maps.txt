@@ -36,6 +36,7 @@ endmap
 map yogspubby
 endmap
 
+<<<<<<< HEAD
 #map deltastation
 	#minplayers 50
 #endmap
@@ -49,15 +50,25 @@ endmap
 #endmap
 
 map yogsdonut
+=======
+map deltastation
+	minplayers 50
+endmap
+
+map donutstation
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	minplayers 50
 endmap
 
 map runtimestation
 endmap
 
+<<<<<<< HEAD
 map clownstation
 	voteweight 0
 endmap
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 map multiz_debug
 endmap

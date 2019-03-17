@@ -45,7 +45,11 @@
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
+<<<<<<< HEAD
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/card/id/departmental_budget/civ=1, /obj/item/gun/energy/e_gun=1) //yogs - adds egun
+=======
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/card/id/departmental_budget/civ=1)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap

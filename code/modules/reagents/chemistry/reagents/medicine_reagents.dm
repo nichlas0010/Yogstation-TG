@@ -535,12 +535,16 @@
 
 /datum/reagent/medicine/perfluorodecalin/on_mob_life(mob/living/carbon/human/M)
 	M.adjustOxyLoss(-12*REM, 0)
+<<<<<<< HEAD
 	// yogs start
 	M.silent = max(M.silent, 5)
 	if(prob(33))
 		M.adjustBruteLoss(-0.5*REM, 0)
 		M.adjustFireLoss(-0.5*REM, 0)
 	// yogs end
+=======
+	M.adjustToxLoss(0.3*REM, 0)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	..()
 	return TRUE
 
@@ -1340,7 +1344,11 @@
 	M.confused = max(0, M.confused-6)
 	M.disgust = max(0, M.disgust-6)
 	GET_COMPONENT_FROM(mood, /datum/component/mood, M)
+<<<<<<< HEAD
 	if(mood && mood.sanity <= SANITY_NEUTRAL) // only take effect if in negative sanity and then... // yogs - fix lack of mood causing runtime
+=======
+	if(mood.sanity <= SANITY_NEUTRAL) // only take effect if in negative sanity and then...
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL)) // set minimum to prevent unwanted spiking over neutral
 	..()
 	. = 1

@@ -167,7 +167,10 @@
 			if(.)
 				transfer_rate = CLAMP(rate, 0, MAX_TRANSFER_RATE)
 				investigate_log("was set to [transfer_rate] L/s by [key_name(usr)]", INVESTIGATE_ATMOS)
+<<<<<<< HEAD
 				investigate_log("was set to [transfer_rate] L/s by [key_name(usr)]", INVESTIGATE_SUPERMATTER) // yogs - make supermatter invest useful
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if("filter")
 			filter_type = null
 			var/filter_name = "nothing"

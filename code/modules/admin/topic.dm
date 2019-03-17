@@ -455,8 +455,13 @@
 			if(!check_if_greater_rights_than(M.client))
 				to_chat(usr, "<span class='danger'>Error: They have more rights than you do.</span>")
 				return
+<<<<<<< HEAD
 			/* yogs - admins don't need handholding if(alert(usr, "Kick [key_name(M)]?", "Confirm", "Yes", "No") != "Yes")
 				return yogs - admins don't need handholding */
+=======
+			if(alert(usr, "Kick [key_name(M)]?", "Confirm", "Yes", "No") != "Yes")
+				return
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			if(!M)
 				to_chat(usr, "<span class='danger'>Error: [M] no longer exists!</span>")
 				return
@@ -546,11 +551,19 @@
 		var/message_id = href_list["editmessageexpiryempty"]
 		edit_message_expiry(message_id, browse = 1)
 
+<<<<<<< HEAD
 	/*else if(href_list["editmessageseverity"])
 		if(!check_rights(R_ADMIN))
 			return
 		var/message_id = href_list["editmessageseverity"]
 		edit_message_severity(message_id)*/ //yogs - remove severity
+=======
+	else if(href_list["editmessageseverity"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/message_id = href_list["editmessageseverity"]
+		edit_message_severity(message_id)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	else if(href_list["secretmessage"])
 		if(!check_rights(R_ADMIN))
@@ -616,10 +629,16 @@
 		if(query_get_message_edits.NextRow())
 			var/edit_log = query_get_message_edits.item[1]
 			if(!QDELETED(usr))
+<<<<<<< HEAD
 				/*var/datum/browser/browser = new(usr, "Note edits", "Note edits")
 				browser.set_content(jointext(edit_log, ""))
 				browser.open()*/ //yogs - simple fast interface thanks
 				usr << browse(edit_log,"window=noteedits") //yogs
+=======
+				var/datum/browser/browser = new(usr, "Note edits", "Note edits")
+				browser.set_content(jointext(edit_log, ""))
+				browser.open()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		qdel(query_get_message_edits)
 
 	else if(href_list["mute"])
@@ -1873,6 +1892,7 @@
 				if(M)
 					T.admin_remove_member(usr,M)
 		check_teams()
+<<<<<<< HEAD
 	// yogs start - mentors
 	else if(href_list["makementor"])
 		makeMentor(href_list["makementor"])
@@ -1880,6 +1900,8 @@
 	else if(href_list["removementor"])
 		removeMentor(href_list["removementor"])
 	// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	else if(href_list["newbankey"])
 		var/player_key = href_list["newbankey"]

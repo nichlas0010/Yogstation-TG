@@ -53,4 +53,8 @@
 			CB.Invoke()
 		log_played_names(client.ckey,name,real_name)
 
+<<<<<<< HEAD
 	log_message("Client [key_name(src)] has taken ownership of mob [src]", LOG_OWNERSHIP)
+=======
+	log_message("Client [key_name(src)] has taken ownership of mob [src]([src.type])", LOG_OWNERSHIP)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

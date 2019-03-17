@@ -31,9 +31,15 @@
 	icon_state = "salt_pile"
 
 /obj/effect/decal/cleanable/food/salt/CanPass(atom/movable/AM, turf/target)
+<<<<<<< HEAD
 	/* YOGS if(is_species(AM, /datum/species/snail))
 		to_chat(AM, "<span class='danger'>Your path is obstructed by <span class='phobia'>salt</span>.</span>")
 		return FALSE YOGS */
+=======
+	if(is_species(AM, /datum/species/snail))
+		to_chat(AM, "<span class='danger'>Your path is obstructed by <span class='phobia'>salt</span>.</span>")
+		return FALSE
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	return TRUE
 
 /obj/effect/decal/cleanable/food/flour

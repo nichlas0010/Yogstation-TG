@@ -415,6 +415,7 @@
 			if(Mech.occupant && !in_faction(Mech.occupant)) //If there is a user and they're not in our faction
 				if(assess_perp(Mech.occupant) >= 4)
 					targets += Mech
+<<<<<<< HEAD
 	// yogs start
 	for(var/A in GLOB.spacepods_list)
 		if((get_dist(A, base) < scan_range) && can_see(base, A, scan_range))
@@ -423,6 +424,8 @@
 				if(assess_perp(SP.pilot) >= 4)
 					targets += SP
 	// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	if(check_anomalies && GLOB.blobs.len && (mode == TURRET_LETHAL))
 		for(var/obj/structure/blob/B in view(scan_range, base))
@@ -782,8 +785,8 @@
 	integrity_failure = 60
 	name = "Old Laser Turret"
 	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else."
-	stun_projectile = /obj/item/projectile/beam/weak
-	lethal_projectile = /obj/item/projectile/beam/weak
+	stun_projectile = /obj/item/projectile/beam/weak/penetrator
+	lethal_projectile = /obj/item/projectile/beam/weak/penetrator
 	faction = list("neutral","silicon","turret")
 
 ////////////////////////

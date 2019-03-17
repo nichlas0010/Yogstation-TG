@@ -1,12 +1,20 @@
 /obj/structure/fireaxecabinet
 	name = "fire axe cabinet"
+<<<<<<< HEAD
 	desc = "There is a small label that reads \"For Emergency use only\" along with details for safe use of the axe. As if.<BR>There are bolts under it's glass cover for easy disassembly using a wrench."
+=======
+	desc = "There is a small label that reads \"For Emergency use only\" along with details for safe use of the axe. As if."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "fireaxe"
 	anchored = TRUE
 	density = FALSE
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50)
+<<<<<<< HEAD
 	max_integrity = 200//yogs - increase durability to 200
+=======
+	max_integrity = 150
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	integrity_failure = 50
 	var/locked = TRUE
 	var/open = FALSE
@@ -27,12 +35,18 @@
 	return ..()
 
 /obj/structure/fireaxecabinet/attackby(obj/item/I, mob/user, params)
+<<<<<<< HEAD
 	check_deconstruct(I, user)//yogs - deconstructible cabinet
 
 	if(iscyborg(user) || I.tool_behaviour == TOOL_MULTITOOL)
 		reset_lock(user) //yogs - adds reset option
 	else if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
 		//Repairing light damage with a welder
+=======
+	if(iscyborg(user) || I.tool_behaviour == TOOL_MULTITOOL)
+		toggle_lock(user)
+	else if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(obj_integrity < max_integrity)
 			if(!I.tool_start_check(user, amount=2))
 				return

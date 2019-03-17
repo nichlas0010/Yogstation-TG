@@ -23,12 +23,15 @@ tgstation.int
 tgstation.rsc
 tgstation.lk
 tgstation.dyn.rsc
+<<<<<<< HEAD
 yogstation.dmb
 yogstation.int
 yogstation.rsc
 yogstation.lk
 yogstation.dyn.rsc
 libvg.dll
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 libmariadb.dll
 rust_g.dll
 BSQL.dll

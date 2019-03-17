@@ -126,10 +126,13 @@ Color: <A href='byond://?src=[REF(src)];color=1' style='background-color: black;
 		if(secured && signaler2.secured)
 			code = signaler2.code
 			set_frequency(signaler2.frequency)
+<<<<<<< HEAD
 			// yogs start - signaller colors
 			label_color = signaler2.label_color
 			update_icon()
 			// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			to_chat(user, "You transfer the frequency and code of \the [signaler2.name] to \the [name]")
 	..()
 

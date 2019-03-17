@@ -116,5 +116,8 @@ GLOBAL_LIST(round_end_notifiees)
 
 /datum/tgs_chat_command/reload_admins/proc/ReloadAsync()
 	set waitfor = FALSE
+<<<<<<< HEAD
 	refresh_admin_files() //yogs - DB support
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	load_admins()

@@ -129,15 +129,21 @@
 /mob/living/simple_animal/hostile/guardian/ranged/Manifest(forced)
 	if (toggle)
 		incorporeal_move = INCORPOREAL_MOVE_BASIC
+<<<<<<< HEAD
 		GET_COMPONENT(incorp, /datum/component/walk) //yogs start
 		if(incorp)
 			incorp.signal_enabled = TRUE //yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	. = ..()
 
 /mob/living/simple_animal/hostile/guardian/ranged/Recall(forced)
 	// To stop scout mode from moving when recalled
 	incorporeal_move = FALSE
+<<<<<<< HEAD
 	GET_COMPONENT(incorp, /datum/component/walk) //yogs start
 	if(incorp)
 		incorp.signal_enabled = FALSE //yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	. = ..()

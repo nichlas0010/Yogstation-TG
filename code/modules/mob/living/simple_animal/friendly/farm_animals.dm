@@ -16,9 +16,15 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
+<<<<<<< HEAD
 	faction = list("goat") // yogs change replaced neutrial faction with goat faction
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	/*attack_same = 1*/ // yogs No longer needed since goats got there own faction now
+=======
+	faction = list("neutral")
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	attack_same = 1
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	attacktext = "kicks"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 40

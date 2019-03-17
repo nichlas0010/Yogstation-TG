@@ -59,7 +59,11 @@
 	var/laws = \
 	"1. You may not involve yourself in the matters of another being, even if such matters conflict with Law Two or Law Three, unless the other being is another Drone.\n"+\
 	"2. You may not harm any being, regardless of intent or circumstance.\n"+\
+<<<<<<< HEAD
 	"3. Your goals are to build, maintain, repair, improve, and provide power to the best of your abilities, You must never actively work against these goals." //yogs - changed from tg since our rules are different
+=======
+	"3. Your goals are to actively build, maintain, repair, improve, and provide power to the best of your abilities within the facility that housed your activation." //for derelict drones so they don't go to station.
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/heavy_emp_damage = 25 //Amount of damage sustained if hit by a heavy EMP pulse
 	var/alarms = list("Atmosphere" = list(), "Fire" = list(), "Power" = list())
 	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body

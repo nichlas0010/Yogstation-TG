@@ -79,7 +79,7 @@
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/soulstone
 	name = "Summon Soulstone"
-	desc = "This spell reaches into Nar-Sie's realm, summoning one of the legendary fragments across time and space."
+	desc = "This spell reaches into Nar'Sie's realm, summoning one of the legendary fragments across time and space."
 
 	school = "conjuration"
 	charge_max = 2400
@@ -220,7 +220,11 @@
 
 /obj/effect/proc_holder/spell/targeted/dominate
 	name = "Dominate"
+<<<<<<< HEAD
 	desc = "This spell dominates the mind of a lesser creature to the will of Nar'sie, allying it only to her direct followers."
+=======
+	desc = "This spell dominates the mind of a lesser creature to the will of Nar'Sie, allying it only to her direct followers."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	charge_max = 600
 	range = 7

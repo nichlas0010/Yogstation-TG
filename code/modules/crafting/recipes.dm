@@ -39,8 +39,12 @@
 	result = /obj/item/twohanded/spear
 	reqs = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
+<<<<<<< HEAD
 	blacklist = list(/obj/item/twohanded/spear/explosive,
 					/obj/item/grenade/flashbang) //yogs change - removes flashbangs from explosive lances for being even stupider
+=======
+	blacklist = list(/obj/item/twohanded/spear/explosive)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	parts = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
 	time = 15
@@ -304,7 +308,7 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/laserslug
-	name = "Laser Slug Shell"
+	name = "Scatter Laser Shell"
 	result = /obj/item/ammo_casing/shotgun/laserslug
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
 				/obj/item/stock_parts/capacitor/adv = 1,

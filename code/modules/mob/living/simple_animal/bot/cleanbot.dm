@@ -199,6 +199,9 @@
 	if(drawn)
 		target_types += /obj/effect/decal/cleanable/crayon
 
+	if(drawn)
+		target_types += /obj/effect/decal/cleanable/crayon
+
 	if(trash)
 		target_types += /obj/item/trash
 

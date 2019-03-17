@@ -166,16 +166,47 @@ SUBSYSTEM_DEF(dbcore)
 	if(!CONFIG_GET(flag/sql_enabled))
 		return "Database disabled by configuration"
 	return last_error
+<<<<<<< HEAD
 
 /datum/controller/subsystem/dbcore/proc/ReportError(error)
 	last_error = error
 
+=======
+
+/datum/controller/subsystem/dbcore/proc/ReportError(error)
+	last_error = error
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/controller/subsystem/dbcore/proc/NewQuery(sql_query)
 	if(IsAdminAdvancedProcCall())
 		log_admin_private("ERROR: Advanced admin proc call led to sql query: [sql_query]. Query has been blocked")
 		message_admins("ERROR: Advanced admin proc call led to sql query. Query has been blocked")
 		return FALSE
 	return new /datum/DBQuery(sql_query, connection)
+<<<<<<< HEAD
+=======
+
+/datum/controller/subsystem/dbcore/proc/QuerySelect(list/querys, warn = FALSE, qdel = FALSE)
+	if (!islist(querys))
+		if (!istype(querys, /datum/DBQuery))
+			CRASH("Invalid query passed to QuerySelect: [querys]")
+		querys = list(querys)
+
+	for (var/thing in querys)
+		var/datum/DBQuery/query = thing
+		if (warn)
+			INVOKE_ASYNC(query, /datum/DBQuery.proc/warn_execute)
+		else
+			INVOKE_ASYNC(query, /datum/DBQuery.proc/Execute)
+
+	for (var/thing in querys)
+		var/datum/DBQuery/query = thing
+		UNTIL(!query.in_progress)
+		if (qdel)
+			qdel(query)
+
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /*
 Takes a list of rows (each row being an associated list of column => value) and inserts them via a single mass query.
@@ -263,12 +294,21 @@ Delayed insert mode was removed in mysql 7 and only works with MyISAM type table
 	item = list()
 	src.connection = connection
 	sql = sql_query
+<<<<<<< HEAD
 
 /datum/DBQuery/Destroy()
 	Close()
 	SSdbcore.active_queries -= src
 	return ..()
 
+=======
+
+/datum/DBQuery/Destroy()
+	Close()
+	SSdbcore.active_queries -= src
+	return ..()
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/DBQuery/CanProcCall(proc_name)
 	//fuck off kevinz
 	return FALSE

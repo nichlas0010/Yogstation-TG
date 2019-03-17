@@ -65,7 +65,11 @@ FROM dm_base as build
 
 COPY . .
 
+<<<<<<< HEAD
 RUN DreamMaker -max_errors 0 yogstation.dme && tools/deploy.sh /deploy
+=======
+RUN DreamMaker -max_errors 0 tgstation.dme && tools/deploy.sh /deploy
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 FROM dm_base
 
@@ -87,4 +91,8 @@ RUN ln -s /tgstation/libBSQL.so /root/.byond/bin/libBSQL.so
 
 VOLUME [ "/tgstation/config", "/tgstation/data" ]
 
+<<<<<<< HEAD
 ENTRYPOINT [ "DreamDaemon", "yogstation.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
+=======
+ENTRYPOINT [ "DreamDaemon", "tgstation.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

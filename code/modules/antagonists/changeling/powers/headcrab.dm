@@ -1,7 +1,11 @@
 /datum/action/changeling/headcrab
 	name = "Last Resort"
 	desc = "We sacrifice our current body in a moment of need, placing us in control of a vessel that can plant our likeness in a new host. Costs 20 chemicals."
+<<<<<<< HEAD
 	helptext = "We will be placed in control of a small, fragile creature. We may attack a corpse like this to plant an egg which will slowly mature into a new form for us. Can be used while unconscious or dead." // yogs - added "Can be used while unconscious or dead."
+=======
+	helptext = "We will be placed in control of a small, fragile creature. We may attack a corpse like this to plant an egg which will slowly mature into a new form for us."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	button_icon_state = "last_resort"
 	chemical_cost = 20
 	dna_cost = 1

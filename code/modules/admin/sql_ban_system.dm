@@ -91,7 +91,10 @@
 		panel.add_stylesheet("banpanelcss3", 'html/admin/banpanel_css3.css')
 		panel.add_script("banpaneljs", 'html/admin/banpanel.js')
 	var/list/output = list("<form method='get' action='?src=[REF(src)]'>[HrefTokenFormField()]")
+<<<<<<< HEAD
 	// yogs - removed severity from the gui
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	output += {"<input type='hidden' name='src' value='[REF(src)]'>
 	<label class='inputlabel checkbox'>Key:
 	<input type='checkbox' id='keycheck' name='keycheck' value='1'[player_key ? " checked": ""]>
@@ -149,6 +152,26 @@
 			<input type='radio' id='role' name='radioban' value='role'[role == "Server" ? "" : " checked"][edit_id ? " disabled" : ""]>
 			<div class='inputbox'></div></label>
 		</div>
+<<<<<<< HEAD
+=======
+		<div class='column right'>
+			Severity
+			<br>
+			<label class='inputlabel radio'>None
+			<input type='radio' id='none' name='radioseverity' value='none'[edit_id ? " disabled" : ""]>
+			<div class='inputbox'></div></label>
+			<label class='inputlabel radio'>Medium
+			<input type='radio' id='medium' name='radioseverity' value='medium'[edit_id ? " disabled" : ""]>
+			<div class='inputbox'></div></label>
+			<br>
+			<label class='inputlabel radio'>Minor
+			<input type='radio' id='minor' name='radioseverity' value='minor'[edit_id ? " disabled" : ""]>
+			<div class='inputbox'></div></label>
+			<label class='inputlabel radio'>High
+			<input type='radio' id='high' name='radioseverity' value='high'[edit_id ? " disabled" : ""]>
+			<div class='inputbox'></div></label>
+		</div>
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		<div class='column'>
 			Reason
 			<br>
@@ -278,7 +301,11 @@
 	var/applies_to_admins = FALSE
 	var/duration
 	var/interval
+<<<<<<< HEAD
 	//var/severity // yogs - we dont need this
+=======
+	var/severity
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/reason
 	var/mirror_edit
 	var/edit_id
@@ -354,10 +381,16 @@
 		if(!changes.len)
 			error_state += "No changes were detected."
 	else
+<<<<<<< HEAD
 		// yogs - removed severity
 		/*severity = href_list["radioseverity"]
 		if(!severity)
 			error_state += "No severity was selected."*/
+=======
+		severity = href_list["radioseverity"]
+		if(!severity)
+			error_state += "No severity was selected."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		switch(href_list["radioban"])
 			if("server")
 				roles_to_ban += "Server"
@@ -378,9 +411,15 @@
 	if(edit_id)
 		edit_ban(edit_id, player_key, ip_check, player_ip, cid_check, player_cid, use_last_connection, applies_to_admins, duration, interval, reason, mirror_edit, old_key, old_ip, old_cid, old_applies, page, admin_key, changes)
 	else
+<<<<<<< HEAD
 		create_ban(player_key, ip_check, player_ip, cid_check, player_cid, use_last_connection, applies_to_admins, duration, interval, reason, roles_to_ban) // yogs - removed severity
 
 /datum/admins/proc/create_ban(player_key, ip_check, player_ip, cid_check, player_cid, use_last_connection, applies_to_admins, duration, interval, reason, list/roles_to_ban) // removed severity
+=======
+		create_ban(player_key, ip_check, player_ip, cid_check, player_cid, use_last_connection, applies_to_admins, duration, interval, severity, reason, roles_to_ban)
+
+/datum/admins/proc/create_ban(player_key, ip_check, player_ip, cid_check, player_cid, use_last_connection, applies_to_admins, duration, interval, severity, reason, list/roles_to_ban)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(!check_rights(R_BAN))
 		return
 	if(!SSdbcore.Connect())
@@ -476,7 +515,11 @@
 	if(applies_to_admins)
 		send2irc("BAN ALERT","[kn] [msg]")
 	if(player_ckey)
+<<<<<<< HEAD
 		create_message("note", player_ckey, admin_ckey, note_reason, null, null, 0, 0, null, 0) // yogs - removed severity
+=======
+		create_message("note", player_ckey, admin_ckey, note_reason, null, null, 0, 0, null, 0, severity)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/client/C = GLOB.directory[player_ckey]
 	var/datum/admin_help/AH = admin_ticket_log(player_ckey, msg)
 	var/appeal_url = "No ban appeal url set!"

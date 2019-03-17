@@ -380,8 +380,12 @@
 	required_reagents = list("water" = 1)
 	required_container = /obj/item/slime_extract/red
 	required_other = TRUE
+<<<<<<< HEAD
 // yogs start
 /*
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/chemical_reaction/slime/slimespeed/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/speed(get_turf(holder.my_atom))
 	..()

@@ -1,7 +1,11 @@
 /datum/action/changeling/adrenaline
 	name = "Adrenaline Sacs"
 	desc = "We evolve additional sacs of adrenaline throughout our body. Costs 30 chemicals."
+<<<<<<< HEAD
 	helptext = "Removes all stuns instantly. Can be used while unconscious. Continued use poisons the body." //yogs - changed text to suit the below change
+=======
+	helptext = "Removes all stuns instantly and adds a short-term reduction in further stuns. Can be used while unconscious. Continued use poisons the body."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	button_icon_state = "adrenaline"
 	chemical_cost = 30
 	dna_cost = 2
@@ -18,7 +22,11 @@
 	user.SetKnockdown(0)
 	user.SetImmobilized(0)
 	user.SetParalyzed(0)
+<<<<<<< HEAD
 	//user.reagents.add_reagent("changelingadrenaline", 10) //yogs - lings no longer get prolonged anti-stun reagents
+=======
+	user.reagents.add_reagent("changelingadrenaline", 10)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	user.reagents.add_reagent("changelinghaste", 2) //For a really quick burst of speed
 	user.adjustStaminaLoss(-75)
 	return TRUE

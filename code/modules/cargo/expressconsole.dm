@@ -111,7 +111,11 @@
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
 	if(usingBeacon && !beacon)
+<<<<<<< HEAD
 		message = "BEACON ERROR: BEACON MISSING"//beacon was destroyed 
+=======
+		message = "BEACON ERROR: BEACON MISSING"//beacon was destroyed
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	else if (usingBeacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	if(obj_flags & EMAGGED)
@@ -173,7 +177,11 @@
 					var/LZ
 					if (istype(beacon) && usingBeacon)//prioritize beacons over landing in cargobay
 						LZ = get_turf(beacon)
+<<<<<<< HEAD
 						beacon.update_status(SP_LAUNCH)	
+=======
+						beacon.update_status(SP_LAUNCH)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 					else if (!usingBeacon)//find a suitable supplypod landing zone in cargobay
 						landingzone = GLOB.areas_by_type[/area/quartermaster/storage]
 						if (!landingzone)

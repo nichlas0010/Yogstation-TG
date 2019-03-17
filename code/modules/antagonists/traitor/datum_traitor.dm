@@ -264,7 +264,11 @@
 
 /datum/antagonist/traitor/proc/equip(var/silent = FALSE)
 	if(traitor_kind == TRAITOR_HUMAN)
+<<<<<<< HEAD
 		uplink_holder = owner.equip_traitor(employer, silent, src) //yogs - uplink_holder =
+=======
+		owner.equip_traitor(employer, silent, src)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /datum/antagonist/traitor/proc/assign_exchange_role()
 	//set faction

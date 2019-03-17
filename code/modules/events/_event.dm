@@ -60,10 +60,15 @@
 
 	triggering = TRUE
 	if (alert_observers)
+<<<<<<< HEAD
 		//Yogs start -- 15 seconds instead of 10
 		message_admins("Random Event triggering in 15 seconds: [name] (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>)")
 		sleep(150)
 		//Yogs end
+=======
+		message_admins("Random Event triggering in 10 seconds: [name] (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>)")
+		sleep(100)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		var/gamemode = SSticker.mode.config_tag
 		var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 		if(!canSpawnEvent(players_amt, gamemode))

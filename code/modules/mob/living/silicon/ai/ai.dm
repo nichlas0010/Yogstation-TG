@@ -185,7 +185,10 @@
 		icon_state = initial(icon_state)
 	else
 		var/preferred_icon = input ? input : C.prefs.preferred_ai_core_display
+<<<<<<< HEAD
 		icon = initial(icon) //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		icon_state = resolve_ai_icon(preferred_icon)
 
 /mob/living/silicon/ai/verb/pick_icon()
@@ -196,6 +199,7 @@
 	var/list/iconstates = GLOB.ai_core_display_screens
 	for(var/option in iconstates)
 		if(option == "Random")
+<<<<<<< HEAD
 			iconstates[option] = image(icon = initial(src.icon), icon_state = "ai-random") //yogs start - AI donor icons
 			continue
 		iconstates[option] = image(icon = initial(src.icon), icon_state = resolve_ai_icon(option))
@@ -205,16 +209,25 @@
 			if(S.owner == client.ckey || !S.owner) //We own this skin.
 				iconstates[S] = image(icon = S.icon, icon_state = S.icon_state)
 
+=======
+			iconstates[option] = image(icon = src.icon, icon_state = "ai-random")
+			continue
+		iconstates[option] = image(icon = src.icon, icon_state = resolve_ai_icon(option))
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	view_core()
 	var/ai_core_icon = show_radial_menu(src, src , iconstates, radius = 42)
 
 	if(!ai_core_icon || incapacitated())
 		return
 
+<<<<<<< HEAD
 	if(ai_core_icon in GLOB.DonorBorgHolder.skins)
 		set_core_display_icon_yogs(ai_core_icon)
 		return //yogs end - AI donor icons
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	display_icon_override = ai_core_icon
 	set_core_display_icon(ai_core_icon)
 

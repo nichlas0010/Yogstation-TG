@@ -364,7 +364,7 @@
 /obj/item/twohanded/dualsaber/proc/impale(mob/living/user)
 	to_chat(user, "<span class='warning'>You twirl around a bit before losing your balance and impaling yourself on [src].</span>")
 	if (force_wielded)
-		user.take_bodypart_damage(20,25)
+		user.take_bodypart_damage(20,25,check_armor = TRUE)
 	else
 		user.adjustStaminaLoss(25)
 
@@ -496,8 +496,11 @@
 		force_wielded = 19
 		force_unwielded = 11
 		throwforce = 21
+<<<<<<< HEAD
 		righthand_file = 'yogstation/icons/mob/inhands/weapons/polearms_righthand.dmi' //yogs
 		alternate_worn_icon = 'yogstation/icons/mob/back.dmi' //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		icon_prefix = "spearplasma"
 	update_icon()
 	qdel(tip)
@@ -511,12 +514,21 @@
 		parts_list -= G
 		qdel(src)
 	..()
+<<<<<<< HEAD
 
 
 /obj/item/twohanded/spear/explosive
 	name = "explosive lance"
 	var/obj/item/grenade/explosive = null
 
+=======
+	
+
+/obj/item/twohanded/spear/explosive
+	name = "explosive lance"
+	var/obj/item/grenade/explosive = null
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/twohanded/spear/explosive/Initialize(mapload, obj/item/grenade/G)
 	. = ..()
 	if (!G)
@@ -534,6 +546,7 @@
 	user.gib()
 	qdel(src)
 	return BRUTELOSS
+<<<<<<< HEAD
 
 /obj/item/twohanded/spear/explosive/examine(mob/user)
 	..()
@@ -542,6 +555,16 @@
 /obj/item/twohanded/spear/explosive/update_icon()
 	icon_state = "spearbomb[wielded]"
 
+=======
+
+/obj/item/twohanded/spear/explosive/examine(mob/user)
+	..()
+	to_chat(user, "<span class='notice'>Alt-click to set your war cry.</span>")
+
+/obj/item/twohanded/spear/explosive/update_icon()	
+	icon_state = "spearbomb[wielded]"
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/twohanded/spear/explosive/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))
 		..()

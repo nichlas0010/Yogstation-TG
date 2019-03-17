@@ -17,8 +17,12 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/reestablish_db_connection, /*reattempt a connection to the database*/
 	/client/proc/cmd_admin_pm_context,	/*right-click adminPM interface*/
 	/client/proc/cmd_admin_pm_panel,		/*admin-pm list*/
+<<<<<<< HEAD
 	/client/proc/stop_sounds,
 	/client/proc/fix_air // yogs - fix air verb
+=======
+	/client/proc/stop_sounds
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -76,12 +80,16 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/resetasaycolor,
 	/client/proc/toggleadminhelpsound,
 	/client/proc/respawn_character,
+<<<<<<< HEAD
 	/datum/admins/proc/open_borgopanel,
 	/datum/admins/proc/restart, //yogs - moved from +server
 	/client/proc/admin_pick_random_player, //yogs
 	/client/proc/get_law_history, //yogs - silicon law history
 	/client/proc/show_mentors, // yogs - mentors
 	/client/proc/reset_all_tcs // yogs - NTSL, resets all NTSL scripts in world
+=======
+	/datum/admins/proc/open_borgopanel
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -109,9 +117,12 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/polymorph_all,
 	/client/proc/show_tip,
 	/client/proc/smite,
+<<<<<<< HEAD
 	/client/proc/spawn_floor_cluwne, // Yogs
 	/client/proc/rejuv_all, // yogs - Revive All
 	/client/proc/admin_vox, // yogs - Admin AI Vox
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	/client/proc/admin_away
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
@@ -257,8 +268,12 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 		var/rights = holder.rank.rights
 		verbs += GLOB.admin_verbs_default
+<<<<<<< HEAD
 		verbs += GLOB.mentor_verbs // yogs - give admins mentor verbs
 		if(rights & R_BUILDMODE)
+=======
+		if(rights & R_BUILD)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			verbs += /client/proc/togglebuildmodeself
 		if(rights & R_ADMIN)
 			verbs += GLOB.admin_verbs_admin
@@ -278,7 +293,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			verbs += /client/proc/stealth
 		if(rights & R_ADMIN)
 			verbs += GLOB.admin_verbs_poll
-		if(rights & R_SOUNDS)
+		if(rights & R_SOUND)
 			verbs += GLOB.admin_verbs_sounds
 			if(CONFIG_GET(string/invoke_youtubedl))
 				verbs += /client/proc/play_web_sound
@@ -394,6 +409,14 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Antagonists") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	// yogs end
+
+/client/proc/ban_panel()
+	set name = "Banning Panel"
+	set category = "Admin"
+	if(!check_rights(R_BAN))
+		return
+	holder.ban_panel()
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Banning Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/ban_panel()
 	set name = "Banning Panel"
@@ -628,7 +651,11 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
 	set category = "Special Verbs"
+<<<<<<< HEAD
 	if (!(holder.rank.rights & R_BUILDMODE))
+=======
+	if (!(holder.rank.rights & R_BUILD))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		return
 	if(src.mob)
 		togglebuildmode(src.mob)

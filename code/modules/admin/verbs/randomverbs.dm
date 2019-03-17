@@ -14,7 +14,11 @@
 			M.regenerate_icons()
 
 	log_admin("[key_name(usr)] made [key_name(M)] drop everything!")
+<<<<<<< HEAD
 	var/msg = "[key_name(usr)] made [key_name(M)] drop everything!" // yogs - Yog Tickets
+=======
+	var/msg = "[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] drop everything!"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Everything") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -199,7 +203,11 @@
 	to_chat(usr, "<span class='adminnotice'>Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]</span>")
 
 	log_admin("[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]")
+<<<<<<< HEAD
 	var/msg = "[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]" // yogs - Yog Tickets
+=======
+	var/msg = "[key_name_admin(usr)] has toggled [ADMIN_LOOKUPFLW(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Godmode", "[M.status_flags & GODMODE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -540,7 +548,11 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	M.revive(full_heal = 1, admin_revive = 1)
 
 	log_admin("[key_name(usr)] healed / revived [key_name(M)]")
+<<<<<<< HEAD
 	var/msg = "Admin [key_name(usr)] healed / revived [key_name(M)]!" // yogs - Yog Tickets
+=======
+	var/msg = "<span class='danger'>Admin [key_name_admin(usr)] healed / revived [ADMIN_LOOKUPFLW(M)]!</span>"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Rejuvinate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -589,7 +601,11 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set category = "Admin"
 	set name = "Delete"
 
+<<<<<<< HEAD
 	if(!check_rights(R_ADMIN)) //yogs - makes this +admin instead of +spawn/+debug
+=======
+	if(!check_rights(R_SPAWN|R_DEBUG))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		return
 
 	admin_delete(A)
@@ -1312,10 +1328,18 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 			if(!puzzle_imprison(target))
 				to_chat(usr,"<span class='warning'>Imprisonment failed!</span>")
 				return
+<<<<<<< HEAD
 	punish_log(target, punishment)
 
 /client/proc/punish_log(var/whom, var/punishment)
 	var/msg = "[key_name(usr)] punished [key_name_admin(whom)] with [punishment]." //yogs - Yog tickets
+=======
+
+	punish_log(target, punishment)
+
+/client/proc/punish_log(var/whom, var/punishment)
+	var/msg = "[key_name_admin(usr)] punished [key_name_admin(whom)] with [punishment]."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	message_admins(msg)
 	admin_ticket_log(whom, msg)
 	log_admin("[key_name(usr)] punished [key_name(whom)] with [punishment].")

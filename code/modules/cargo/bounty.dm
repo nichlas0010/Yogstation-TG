@@ -146,7 +146,11 @@ GLOBAL_LIST_EMPTY(bounties_list)
 											/datum/bounty/reagent/complex_drink = 1,
 											/datum/bounty/reagent/chemical_simple = 1,
 											/datum/bounty/reagent/chemical_complex = 1)
+<<<<<<< HEAD
 											
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	for(var/the_strict_type in easy_add_list_strict_types)
 		for(var/i in 1 to easy_add_list_strict_types[the_strict_type])
 			try_add_bounty(new the_strict_type)
@@ -168,6 +172,10 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/list/low_priority_strict_type_list = list( /datum/bounty/item/alien_organs,
 													/datum/bounty/item/syndicate_documents,
 													/datum/bounty/item/adamantine,
+<<<<<<< HEAD
+=======
+													/datum/bounty/item/trash,
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 													/datum/bounty/more_bounties)
 
 	for(var/low_priority_bounty in low_priority_strict_type_list)

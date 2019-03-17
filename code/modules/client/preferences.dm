@@ -156,8 +156,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Settings</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
+<<<<<<< HEAD
 	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Donator Preferences</a>" // yogs - Donor features
 	dat += "<a href='?_src_=prefs;preference=tab;tab=4' [current_tab == 4 ? "class='linkOn'" : ""]>Keybindings</a>" // yogs - Custom keybindings
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	if(!path)
 		dat += "<div class='notice'>Please create an account to save your preferences</div>"
@@ -462,7 +465,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
+<<<<<<< HEAD
 			//dat += "<b>Keybindings:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Default"]</a><br>" // yogs - Custom keybindings
+=======
+			dat += "<b>Keybindings:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Default"]</a><br>"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			dat += "<br>"
 			dat += "<b>PDA Color:</b> <span style='border:1px solid #161616; background-color: [pda_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=pda_color;task=input'>Change</a><BR>"
 			dat += "<b>PDA Style:</b> <a href='?_src_=prefs;task=input;preference=pda_style'>[pda_style]</a><br>"
@@ -569,10 +576,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<br>"
 			dat += "<b>Midround Antagonist:</b> <a href='?_src_=prefs;preference=allow_midround_antag'>[(toggles & MIDROUND_ANTAG) ? "Enabled" : "Disabled"]</a><br>"
 
+<<<<<<< HEAD
 			// yogs start - Donor features
 			if(is_donator(user.client))
 				dat += "<b>Quiet round:</b> <a href='?_src_=prefs;preference=donor;task=quiet_round'>[(src.toggles & QUIET_ROUND) ? "Yes" : "No"]</a><br>"
 			// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			dat += "</td></tr></table>"
 		if(2) //OOC Preferences
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -589,6 +599,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(unlock_content)
 					dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
 
+<<<<<<< HEAD
+=======
+		if(2) //OOC Preferences
+			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
+			dat += "<h2>OOC Settings</h2>"
+			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<br>"
+			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<br>"
+
+
+			if(user.client)
+				if(unlock_content)
+					dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 				if(unlock_content || check_rights_for(user.client, R_ADMIN))
 					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 
@@ -613,6 +641,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>ASAY Color:</b> <span style='border: 1px solid #161616; background-color: [asaycolor ? asaycolor : "#FF4500"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=asaycolor;task=input'>Change</a><br>"
 				dat += "</td>"
 			dat += "</tr></table>"
+<<<<<<< HEAD
 		// yogs start - Donor features
 		if (3) //Donator preferences
 			dat += "<table><tr><td width='500px' height='300px' valign='top'>"
@@ -709,6 +738,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "<b>Default keybindings selected</b>"
 		// yogs end
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	dat += "<hr><center>"
 
 	if(!IsGuestKey(user.key))
@@ -1065,6 +1097,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			C.clear_character_previews()
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
+<<<<<<< HEAD
 	// yogs start - Donor features
 	if(href_list["preference"] == "donor")
 		if(is_donator(user))
@@ -1090,6 +1123,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			message_admins("EXPLOIT \[donor\]: [user] tried to access donor only functions (as a non-donor). Attempt made on \"[href_list["preference"]]\" -> \"[href_list["task"]]\".")
 	// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(href_list["bancheck"])
 		var/list/ban_details = is_banned_from_with_details(user.ckey, user.client.address, user.client.computer_id, href_list["bancheck"])
 		var/admin = FALSE
@@ -1758,4 +1793,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ' and .</font>")
 			return
 		else
+<<<<<<< HEAD
 			custom_names[name_id] = sanitized_name
+=======
+			custom_names[name_id] = sanitized_name
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

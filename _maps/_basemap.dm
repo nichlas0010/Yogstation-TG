@@ -11,11 +11,15 @@
 		#include "map_files\PubbyStation\PubbyStation.dmm"
 		#include "map_files\BoxStation\BoxStation.dmm"
 		#include "map_files\Donutstation\Donutstation.dmm"
+<<<<<<< HEAD
 		#include "yogstation\map_files\YogStation\Yogstation.dmm"
 		#include "yogstation\map_files\YogsMeta\YogsMeta.dmm"
 		#include "yogstation\map_files\YogsPubby\YogsPubby.dmm"
 		#include "yogstation\map_files\YogsDelta\YogsDelta.dmm"
 		#include "yogstation\map_files\YogsDonut\YogsDonut.dmm"
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif

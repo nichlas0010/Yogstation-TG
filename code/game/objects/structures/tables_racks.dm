@@ -89,9 +89,12 @@
 
 /obj/structure/table/attack_tk()
 	return FALSE
+<<<<<<< HEAD
 
 /obj/structure/table/attack_tk()
 	return FALSE
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/structure/table/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
@@ -423,7 +426,7 @@
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smooth = SMOOTH_FALSE
 	can_buckle = 1
-	buckle_lying = 1
+	buckle_lying = -1
 	buckle_requires_restraints = 1
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null

@@ -443,6 +443,7 @@
 		H.spill_organs()
 		H.spread_bodyparts()
 	return (BRUTELOSS)
+<<<<<<< HEAD
 
 //YOGS start
 /obj/item/book/manual/wiki/supermatter
@@ -453,3 +454,5 @@
 	title = "Easy Guide to Setting up the Supermatter Engine"
 	page_link = "Supermatter"
 //YOGS end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

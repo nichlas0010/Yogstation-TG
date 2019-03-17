@@ -222,5 +222,8 @@ Any-Mode: (hotkey doesn't need to be on)
 
 	to_chat(src, hotkey_mode)
 	to_chat(src, other)
+<<<<<<< HEAD
 */
 // yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

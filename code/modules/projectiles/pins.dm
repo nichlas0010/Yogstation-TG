@@ -57,7 +57,12 @@
 	return TRUE
 
 /obj/item/firing_pin/proc/auth_fail(mob/living/user)
+<<<<<<< HEAD
 	user.show_message(fail_message, 1)
+=======
+	if(user)
+		user.show_message(fail_message, 1)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(selfdestruct)
 		if(user)
 			user.show_message("<span class='danger'>SELF-DESTRUCTING...</span><br>", 1)
@@ -81,6 +86,11 @@
 	pin_removeable = TRUE
 
 /obj/item/firing_pin/test_range/pin_auth(mob/living/user)
+<<<<<<< HEAD
+=======
+	if(!istype(user))
+		return FALSE
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	for(var/obj/machinery/magnetic_controller/M in range(user, 3))
 		return TRUE
 	return FALSE

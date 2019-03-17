@@ -143,6 +143,11 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 
 	var/moveable = FALSE
 
+<<<<<<< HEAD
+=======
+	var/moveable = FALSE
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/machinery/power/supermatter_crystal/Initialize()
 	. = ..()
 	uid = gl_uid++
@@ -248,8 +253,11 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	for(var/i in SUPERMATTER_COUNTDOWN_TIME to 0 step -10)
 		if(damage < explosion_point) // Cutting it a bit close there engineers
 			radio.talk_into(src, "[safe_alert] Failsafe has been disengaged.", common_channel, get_spans(), get_default_language())
+<<<<<<< HEAD
 			log_game("The supermatter crystal:[safe_alert] Failsafe has been disengaged.") // yogs start - Logs SM chatter
 			investigate_log("The supermatter crystal:[safe_alert] Failsafe has been disengaged.", INVESTIGATE_SUPERMATTER) // yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			cut_overlay(causality_field, TRUE)
 			final_countdown = FALSE
 			return
@@ -258,12 +266,17 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			continue
 		else if(i > 50)
 			speaking = "[DisplayTimeText(i, TRUE)] remain before causality stabilization."
+<<<<<<< HEAD
 			log_game("The supermatter crystal: [DisplayTimeText(i, TRUE)] remain before causality stabilization.") // yogs start - Logs SM chatter
 			investigate_log("The supermatter crystal: [DisplayTimeText(i, TRUE)] remain before causality stabilization.", INVESTIGATE_SUPERMATTER) // yogs end
 		else
 			speaking = "[i*0.1]..."
 			log_game("The supermatter crystal: [i*0.1]...") // yogs start - Logs SM chatter
 			investigate_log("The supermatter crystal: [i*0.1]...", INVESTIGATE_SUPERMATTER) // yogs end
+=======
+		else
+			speaking = "[i*0.1]..."
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		radio.talk_into(src, speaking, common_channel, get_spans(), get_default_language())
 		sleep(10)
 
@@ -497,8 +510,13 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	var/turf/L = loc
 	if(!istype(L))
 		return FALSE
+<<<<<<< HEAD
 	if(istype(Proj.firer, /mob/living)) //yogs start - supermatter stuff
 		investigate_log("has been hit by [Proj] fired by [key_name(Proj.firer)]", INVESTIGATE_SUPERMATTER) // yogs end
+=======
+	if(!istype(Proj.firer, /obj/machinery/power/emitter))
+		investigate_log("has been hit by [Proj] fired by [key_name(Proj.firer)]", INVESTIGATE_SUPERMATTER)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(Proj.flag != "bullet")
 		power += Proj.damage * config_bullet_energy
 		if(!has_been_powered)
@@ -669,7 +687,27 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			L.show_message("<span class='italics'>You hear an unearthly ringing and notice your skin is covered in fresh radiation burns.</span>", 2)
 
 /obj/machinery/power/supermatter_crystal/engine
+<<<<<<< HEAD
+=======
 	is_main_engine = TRUE
+
+/obj/machinery/power/supermatter_crystal/shard
+	name = "supermatter shard"
+	desc = "A strangely translucent and iridescent crystal that looks like it used to be part of a larger structure."
+	base_icon_state = "darkmatter_shard"
+	icon_state = "darkmatter_shard"
+	anchored = FALSE
+	gasefficency = 0.125
+	explosion_power = 12
+	layer = ABOVE_MOB_LAYER
+	moveable = TRUE
+
+/obj/machinery/power/supermatter_crystal/shard/engine
+	name = "anchored supermatter shard"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
+	is_main_engine = TRUE
+	anchored = TRUE
+	moveable = FALSE
 
 /obj/machinery/power/supermatter_crystal/shard
 	name = "supermatter shard"

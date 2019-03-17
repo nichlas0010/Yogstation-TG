@@ -41,12 +41,19 @@
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
 	if(QDELETED(src) || QDELETED(user))
+<<<<<<< HEAD
 		return
 	if(!check_allowed(user)) // Yogs
 		return // Yogs
 	var/ghost_role = alert("Become [prompt_name ? prompt_name : mob_name]? (Warning, You can no longer be cloned!)",,"Yes","No") // Yogs
 	if(!check_allowed(user) || (ghost_role == "No") || !loc || QDELETED(src) || QDELETED(user)) // Yogs
 		return
+=======
+		return
+	var/ghost_role = alert("Become [mob_name]? (Warning, You can no longer be cloned!)",,"Yes","No")
+	if(ghost_role == "No" || !loc)
+		return
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	log_game("[key_name(user)] became [mob_name]")
 	create(ckey = user.ckey)
 

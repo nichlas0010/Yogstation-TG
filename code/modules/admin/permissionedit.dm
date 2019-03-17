@@ -44,7 +44,11 @@
 				pagecount++
 			output += "|"
 		var/limit = " LIMIT [logssperpage * page], [logssperpage]"
+<<<<<<< HEAD
 		var/datum/DBQuery/query_search_admin_logs = SSdbcore.NewQuery("SELECT datetime, round_id, (SELECT byond_key FROM [format_table_name("player")] WHERE ckey = adminckey), operation, IF(ckey IS NULL, target, byond_key), log FROM [format_table_name("admin_log")] LEFT JOIN [format_table_name("player")] ON target = ckey[search] ORDER BY datetime DESC[limit]")
+=======
+		var/datum/DBQuery/query_search_admin_logs = SSdbcore.NewQuery("SELECT datetime, round_id, IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE ckey = adminckey), adminckey), operation, IF(ckey IS NULL, target, byond_key), log FROM [format_table_name("admin_log")] LEFT JOIN [format_table_name("player")] ON target = ckey[search] ORDER BY datetime DESC[limit]")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(!query_search_admin_logs.warn_execute())
 			qdel(query_search_admin_logs)
 			return
@@ -59,7 +63,11 @@
 		qdel(query_search_admin_logs)
 	if(action == 2)
 		output += "<h3>Admin ckeys with invalid ranks</h3>"
+<<<<<<< HEAD
 		var/datum/DBQuery/query_check_admin_errors = SSdbcore.NewQuery("SELECT (SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("admin")].ckey), [format_table_name("admin")].rank FROM [format_table_name("admin")] LEFT JOIN [format_table_name("admin_ranks")] ON [format_table_name("admin_ranks")].rank = [format_table_name("admin")].rank WHERE [format_table_name("admin_ranks")].rank IS NULL")
+=======
+		var/datum/DBQuery/query_check_admin_errors = SSdbcore.NewQuery("SELECT IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("admin")].ckey), ckey), [format_table_name("admin")].rank FROM [format_table_name("admin")] LEFT JOIN [format_table_name("admin_ranks")] ON [format_table_name("admin_ranks")].rank = [format_table_name("admin")].rank WHERE [format_table_name("admin_ranks")].rank IS NULL")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(!query_check_admin_errors.warn_execute())
 			qdel(query_check_admin_errors)
 			return
@@ -279,7 +287,7 @@
 			rank_names[R.name] = R
 	var/new_rank = input("Please select a rank", "New rank") as null|anything in rank_names
 	if(new_rank == "*New Rank*")
-		new_rank = ckeyEx(input("Please input a new rank", "New custom rank") as text|null)
+		new_rank = input("Please input a new rank", "New custom rank") as text|null
 	if(!new_rank)
 		return
 	R = rank_names[new_rank]
@@ -356,10 +364,14 @@
 	var/m1 = "[key_name_admin(usr)] edited the permissions of [use_db ? " rank [D.rank.name] permanently" : "[admin_key] temporarily"]"
 	var/m2 = "[key_name(usr)] edited the permissions of [use_db ? " rank [D.rank.name] permanently" : "[admin_key] temporarily"]"
 	if(use_db || legacy_only)
+<<<<<<< HEAD
+=======
+		var/rank_name = sanitizeSQL(D.rank.name)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		var/old_flags
 		var/old_exclude_flags
 		var/old_can_edit_flags
-		var/datum/DBQuery/query_get_rank_flags = SSdbcore.NewQuery("SELECT flags, exclude_flags, can_edit_flags FROM [format_table_name("admin_ranks")] WHERE rank = '[D.rank.name]'")
+		var/datum/DBQuery/query_get_rank_flags = SSdbcore.NewQuery("SELECT flags, exclude_flags, can_edit_flags FROM [format_table_name("admin_ranks")] WHERE rank = '[rank_name]'")
 		if(!query_get_rank_flags.warn_execute())
 			qdel(query_get_rank_flags)
 			return
@@ -368,12 +380,20 @@
 			old_exclude_flags = text2num(query_get_rank_flags.item[2])
 			old_can_edit_flags = text2num(query_get_rank_flags.item[3])
 		qdel(query_get_rank_flags)
+<<<<<<< HEAD
 		var/datum/DBQuery/query_change_rank_flags = SSdbcore.NewQuery("UPDATE [format_table_name("admin_ranks")] SET flags = '[new_flags]', exclude_flags = '[new_exclude_flags]', can_edit_flags = '[new_can_edit_flags]' WHERE rank = '[D.rank.name]'")
+=======
+		var/datum/DBQuery/query_change_rank_flags = SSdbcore.NewQuery("UPDATE [format_table_name("admin_ranks")] SET flags = '[new_flags]', exclude_flags = '[new_exclude_flags]', can_edit_flags = '[new_can_edit_flags]' WHERE rank = '[rank_name]'")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(!query_change_rank_flags.warn_execute())
 			qdel(query_change_rank_flags)
 			return
 		qdel(query_change_rank_flags)
+<<<<<<< HEAD
 		var/datum/DBQuery/query_change_rank_flags_log = SSdbcore.NewQuery("INSERT INTO [format_table_name("admin_log")] (datetime, round_id, adminckey, adminip, operation, target, log) VALUES ('[SQLtime()]', '[GLOB.round_id]', '[sanitizeSQL(usr.ckey)]', INET_ATON('[sanitizeSQL(usr.client.address)]'), 'change rank flags', '[D.rank.name]', 'Permissions of [D.rank.name] changed from[rights2text(old_flags," ")][rights2text(old_exclude_flags," ", "-")][rights2text(old_can_edit_flags," ", "*")] to[rights2text(new_flags," ")][rights2text(new_exclude_flags," ", "-")][rights2text(new_can_edit_flags," ", "*")]')")
+=======
+		var/datum/DBQuery/query_change_rank_flags_log = SSdbcore.NewQuery("INSERT INTO [format_table_name("admin_log")] (datetime, round_id, adminckey, adminip, operation, target, log) VALUES ('[SQLtime()]', '[GLOB.round_id]', '[sanitizeSQL(usr.ckey)]', INET_ATON('[sanitizeSQL(usr.client.address)]'), 'change rank flags', '[rank_name]', 'Permissions of [rank_name] changed from[rights2text(old_flags," ")][rights2text(old_exclude_flags," ", "-")][rights2text(old_can_edit_flags," ", "*")] to[rights2text(new_flags," ")][rights2text(new_exclude_flags," ", "-")][rights2text(new_can_edit_flags," ", "*")]')")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(!query_change_rank_flags_log.warn_execute())
 			qdel(query_change_rank_flags_log)
 			return

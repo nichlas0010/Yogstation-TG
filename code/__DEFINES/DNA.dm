@@ -12,6 +12,10 @@
 #define MUTATE		/datum/mutation/human/bad_dna
 #define COUGH		/datum/mutation/human/cough
 #define DWARFISM	/datum/mutation/human/dwarfism
+<<<<<<< HEAD
+=======
+#define GIGANTISM	/datum/mutation/human/gigantism
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 #define CLOWNMUT	/datum/mutation/human/clumsy
 #define TOURETTES	/datum/mutation/human/tourettes
 #define DEAFMUT		/datum/mutation/human/deaf
@@ -41,10 +45,19 @@
 #define INSULATED	/datum/mutation/human/insulated
 #define SHOCKTOUCH	/datum/mutation/human/shock
 #define OLFACTION	/datum/mutation/human/olfaction
+<<<<<<< HEAD
 #define YELLING		/datum/mutation/human/yelling
 #define GELADIKINESIS		/datum/mutation/human/geladikinesis
 #define CRYOKINESIS /datum/mutation/human/cryokinesis
 
+=======
+#define ACIDFLESH	/datum/mutation/human/acidflesh
+#define BADBLINK	/datum/mutation/human/badblink
+#define SPASTIC		/datum/mutation/human/spastic
+#define EXTRASTUN	/datum/mutation/human/extrastun
+#define GELADIKINESIS		/datum/mutation/human/geladikinesis
+#define CRYOKINESIS /datum/mutation/human/cryokinesis
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 #define UI_CHANGED "ui changed"
 #define UE_CHANGED "ue changed"
@@ -57,8 +70,13 @@
 #define	POSITIVE 			1
 #define	NEGATIVE			2
 #define	MINOR_NEGATIVE		4
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 //Mutation classes. Normal being on them, extra being additional mutations with instability and other being stuff you dont want people to fuck with like wizard mutate
 #define MUT_NORMAL 1
 #define MUT_EXTRA 2

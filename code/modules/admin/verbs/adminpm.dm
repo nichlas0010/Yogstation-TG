@@ -151,7 +151,11 @@
 
 	if(irc)
 		to_chat(src, "<font color='blue'>PM to-<b>Admins</b>: <span class='linkify'>[rawmsg]</span></font>")
+<<<<<<< HEAD
 		var/datum/admin_help/AH = admin_ticket_log(src, keywordparsedmsg) // yogs - Yog Tickets
+=======
+		var/datum/admin_help/AH = admin_ticket_log(src, "<font color='red'>Reply PM from-<b>[key_name(src, TRUE, TRUE)] to <i>IRC</i>: [keywordparsedmsg]</font>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		ircreplyamount--
 		send2irc("[AH ? "#[AH.id] " : ""]Reply: [ckey]", rawmsg)
 	else
@@ -168,12 +172,19 @@
 					admin_ticket_log(recipient, msg, FALSE) // yogs - Yog Tickets
 
 			else		//recipient is an admin but sender is not
+<<<<<<< HEAD
 				if(!current_ticket)
 					to_chat(src, "<font color='blue'>Ticket closed, please make a new one before trying to contact admins!</span>") // yogs - Yog Tickets
 					return
 				admin_ticket_log(src, keywordparsedmsg, FALSE) // yogs - Yog Tickets
 				to_chat(recipient, "<font color='red'>Reply PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span></font>") // yogs - Yog Tickets
 				to_chat(src, "<font color='blue'>-- [key_name(src, null, 0)] -> <b>Admins</b>: <span class='linkify'>[msg]</span></font>") // yogs - Yog Tickets
+=======
+				var/replymsg = "<font color='red'>Reply PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span></font>"
+				admin_ticket_log(src, replymsg)
+				to_chat(recipient, replymsg)
+				to_chat(src, "<font color='blue'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></font>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 			//play the receiving admin the adminhelp sound (if they have them enabled)
 			if(recipient.prefs.toggles & SOUND_ADMINHELP)

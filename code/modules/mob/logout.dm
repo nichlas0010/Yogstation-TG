@@ -1,5 +1,9 @@
 /mob/Logout()
+<<<<<<< HEAD
 	log_message("[key_name(src)] is no longer owning mob [src]", LOG_OWNERSHIP)
+=======
+	log_message("[key_name(src)] is no longer owning mob [src]([src.type])", LOG_OWNERSHIP)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	SStgui.on_logout(src)
 	unset_machine()
 	GLOB.player_list -= src

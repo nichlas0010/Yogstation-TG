@@ -49,7 +49,11 @@ if [ "$BUILD_TOOLS" = false ]; then
 	if [ "$BUILD_TESTING" = true ]; then
 		tools/travis/dm.sh -DTRAVISBUILDING -DTRAVISTESTING -DALL_MAPS yogstation.dme
 	else
+<<<<<<< HEAD
 		tools/travis/dm.sh -DTRAVISBUILDING yogstation.dme
+=======
+		tools/travis/dm.sh -DTRAVISBUILDING tgstation.dme
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		
 		tools/deploy.sh travis_test
 		mkdir travis_test/config
@@ -72,7 +76,11 @@ if [ "$BUILD_TOOLS" = false ]; then
 	
 		cd travis_test
     	ln -s $HOME/libmariadb/libmariadb.so libmariadb.so
+<<<<<<< HEAD
 		DreamDaemon yogstation.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
+=======
+		DreamDaemon tgstation.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		cd ..
 		cat travis_test/data/logs/travis/clean_run.lk
 

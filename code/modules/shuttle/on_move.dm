@@ -183,10 +183,19 @@ All ShuttleMove procs go here
 
 /obj/machinery/door/airlock/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
+<<<<<<< HEAD
 	for(var/obj/machinery/door/airlock/A in orange(1, src))  // does not include src
 		// Cycle linking is only disabled if we are actually adjacent to another airlock
 		shuttledocked = TRUE
 		A.shuttledocked = TRUE
+=======
+	var/current_area = get_area(src)
+	for(var/obj/machinery/door/airlock/A in orange(1, src))  // does not include src
+		if(get_area(A) != current_area)  // does not include double-wide airlocks unless actually docked
+			// Cycle linking is only disabled if we are actually adjacent to another airlock
+			shuttledocked = TRUE
+			A.shuttledocked = TRUE
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/machinery/camera/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
 	. = ..()

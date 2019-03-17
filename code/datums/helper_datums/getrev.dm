@@ -29,12 +29,21 @@
 		var/datum/tgs_revision_information/test_merge/tm = line
 		msg += "Test merge active of PR #[tm.number] commit [tm.commit]"
 		SSblackbox.record_feedback("associative", "testmerged_prs", 1, list("number" = "[tm.number]", "commit" = "[tm.commit]", "title" = "[tm.title]", "author" = "[tm.author]"))
+<<<<<<< HEAD
 
 	if(commit && commit != originmastercommit)
 		msg += "HEAD: [commit]"
 	else if(!originmastercommit)
 		msg += "No commit information"
 
+=======
+
+	if(commit && commit != originmastercommit)
+		msg += "HEAD: [commit]"
+	else if(!originmastercommit)
+		msg += "No commit information"
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	return msg.Join("\n")
 
 /datum/getrev/proc/GetTestMergeInfo(header = TRUE)
@@ -75,15 +84,21 @@
 		msg += "Local commit: [revdata.commit]"
 	else if(!pc)
 		msg += "No commit information"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(world.TgsAvailable())
 		var/datum/tgs_version/version = world.TgsVersion()
 		msg += "Server tools version: [version.raw_parameter]"
 
+<<<<<<< HEAD
 	if(!check_rights_for(src, R_ADMIN)) //yogs
 		to_chat(src, msg.Join("<br>"))
 		return //yogs
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	// Game mode odds
 	msg += "<br><b>Current Informational Settings:</b>"
 	msg += "Protect Authority Roles From Traitor: [CONFIG_GET(flag/protect_roles_from_antagonist)]"

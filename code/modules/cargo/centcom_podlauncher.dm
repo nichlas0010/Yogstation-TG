@@ -12,7 +12,11 @@
 /client/proc/centcom_podlauncher() //Creates a verb for admins to open up the ui
 	set name = "Config/Launch Supplypod"
 	set desc = "Configure and launch a Centcom supplypod full of whatever your heart desires!"
+<<<<<<< HEAD
 	set category = "Fun"
+=======
+	set category = "Admin"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/datum/centcom_podlauncher/plaunch  = new(usr)//create the datum
 	plaunch.ui_interact(usr)//datum has a tgui component, here we open the window
 
@@ -34,7 +38,11 @@
 	var/launchCounter = 1 //Used with the "Ordered" launch mode (launchChoice = 1) to see what item is launched
 	var/atom/specificTarget //Do we want to target a specific mob instead of where we click? Also used for smiting
 	var/list/orderedArea = list() //Contains an ordered list of turfs in an area (filled in the createOrderedArea() proc), read top-left to bottom-right. Used for the "ordered" launch mode (launchChoice = 1)
+<<<<<<< HEAD
 	var/list/acceptableTurfs = list() //Contians a list of turfs (in the "bay" area on centcom) that have items that can be launched. Taken from orderedArea
+=======
+	var/list/turf/acceptableTurfs = list() //Contians a list of turfs (in the "bay" area on centcom) that have items that can be launched. Taken from orderedArea
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/list/launchList = list() //Contains whatever is going to be put in the supplypod and fired. Taken from acceptableTurfs
 	var/obj/effect/supplypod_selector/selector = new() //An effect used for keeping track of what item is going to be launched when in "ordered" mode (launchChoice = 1)
 	var/obj/structure/closet/supplypod/centcompod/temp_pod //The temporary pod that is modified by this datum, then cloned. The buildObject() clone of this pod is what is launched
@@ -599,9 +607,14 @@ force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.adm
 		explosionString = " Boom=|"
 		for (var/X in temp_pod.explosionSize)
 			explosionString += "[X]|"
+<<<<<<< HEAD
   
 	var/msg = "launched [podString][whomString][delayString][damageString][explosionString]" //yogs - removed a "."
 
+=======
+
+	var/msg = "launched [podString][whomString].[delayString][damageString][explosionString]"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	message_admins("[key_name_admin(usr)] [msg] in [AREACOORD(specificTarget)].")
 	if (!isemptylist(whoDyin))
 		for (var/mob/living/M in whoDyin)

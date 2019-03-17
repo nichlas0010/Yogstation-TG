@@ -70,7 +70,11 @@
 	light_color = "#ffff00"
 	var/next_trombone_allowed = 0
 
+<<<<<<< HEAD
 /obj/item/melee/transforming/energy/sword/bananium/Initialize()
+=======
+/obj/item/melee/transforming/energy/sword/bananium/ComponentInitialize()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	. = ..()
 	AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
 	GET_COMPONENT(slipper, /datum/component/slippery)
@@ -127,7 +131,11 @@
 	on_throwforce = 0
 	on_throw_speed = 1
 
+<<<<<<< HEAD
 /obj/item/shield/energy/bananium/Initialize()
+=======
+/obj/item/shield/energy/bananium/ComponentInitialize()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	. = ..()
 	AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
 	GET_COMPONENT(slipper, /datum/component/slippery)
@@ -176,7 +184,10 @@
 
 /obj/item/grown/bananapeel/bombanana/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	AddComponent(/datum/component/slippery, det_time)
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	bomb = new /obj/item/grenade/syndieminibomb(src)
 	bomb.det_time = det_time
 	if(iscarbon(loc))
@@ -185,6 +196,13 @@
 		C.throw_mode_on()
 	bomb.preprime(loc, null, FALSE)
 
+<<<<<<< HEAD
+=======
+/obj/item/grown/bananapeel/bombanana/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/slippery, det_time)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/grown/bananapeel/bombanana/Destroy()
 	. = ..()
 	QDEL_NULL(bomb)

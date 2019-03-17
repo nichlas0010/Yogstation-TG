@@ -110,7 +110,10 @@
 		message_admins("Emitter deleted at [ADMIN_VERBOSEJMP(T)]")
 		log_game("Emitter deleted at [AREACOORD(T)]")
 		investigate_log("<font color='red'>deleted</font> at [AREACOORD(T)]", INVESTIGATE_SINGULO)
+<<<<<<< HEAD
 		investigate_log("<font color='red'>deleted</font> at [AREACOORD(T)]", INVESTIGATE_SUPERMATTER) // yogs - so supermatter investigate is useful
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	QDEL_NULL(sparks)
 	return ..()
 
@@ -143,7 +146,11 @@
 			message_admins("Emitter turned [active ? "ON" : "OFF"] by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(src)]")
 			log_game("Emitter turned [active ? "ON" : "OFF"] by [key_name(user)] in [AREACOORD(src)]")
 			investigate_log("turned [active ? "<font color='green'>ON</font>" : "<font color='red'>OFF</font>"] by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
+<<<<<<< HEAD
 			investigate_log("turned [active ? "<font color='green'>ON</font>" : "<font color='red'>OFF</font>"] by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SUPERMATTER) // yogs - so supermatter investigate is useful
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			update_icon()
 
 		else
@@ -176,13 +183,19 @@
 				powered = TRUE
 				update_icon()
 				investigate_log("regained power and turned <font color='green'>ON</font> at [AREACOORD(src)]", INVESTIGATE_SINGULO)
+<<<<<<< HEAD
 				investigate_log("regained power and turned <font color='green'>ON</font> at [AREACOORD(src)]", INVESTIGATE_SUPERMATTER) // yogs - so supermatter investigate is useful
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		else
 			if(powered)
 				powered = FALSE
 				update_icon()
 				investigate_log("lost power and turned <font color='red'>OFF</font> at [AREACOORD(src)]", INVESTIGATE_SINGULO)
+<<<<<<< HEAD
 				investigate_log("lost power and turned <font color='red'>OFF</font> at [AREACOORD(src)]", INVESTIGATE_SUPERMATTER) // yogs - so supermatter investigate is useful
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 				log_game("Emitter lost power in [AREACOORD(src)]")
 			return
 		if(charge <= 80)
@@ -318,6 +331,7 @@
 		if(integrate(I,user))
 			return
 	return ..()
+<<<<<<< HEAD
 
 /obj/machinery/power/emitter/proc/integrate(obj/item/gun/energy/E,mob/user)
 	if(istype(E, /obj/item/gun/energy))
@@ -328,6 +342,18 @@
 		set_projectile()
 		return TRUE
 
+=======
+
+/obj/machinery/power/emitter/proc/integrate(obj/item/gun/energy/E,mob/user)
+	if(istype(E, /obj/item/gun/energy))
+		if(!user.transferItemToLoc(E, src))
+			return
+		gun = E
+		gun_properties = gun.get_turret_properties()
+		set_projectile()
+		return TRUE
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/machinery/power/emitter/proc/remove_gun(mob/user)
 	if(!gun)
 		return

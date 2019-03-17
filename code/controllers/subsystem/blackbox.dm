@@ -71,7 +71,11 @@ SUBSYSTEM_DEF(blackbox)
 
 //Recorded on subsystem shutdown
 /datum/controller/subsystem/blackbox/proc/FinalFeedback()
+<<<<<<< HEAD
 	//record_feedback("tally", "ahelp_stats", GLOB.ahelp_tickets.active_tickets.len, "unresolved") // yogs - Yogs Tickets
+=======
+	record_feedback("tally", "ahelp_stats", GLOB.ahelp_tickets.active_tickets.len, "unresolved")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	for (var/obj/machinery/telecomms/message_server/MS in GLOB.telecomms_list)
 		if (MS.pda_msgs.len)
 			record_feedback("tally", "radio_usage", MS.pda_msgs.len, "PDA")

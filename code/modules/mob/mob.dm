@@ -567,8 +567,11 @@
 		// yogs start - Yogs Ticket
 		/*if(statpanel("Tickets"))
 			GLOB.ahelp_tickets.stat_entry()
+<<<<<<< HEAD
 		*/
 		// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(length(GLOB.sdql2_queries))
 			if(statpanel("SDQL2"))
 				stat("Access Global SDQL2 List", GLOB.sdql2_vv_statobj)

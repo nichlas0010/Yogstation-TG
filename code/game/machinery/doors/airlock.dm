@@ -96,6 +96,9 @@
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_MEDIUM_INSULATION
 
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	rad_insulation = RAD_MEDIUM_INSULATION
+
 	var/static/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/Initialize()
@@ -1206,7 +1209,11 @@
 		for(var/option in optionlist)
 			optionlist[option] = image(icon = 'yogstation/icons/obj/interface.dmi', icon_state = option)
 
+<<<<<<< HEAD
 	var/paintjob = show_radial_menu(user,src,optionlist) //yogs end
+=======
+	var/paintjob = input(user, "Please select a paintjob for this airlock.") in optionlist
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if((!in_range(src, usr) && loc != usr) || !W.use_paint(user))
 		return
 	switch(paintjob)
@@ -1604,7 +1611,10 @@
 		to_chat(user, "Can't un-electrify the airlock - The electrification wire is cut.")
 	else if(isElectrified())
 		set_electrified(MACHINE_NOT_ELECTRIFIED, user)
+<<<<<<< HEAD
 		to_chat(user, "Door un-electrified.") //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/machinery/door/airlock/proc/shock_temp(mob/user)
 	if(!user_allowed(user))
@@ -1621,7 +1631,10 @@
 		to_chat(user, "The electrification wire has been cut")
 	else
 		set_electrified(MACHINE_ELECTRIFIED_PERMANENT, user)
+<<<<<<< HEAD
 		to_chat(user, "Door electrified") //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/machinery/door/airlock/proc/emergency_on(mob/user)
 	if(!user_allowed(user))

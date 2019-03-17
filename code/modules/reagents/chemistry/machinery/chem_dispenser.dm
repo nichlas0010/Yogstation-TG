@@ -235,7 +235,10 @@
 		if("eject")
 			replace_beaker(usr)
 			. = TRUE
+<<<<<<< HEAD
 		/* yogs - removes chem recipes
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if("dispense_recipe")
 			if(!is_operational() || QDELETED(cell))
 				return

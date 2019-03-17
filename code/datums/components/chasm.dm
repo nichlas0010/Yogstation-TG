@@ -20,8 +20,12 @@
 		/obj/effect/light_emitter/tendril,
 		/obj/effect/collapse,
 		/obj/effect/particle_effect/ion_trails,
+<<<<<<< HEAD
 		/obj/effect/dummy/phased_mob,
 		/obj/effect/dummy/crawling //yogs
+=======
+		/obj/effect/dummy/phased_mob
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		))
 
 /datum/component/chasm/Initialize(turf/target)

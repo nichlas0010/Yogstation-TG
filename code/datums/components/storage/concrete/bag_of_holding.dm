@@ -18,10 +18,17 @@
 		to_chat(user, "<span class='danger'>The Bluespace interfaces of the two devices catastrophically malfunction!</span>")
 		qdel(W)
 		playsound(loccheck,'sound/effects/supermatter.ogg', 200, 1)
+<<<<<<< HEAD
 		
 		message_admins("[ADMIN_LOOKUPFLW(user)] detonated a bag of holding at [ADMIN_VERBOSEJMP(loccheck)].")
 		log_game("[key_name(user)] detonated a bag of holding at [loc_name(loccheck)].")
 		
+=======
+
+		message_admins("[ADMIN_LOOKUPFLW(user)] detonated a bag of holding at [ADMIN_VERBOSEJMP(loccheck)].")
+		log_game("[key_name(user)] detonated a bag of holding at [loc_name(loccheck)].")
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		user.gib(TRUE, TRUE, TRUE)
 		for(var/turf/T in range(6,loccheck))
 			if(istype(T, /turf/open/space/transit))

@@ -348,7 +348,10 @@
 	SSjob.AssignRole(src, rank, 1)
 
 	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
+<<<<<<< HEAD
 	character.mind.quiet_round = character.client.prefs.toggles & QUIET_ROUND // yogs - Donor Features
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/equip = SSjob.EquipRank(character, rank, TRUE)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip

@@ -22,7 +22,10 @@
 	ventcrawler = VENTCRAWLER_ALWAYS
 	var/datum/mind/origin
 	var/egg_lain = 0
+<<<<<<< HEAD
 	gold_core_spawnable = HOSTILE_SPAWN //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /mob/living/simple_animal/hostile/headcrab/proc/Infect(mob/living/carbon/victim)
 	var/obj/item/organ/body_egg/changeling_egg/egg = new(victim)

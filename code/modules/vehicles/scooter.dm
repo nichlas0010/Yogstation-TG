@@ -50,7 +50,11 @@
 /obj/vehicle/ridden/scooter/skateboard/Initialize()
 	. = ..()
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+<<<<<<< HEAD
 	D.vehicle_move_delay = 1
+=======
+	D.vehicle_move_delay = 1.5
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
 	D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
 	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)

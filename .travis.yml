@@ -63,7 +63,11 @@ before_script:
   - tools/travis/before_build_byond.sh
 
 script:
+<<<<<<< HEAD
   - tools/travis/check_filedirs.sh yogstation.dme
+=======
+  - tools/travis/check_filedirs.sh tgstation.dme
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
   - tools/travis/build_tools.sh || travis_terminate 1
   - tools/travis/build_dependencies.sh || travis_terminate 1
   - tools/travis/build_byond.sh

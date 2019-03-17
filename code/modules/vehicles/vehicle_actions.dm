@@ -130,14 +130,22 @@
 
 /datum/action/vehicle/sealed/horn/Trigger()
 	if(world.time - last_honk_time > 20)
+<<<<<<< HEAD
 		vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] loudly honks</span>")
+=======
+		vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] loudly honks!</span>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		to_chat(owner, "<span class='notice'>You press the vehicle's horn.</span>")
 		playsound(vehicle_entered_target, hornsound, 75)
 		last_honk_time = world.time
 
 /datum/action/vehicle/sealed/horn/clowncar/Trigger()
 	if(world.time - last_honk_time > 20)
+<<<<<<< HEAD
 		vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] loudly honks</span>")
+=======
+		vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] loudly honks!</span>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		to_chat(owner, "<span class='notice'>You press the vehicle's horn.</span>")
 		last_honk_time = world.time
 		if(vehicle_target.inserted_key)

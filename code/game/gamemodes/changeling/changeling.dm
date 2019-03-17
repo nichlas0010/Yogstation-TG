@@ -71,7 +71,11 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 		GLOB.changeling_team_objective_type = pick(possible_team_objectives)
 
 	for(var/datum/mind/changeling in changelings)
+<<<<<<< HEAD
 		//log_game("[key_name(changeling)] has been selected as a changeling") | yogs - redundant
+=======
+		log_game("[key_name(changeling)] has been selected as a changeling")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		var/datum/antagonist/changeling/new_antag = new()
 		//new_antag.team_mode = TRUE //yogs - lol
 		changeling.add_antag_datum(new_antag)

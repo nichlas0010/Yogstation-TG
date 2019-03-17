@@ -638,7 +638,11 @@ GLOBAL_PROTECT(VVpixelmovement)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_VAR_EDIT, args)
 	log_world("### VarEdit by [key_name(src)]: [O.type] [variable]=[var_value] => [var_new]")
 	log_admin("[key_name(src)] modified [original_name]'s [variable] from [html_encode("[var_value]")] to [html_encode("[var_new]")]")
+<<<<<<< HEAD
 	var/msg = "[key_name(src)] modified [original_name]'s [variable] from [var_value] to [var_new]" // yogs - Yog Tickets
+=======
+	var/msg = "[key_name_admin(src)] modified [original_name]'s [variable] from [var_value] to [var_new]"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	message_admins(msg)
 	admin_ticket_log(O, msg)
 	return TRUE

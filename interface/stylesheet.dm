@@ -29,9 +29,13 @@ em						{font-style: normal;	font-weight: bold;}
 .adminobserverooc		{color: #0099cc;	font-weight: bold;}
 .adminooc				{color: #700038;	font-weight: bold;}
 
+<<<<<<< HEAD
 .looc					{color: #63b2f2;	font-weight: bold;} /* yogs - LOOC */
 
 .adminsay				{color:	#996600;	font-weight: bold;} /* yogs - changed colour to poop */
+=======
+.adminsay				{color:	#FF4500;	font-weight: bold;}
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 .admin					{color: #386aff;	font-weight: bold;}
 
 .name					{					font-weight: bold;}

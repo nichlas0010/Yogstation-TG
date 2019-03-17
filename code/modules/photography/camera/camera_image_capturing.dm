@@ -73,7 +73,12 @@
 			xo += AM.step_x
 			yo += AM.step_y
 		var/icon/img = getFlatIcon(A)
+<<<<<<< HEAD
 		res.Blend(img, blendMode2iconMode(A.blend_mode), xo, yo)
+=======
+		if(img)
+			res.Blend(img, blendMode2iconMode(A.blend_mode), xo, yo)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		CHECK_TICK
 
 	if(!silent)

@@ -63,6 +63,7 @@
 		if(a_right.is_position_sensitive)
 			add_overlay("[a_right.icon_state]_right")
 			for(var/O in a_right.attached_overlays)
+<<<<<<< HEAD
 				// yogs start - signaller colors
 				if(istext(O))
 					add_overlay("[O]_r")
@@ -71,10 +72,14 @@
 					A.icon_state = "[A.icon_state]_r"
 					add_overlay(A)
 				// yogs end
+=======
+				add_overlay("[O]_r")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		else
 			var/mutable_appearance/right = mutable_appearance(icon, "[a_right.icon_state]_left")
 			right.transform = matrix(-1, 0, 0, 0, 1, 0)
 			for(var/O in a_right.attached_overlays)
+<<<<<<< HEAD
 				// yogs start - signaller colors
 				if(istext(O))
 					right.add_overlay("[O]_l")
@@ -83,6 +88,9 @@
 					A.icon_state = "[A.icon_state]_l"
 					right.add_overlay(A)
 				// yogs end
+=======
+				right.add_overlay("[O]_l")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			add_overlay(right)
 
 	if(master)

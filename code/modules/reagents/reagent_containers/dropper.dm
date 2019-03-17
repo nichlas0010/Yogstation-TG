@@ -61,6 +61,7 @@
 				for(var/datum/reagent/A in src.reagents.reagent_list)
 					R += A.id + " ("
 					R += num2text(A.volume) + "),"
+<<<<<<< HEAD
 // yogs start - checks blood for disease
 					if(istype(A, /datum/reagent/blood))
 						var/datum/reagent/blood/RR = A
@@ -81,6 +82,10 @@
 				log_game("[user.real_name] ([user.ckey]) injected [M.real_name] ([M.ckey]) with [viruslist]")
 // yogs end
 
+=======
+			log_combat(user, M, "squirted", R)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution.</span>")
 		update_icon()

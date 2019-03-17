@@ -36,9 +36,12 @@
 #define ROLE_DEATHSQUAD			"Deathsquad"
 #define ROLE_LAVALAND			"Lavaland"
 #define ROLE_INTERNAL_AFFAIRS	"Internal Affairs Agent"
+<<<<<<< HEAD
 #define ROLE_SHADOWLING 		"Shadowling" // Yogs
 #define ROLE_VAMPIRE			"Vampire" // Yogs
 #define ROLE_BATTLEROYALE		"Battle Royale Contestant" //Yogs - Battle Royale Mode
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
 //The gamemode specific ones are just so the gamemodes can query whether a player is old enough
@@ -62,9 +65,13 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_ABDUCTOR,
 	ROLE_DEVIL = /datum/game_mode/devil,
 	ROLE_SERVANT_OF_RATVAR = /datum/game_mode/clockwork_cult,
+<<<<<<< HEAD
 	ROLE_VAMPIRE = /datum/game_mode/vampire, // Yogs
 	ROLE_OVERTHROW = /datum/game_mode/overthrow,
 	ROLE_SHADOWLING = /datum/game_mode/shadowling, //yogs
+=======
+	ROLE_OVERTHROW = /datum/game_mode/overthrow,
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	ROLE_HIVE = /datum/game_mode/hivemind,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_SENTIENCE

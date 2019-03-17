@@ -118,7 +118,11 @@
 /datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
+<<<<<<< HEAD
 	. = ..()	
+=======
+	. = ..()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /datum/status_effect/pacify/on_apply()
 	owner.add_trait(TRAIT_PACIFISM, "status_effect")
@@ -126,7 +130,11 @@
 
 /datum/status_effect/pacify/on_remove()
 	owner.remove_trait(TRAIT_PACIFISM, "status_effect")
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 //OTHER DEBUFFS
 /datum/status_effect/pacify
 	id = "pacify"
@@ -134,11 +142,19 @@
 	tick_interval = 1
 	duration = 100
 	alert_type = null
+<<<<<<< HEAD
 	
 /datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
 	. = ..()	
+=======
+
+/datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
+	if(isnum(set_duration))
+		duration = set_duration
+	. = ..()
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /datum/status_effect/pacify/on_apply()
 	owner.add_trait(TRAIT_PACIFISM, "status_effect")
@@ -600,7 +616,11 @@
 	examine_text = "<span class='warning'>SUBJECTPRONOUN seems slow and unfocused.</span>"
 	var/stun = TRUE
 	alert_type = /obj/screen/alert/status_effect/trance
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/screen/alert/status_effect/trance
 	name = "Trance"
 	desc = "Everything feels so distant, and you can feel your thoughts forming loops inside your head..."

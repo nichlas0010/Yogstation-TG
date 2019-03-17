@@ -126,7 +126,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	..()	//redirect to hsrc.Topic()
 
 /client/proc/is_content_unlocked()
+<<<<<<< HEAD
 	if(!is_donator(src)) // yogs - changed this to is_donator so admins get donor perks
+=======
+	if(!prefs.unlock_content)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		to_chat(src, "Become a BYOND member to access member-perks and features, as well as support the engine that makes this game possible. Only 10 bucks for 3 months! <a href=\"https://secure.byond.com/membership\">Click Here to find out more</a>.")
 		return 0
 	return 1
@@ -410,7 +414,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		for (var/child in entries)
 			winset(src, "[child]", "[entries[child]]")
 			if (!ispath(child, /datum/verbs/menu))
-				var/atom/verb/verbpath = child
+				var/procpath/verbpath = child
 				if (copytext(verbpath.name,1,2) != "@")
 					new child(src)
 
@@ -561,6 +565,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		qdel(query_log_player)
 	if(!account_join_date)
 		account_join_date = "Error"
+<<<<<<< HEAD
 	// yogs start - logout logging
 	var/serverip = "[world.internet_address]"
 	var/datum/DBQuery/query_log_connection = SSdbcore.NewQuery("INSERT INTO `[format_table_name("connection_log")]` (`id`, `datetime`, `server_ip`, `server_port`, `round_id`, `ckey`, `ip`, `computerid`) VALUES(null, Now(), INET_ATON('[serverip]'), '[world.port]', '[GLOB.round_id]', '[sql_ckey]', INET_ATON('[sql_ip]'), '[sql_computerid]')")
@@ -572,6 +577,11 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		qdel(query_getid)
 	qdel(query_log_connection)
 	// yogs end
+=======
+	var/datum/DBQuery/query_log_connection = SSdbcore.NewQuery("INSERT INTO `[format_table_name("connection_log")]` (`id`,`datetime`,`server_ip`,`server_port`,`round_id`,`ckey`,`ip`,`computerid`) VALUES(null,Now(),INET_ATON(IF('[world.internet_address]' LIKE '', '0', '[world.internet_address]')),'[world.port]','[GLOB.round_id]','[sql_ckey]',INET_ATON('[sql_ip]'),'[sql_computerid]')")
+	query_log_connection.Execute()
+	qdel(query_log_connection)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(new_player)
 		player_age = -1
 	. = player_age
@@ -723,8 +733,12 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			qdel(query_get_notes)
 			return
 	qdel(query_get_notes)
+<<<<<<< HEAD
 	//create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0, 0)
 	create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0) //yogs -
+=======
+	create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0, 0)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 
 /client/proc/check_ip_intel()
@@ -831,10 +845,13 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			var/file = GLOB.vox_sounds[name]
 			Export("##action=load_rsc", file)
 			stoplag()
+<<<<<<< HEAD
 		for (var/name in GLOB.vox_sounds_male) //YOGS start - male vox
 			var/file = GLOB.vox_sounds_male[name]
 			Export("##action=load_rsc", file)
 			stoplag() //YOGS end - male vox
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		#endif
 
 

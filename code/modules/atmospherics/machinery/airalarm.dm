@@ -413,12 +413,18 @@
 				else
 					tlv.vars[name] = round(value, 0.01)
 				investigate_log(" treshold value for [env]:[name] was set to [value] by [key_name(usr)]",INVESTIGATE_ATMOS)
+<<<<<<< HEAD
 				investigate_log(" treshold value for [env]:[name] was set to [value] by [key_name(usr)]",INVESTIGATE_SUPERMATTER) // yogs - Makes supermatter invest useful
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 				. = TRUE
 		if("mode")
 			mode = text2num(params["mode"])
 			investigate_log("was turned to [get_mode_name(mode)] mode by [key_name(usr)]",INVESTIGATE_ATMOS)
+<<<<<<< HEAD
 			investigate_log("was turned to [get_mode_name(mode)] mode by [key_name(usr)]",INVESTIGATE_SUPERMATTER) // yogs - Makes supermatter invest useful
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			apply_mode()
 			. = TRUE
 		if("alarm")

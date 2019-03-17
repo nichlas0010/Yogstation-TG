@@ -567,7 +567,11 @@
 	dna.remove_all_mutations()
 	dna.stability = 100
 	if(prob(max(70-instability,0)))
+<<<<<<< HEAD
 		switch(rand(0,8)) //not complete and utter death //yogs - fuck snails
+=======
+		switch(rand(0,10)) //not complete and utter death
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			if(0)
 				monkeyize()
 			if(1)
@@ -601,9 +605,15 @@
 					O.forceMove(drop_location())
 					if(prob(20))
 						O.animate_atom_living()
+<<<<<<< HEAD
 			/* YOGSif(9 to 10)
 				ForceContractDisease(new/datum/disease/gastrolosis())
 				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>") YOGS*/
+=======
+			if(9 to 10)
+				ForceContractDisease(new/datum/disease/gastrolosis())
+				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	else
 		switch(rand(0,5))
 			if(0)

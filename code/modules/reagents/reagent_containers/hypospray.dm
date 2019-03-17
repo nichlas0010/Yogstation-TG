@@ -62,12 +62,18 @@
 
 			to_chat(user, "<span class='notice'>[trans] unit\s injected.  [reagents.total_volume] unit\s remaining in [src].</span>")
 
+<<<<<<< HEAD
 			log_combat(user, M, "injected", src, "([contained])")
 // yogs start - makes logs if viruslist
 			if(viruslist)
 				investigate_log("[user.real_name] ([user.ckey]) injected [M.real_name] ([M.ckey]) with [viruslist]", INVESTIGATE_VIROLOGY)
 				log_game("[user.real_name] ([user.ckey]) injected [M.real_name] ([M.ckey]) with [viruslist]")
 // yogs end
+=======
+
+			log_combat(user, M, "injected", src, "([contained])")
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/reagent_containers/hypospray/CMO
 	list_reagents = list("omnizine" = 30)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF

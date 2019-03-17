@@ -50,7 +50,11 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"ABSTRACT" = ABSTRACT,
 		),
 	"admin_flags" = list(
+<<<<<<< HEAD
 		"BUILDMODE" = R_BUILDMODE,
+=======
+		"BUILDMODE" = R_BUILD,
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		"ADMIN" = R_ADMIN,
 		"BAN" = R_BAN,
 		"FUN" = R_FUN,
@@ -61,9 +65,15 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"STEALTH" = R_STEALTH,
 		"POLL" = R_POLL,
 		"VAREDIT" = R_VAREDIT,
+<<<<<<< HEAD
 		"SOUNDS" = R_SOUNDS,
 		"SPAWN" = R_SPAWN,
 		"AUTOLOGIN" = R_AUTOLOGIN,
+=======
+		"SOUNDS" = R_SOUND,
+		"SPAWN" = R_SPAWN,
+		"AUTOLOGIN" = R_AUTOADMIN,
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		"DBRANKS" = R_DBRANKS
 		),
 	"interaction_flags_atom" = list(
@@ -96,8 +106,12 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"PASSBLOB" = PASSBLOB,
 		"PASSMOB" = PASSMOB,
 		"PASSCLOSEDTURF" = PASSCLOSEDTURF,
+<<<<<<< HEAD
 		"LETPASSTHROW" = LETPASSTHROW,
 		"PASSDOOR" = PASSDOOR //yogs
+=======
+		"LETPASSTHROW" = LETPASSTHROW
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		),
 	"movement_type" = list(
 		"GROUND" = GROUND,

@@ -171,7 +171,11 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		return
 	var/datum/ore_silo_log/entry = new(M, action, amount, noun, mats)
 
+<<<<<<< HEAD
 	var/list/logs = GLOB.silo_access_logs[REF(src)]
+=======
+	var/list/datum/ore_silo_log/logs = GLOB.silo_access_logs[REF(src)]
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(!LAZYLEN(logs))
 		GLOB.silo_access_logs[REF(src)] = logs = list(entry)
 	else if(!logs[1].merge(entry))

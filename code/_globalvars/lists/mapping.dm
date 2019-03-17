@@ -15,10 +15,15 @@ GLOBAL_LIST_INIT(alldirs, list(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, S
 GLOBAL_LIST_EMPTY(landmarks_list)				//list of all landmarks created
 GLOBAL_LIST_EMPTY(start_landmarks_list)			//list of all spawn points created
 GLOBAL_LIST_EMPTY(department_security_spawns)	//list of all department security spawns
+<<<<<<< HEAD
 
 GLOBAL_LIST_EMPTY(generic_event_spawns)			//handles clockwork portal+eminence teleport destinations
 GLOBAL_LIST_EMPTY(jobspawn_overrides)			//These will take precedence over normal spawnpoints if created.
 GLOBAL_LIST_EMPTY(stationroom_landmarks)		//yogs - list of all spawns for stationrooms
+=======
+GLOBAL_LIST_EMPTY(generic_event_spawns)			//handles clockwork portal+eminence teleport destinations
+GLOBAL_LIST_EMPTY(jobspawn_overrides)			//These will take precedence over normal spawnpoints if created.
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 GLOBAL_LIST_EMPTY(wizardstart)
 GLOBAL_LIST_EMPTY(nukeop_start)

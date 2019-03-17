@@ -98,7 +98,11 @@
 	revolution = new()
 
 	for(var/datum/mind/rev_mind in headrev_candidates)
+<<<<<<< HEAD
 		//log_game("[key_name(rev_mind)] has been selected as a head rev") | yogs - redundant
+=======
+		log_game("[key_name(rev_mind)] has been selected as a head rev")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		var/datum/antagonist/rev/head/new_head = new()
 		new_head.give_flash = TRUE
 		new_head.give_hud = TRUE

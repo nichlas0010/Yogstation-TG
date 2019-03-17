@@ -159,10 +159,17 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
+<<<<<<< HEAD
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+=======
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aC" = (
@@ -228,6 +235,7 @@
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/turretedoutpost)
+<<<<<<< HEAD
 "aJ" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -241,6 +249,8 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 "aK" = (
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
@@ -305,10 +315,17 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
+<<<<<<< HEAD
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+=======
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/turretedoutpost)
 "aS" = (
@@ -377,6 +394,19 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/breadslice/meat,
 /obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/turretedoutpost)
+"tK" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -619,8 +649,8 @@ ad
 ad
 ad
 aB
-aJ
-aJ
+tK
+tK
 aR
 ad
 al

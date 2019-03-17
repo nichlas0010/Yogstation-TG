@@ -166,8 +166,13 @@
 
 /datum/hud/proc/update_parallax()
 	var/client/C = mymob.client
+<<<<<<< HEAD
 	var/turf/posobj = get_turf_global(C.eye) // yogs - replace get_turf with get_turf_global
 	if(!posobj)
+=======
+	var/turf/posobj = get_turf(C.eye)
+	if(!posobj) 
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		return
 	var/area/areaobj = posobj.loc
 

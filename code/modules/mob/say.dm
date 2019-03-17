@@ -94,7 +94,11 @@
 		K = src.key
 
 	var/spanned = src.say_quote(message, get_spans())
+<<<<<<< HEAD
 	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[(src.client.prefs.chat_toggles & GHOST_CKEY) ? "" : "([K]) "][name]</span>[alt_name] <span class='message'>[emoji_parse(spanned)]</span></span>" //yogs
+=======
+	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[name]</span>[alt_name] <span class='message'>[emoji_parse(spanned)]</span></span>"
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	log_talk(message, LOG_SAY, tag="DEAD")
 	deadchat_broadcast(rendered, follow_target = src, speaker_key = K)
 

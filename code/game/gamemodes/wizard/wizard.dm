@@ -24,7 +24,11 @@
 	wizards += wizard
 	wizard.assigned_role = ROLE_WIZARD
 	wizard.special_role = ROLE_WIZARD
+<<<<<<< HEAD
 	//log_game("[key_name(wizard)] has been selected as a Wizard") //TODO: Move these to base antag datum | yogs - redundant
+=======
+	log_game("[key_name(wizard)] has been selected as a Wizard") //TODO: Move these to base antag datum
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(GLOB.wizardstart.len == 0)
 		setup_error = "No wizard starting location found"
 		return FALSE

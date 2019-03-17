@@ -154,6 +154,7 @@
 	//YOGS start - toolspeed
 	var/obj/item/I
 	new /obj/item/screwdriver/nuke(src)
+<<<<<<< HEAD
 	I = new /obj/item/wrench(src)
 	I.toolspeed = 0.5
 	I = new /obj/item/weldingtool/largetank(src)
@@ -166,6 +167,14 @@
 	I.toolspeed = 0.5
 	I = new /obj/item/clothing/gloves/combat(src)
 	I.toolspeed = 0.5
+=======
+	new /obj/item/wrench(src)
+	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/crowbar/red(src)
+	new /obj/item/wirecutters(src, "red")
+	new /obj/item/multitool(src)
+	new /obj/item/clothing/gloves/combat(src)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/item/storage/toolbox/drone
 	name = "mechanical toolbox"

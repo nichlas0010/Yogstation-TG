@@ -10,6 +10,10 @@
 #define CHECK_BITFIELD(variable, flag) (variable & (flag))
 #define TOGGLE_BITFIELD(variable, flag) (variable ^= (flag))
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 //check if all bitflags specified are present
 #define CHECK_MULTIPLE_BITFIELDS(flagvar, flags) ((flagvar & (flags)) == flags)
 
@@ -158,4 +162,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 //alternate appearance flags
 #define AA_TARGET_SEE_APPEARANCE (1<<0)
+<<<<<<< HEAD
 #define AA_MATCH_TARGET_OVERLAYS (1<<1)
+=======
+#define AA_MATCH_TARGET_OVERLAYS (1<<1)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

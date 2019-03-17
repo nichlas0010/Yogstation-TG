@@ -38,7 +38,10 @@ new /datum/disease_ability/symptom/powerful/fire,
 new /datum/disease_ability/symptom/powerful/flesh_eating,
 new /datum/disease_ability/symptom/powerful/genetic_mutation,
 new /datum/disease_ability/symptom/powerful/inorganic_adaptation,
+<<<<<<< HEAD
 new /datum/disease_ability/symptom/powerful/undead_adaptation, //yogs change
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 new /datum/disease_ability/symptom/powerful/heal/starlight,
 new /datum/disease_ability/symptom/powerful/heal/oxygen,
 new /datum/disease_ability/symptom/powerful/heal/chem,
@@ -372,10 +375,17 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 
 /datum/disease_ability/symptom/medium/headache
 	symptoms = list(/datum/symptom/headache)
+<<<<<<< HEAD
 
 /datum/disease_ability/symptom/medium/nano_boost
 	symptoms = list(/datum/symptom/nano_boost)
 
+=======
+
+/datum/disease_ability/symptom/medium/nano_boost
+	symptoms = list(/datum/symptom/nano_boost)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/disease_ability/symptom/medium/nano_destroy
 	symptoms = list(/datum/symptom/nano_destroy)
 
@@ -405,6 +415,7 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 	symptoms = list(/datum/symptom/weight_loss)
 	short_desc = "Cause victims to lose weight."
 	long_desc = "Cause victims to lose weight, and make it almost impossible for them to gain nutrition from food. Reduced nutrition allows your infection to spread more easily from hosts, especially by sneezing."
+<<<<<<< HEAD
 
 /datum/disease_ability/symptom/medium/heal/sensory_restoration
 	symptoms = list(/datum/symptom/sensory_restoration)
@@ -445,6 +456,41 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 /datum/disease_ability/symptom/powerful/heal/starlight
 	symptoms = list(/datum/symptom/heal/starlight)
 
+=======
+
+/datum/disease_ability/symptom/medium/heal/sensory_restoration
+	symptoms = list(/datum/symptom/sensory_restoration)
+	short_desc = "Regenerate eye and ear damage of victims."
+	long_desc = "Regenerate eye and ear damage of victims."
+
+/datum/disease_ability/symptom/medium/heal/mind_restoration
+	symptoms = list(/datum/symptom/mind_restoration)
+
+/******POWERFUL******/
+
+
+/datum/disease_ability/symptom/powerful/fire
+	symptoms = list(/datum/symptom/fire)
+
+/datum/disease_ability/symptom/powerful/flesh_eating
+	symptoms = list(/datum/symptom/flesh_eating)
+
+/datum/disease_ability/symptom/powerful/genetic_mutation
+	symptoms = list(/datum/symptom/genetic_mutation)
+	cost = 8
+
+/datum/disease_ability/symptom/powerful/inorganic_adaptation
+	symptoms = list(/datum/symptom/inorganic_adaptation)
+
+/datum/disease_ability/symptom/powerful/narcolepsy
+	symptoms = list(/datum/symptom/narcolepsy)
+
+/****HEALING SUBTYPE****/
+
+/datum/disease_ability/symptom/powerful/heal/starlight
+	symptoms = list(/datum/symptom/heal/starlight)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/disease_ability/symptom/powerful/heal/oxygen
 	symptoms = list(/datum/symptom/oxygen)
 
@@ -461,10 +507,17 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 
 /datum/disease_ability/symptom/powerful/heal/water
 	symptoms = list(/datum/symptom/heal/water)
+<<<<<<< HEAD
 
 /datum/disease_ability/symptom/powerful/heal/plasma
 	symptoms = list(/datum/symptom/heal/plasma)
 
+=======
+
+/datum/disease_ability/symptom/powerful/heal/plasma
+	symptoms = list(/datum/symptom/heal/plasma)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/disease_ability/symptom/powerful/heal/radiation
 	symptoms = list(/datum/symptom/heal/radiation)
 

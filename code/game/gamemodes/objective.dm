@@ -129,10 +129,13 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	var/list/possible_targets = list()
 	for(var/datum/mind/possible_target in get_crewmember_minds())
 		if(!(possible_target in owners) && ishuman(possible_target.current))
+<<<<<<< HEAD
 		// yogs start
 			if(possible_target.quiet_round)
 				continue
 		// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			var/is_role = FALSE
 			if(role_type)
 				if(possible_target.special_role == role)
@@ -727,6 +730,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/absorb_most
 	name = "absorb most"
 	explanation_text = "Extract more compatible genomes than any other Changeling."
+<<<<<<< HEAD
 
 /datum/objective/absorb_most/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -766,6 +770,47 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 			return TRUE
 	return FALSE
 
+=======
+
+/datum/objective/absorb_most/check_completion()
+	var/list/datum/mind/owners = get_owners()
+	var/absorbedcount = 0
+	for(var/datum/mind/M in owners)
+		if(!M)
+			continue
+		var/datum/antagonist/changeling/changeling = M.has_antag_datum(/datum/antagonist/changeling)
+		if(!changeling || !changeling.stored_profiles)
+			continue
+		absorbedcount += changeling.absorbedcount
+
+	for(var/datum/antagonist/changeling/changeling2 in GLOB.antagonists)
+		if(!changeling2.owner || changeling2.owner == owner || !changeling2.stored_profiles || changeling2.absorbedcount < absorbedcount)
+			continue
+		return FALSE
+	return TRUE
+
+/datum/objective/absorb_changeling
+	name = "absorb changeling"
+	explanation_text = "Absorb another Changeling."
+
+/datum/objective/absorb_changeling/check_completion()
+	var/list/datum/mind/owners = get_owners()
+	for(var/datum/mind/M in owners)
+		if(!M)
+			continue
+		var/datum/antagonist/changeling/changeling = M.has_antag_datum(/datum/antagonist/changeling)
+		if(!changeling)
+			continue
+		var/total_genetic_points = changeling.geneticpoints
+
+		for(var/datum/action/changeling/p in changeling.purchasedpowers)
+			total_genetic_points += p.dna_cost
+
+		if(total_genetic_points > initial(changeling.geneticpoints))
+			return TRUE
+	return FALSE
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 //End Changeling Objectives
 
 /datum/objective/destroy

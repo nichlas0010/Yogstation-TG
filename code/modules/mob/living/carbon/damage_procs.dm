@@ -117,7 +117,11 @@
 	var/list/obj/item/bodypart/parts = list()
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
+<<<<<<< HEAD
 		if(!(status == BODYPART_ANY) && (status && (BP.status != status))) //yogs - allows robot limb healing override
+=======
+		if(status && (BP.status != status))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			continue
 		if((brute && BP.brute_dam) || (burn && BP.burn_dam) || (stamina && BP.stamina_dam))
 			parts += BP
@@ -148,12 +152,20 @@
 //Damages ONE bodypart randomly selected from damagable ones.
 //It automatically updates damage overlays if necessary
 //It automatically updates health status
+<<<<<<< HEAD
 /mob/living/carbon/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)
+=======
+/mob/living/carbon/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
 	if(!parts.len)
 		return
 	var/obj/item/bodypart/picked = pick(parts)
+<<<<<<< HEAD
 	if(picked.receive_damage(brute, burn, stamina))
+=======
+	if(picked.receive_damage(brute, burn, stamina,check_armor ? run_armor_check(picked, (brute ? "melee" : burn ? "fire" : stamina ? "bullet" : null)) : FALSE))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		update_damage_overlays()
 
 //Heal MANY bodyparts, in random order

@@ -59,6 +59,7 @@
 	if(target)
 		if(!(target in validtargets))
 			lose_target()
+<<<<<<< HEAD
 		else //yogs start: slows warden attack speed so it doesn't stop people from moving
 			if(last_process + time_between_shots < world.time)
 				if(isliving(target))
@@ -83,6 +84,29 @@
 					var/obj/mecha/M = target
 					M.take_damage(damage_per_tick * get_efficiency_mod(), BURN, "melee", 1, get_dir(src, M))
 					last_process = world.time //yogs end
+=======
+		else
+			if(isliving(target))
+				var/mob/living/L = target
+				if(!L.anti_magic_check(major = FALSE))
+					if(isrevenant(L))
+						var/mob/living/simple_animal/revenant/R = L
+						if(R.revealed)
+							R.unreveal_time += 2
+						else
+							R.reveal(10)
+					if(prob(50))
+						L.playsound_local(null,'sound/machines/clockcult/ocularwarden-dot1.ogg',75 * get_efficiency_mod(),1)
+					else
+						L.playsound_local(null,'sound/machines/clockcult/ocularwarden-dot2.ogg',75 * get_efficiency_mod(),1)
+					L.adjustFireLoss((!iscultist(L) ? damage_per_tick : damage_per_tick * 2) * get_efficiency_mod()) //Nar'Sian cultists take additional damage
+					if(GLOB.ratvar_awakens && L)
+						L.adjust_fire_stacks(damage_per_tick)
+						L.IgniteMob()
+			else if(ismecha(target))
+				var/obj/mecha/M = target
+				M.take_damage(damage_per_tick * get_efficiency_mod(), BURN, "melee", 1, get_dir(src, M))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 			new /obj/effect/temp_visual/ratvar/ocular_warden(get_turf(target))
 
@@ -117,7 +141,11 @@
 			continue
 		if(is_servant_of_ratvar(L) || (L.has_trait(TRAIT_BLIND)) || L.anti_magic_check(TRUE, TRUE))
 			continue
+<<<<<<< HEAD
 		if(L.stat || (L.IsStun())) //yogs: changes mobility flag to IsStun so people have to taze themselves to ignore warden attacks
+=======
+		if(L.stat || !(L.mobility_flags & MOBILITY_STAND))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			continue
 		if (iscarbon(L))
 			var/mob/living/carbon/c = L

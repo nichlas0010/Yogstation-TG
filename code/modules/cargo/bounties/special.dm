@@ -26,6 +26,16 @@
 	required_count = 10
 	wanted_types = list(/obj/item/stack/sheet/mineral/adamantine)
 
+<<<<<<< HEAD
+=======
+/datum/bounty/item/trash
+	name = "Trash"
+	description = "Recently a group of janitors have run out of trash to clean up, without any trash Centcom wants to fire them to cut costs. Send a shipment of trash to keep them employed, and they'll give you a small compensation."
+	reward = 1000
+	required_count = 10
+	wanted_types = list(/obj/item/trash)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /datum/bounty/more_bounties
 	name = "More Bounties"
 	description = "Complete enough bounties and CentCom will issue new ones!"

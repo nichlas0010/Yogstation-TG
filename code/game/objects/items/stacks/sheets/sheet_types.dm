@@ -203,6 +203,10 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+<<<<<<< HEAD
+=======
+	new/datum/stack_recipe("baseball bat", /obj/item/melee/baseball_bat, 5, time = 15),\
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	new/datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("pews", list(
@@ -211,8 +215,13 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 		new /datum/stack_recipe("pew (right)", /obj/structure/chair/pew/right, 3, one_per_turf = TRUE, on_floor = TRUE)
 		)),
 	null, \
+<<<<<<< HEAD
 	)) //YOGS - remove baseball bats, this comment needs to be outside the proc though, so here's the removed line: new/datum/stack_recipe("baseball bat", /obj/item/melee/baseball_bat, 5, time = 15),
 	
+=======
+	))
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/stack/sheet/mineral/wood
 	name = "wooden plank"
 	desc = "One can only guess that this is a bunch of wood."

@@ -132,8 +132,11 @@
 		if(!TryConnectToAI())
 			lawupdate = FALSE
 
+<<<<<<< HEAD
 	update_law_history() //yogs
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	radio = new /obj/item/radio/borg(src)
 	if(!scrambledcodes && !builtInCamera)
 		builtInCamera = new (src)
@@ -553,11 +556,15 @@
 			qdel(W)
 			to_chat(user, "<span class='notice'>You fill the toner level of [src] to its max capacity.</span>")
 
+<<<<<<< HEAD
 	else if(istype(W, /obj/item/light/bulb))
 		var/obj/item/light/bulb/B = W //yogs start
 		if(B.status)
 			to_chat(user, "<span class='warning'>[B] is broken!</span>")
 			return
+=======
+	else if(istype(W, /obj/item/flashlight))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(!opened)
 			to_chat(user, "<span class='warning'>You need to open the panel to repair the headlamp!</span>")
 		else if(lamp_cooldown <= world.time)

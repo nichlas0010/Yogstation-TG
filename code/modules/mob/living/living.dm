@@ -512,7 +512,10 @@
 				var/obj/effect/proc_holder/spell/spell = S
 				spell.updateButtonIcon()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /mob/living/proc/remove_CC(should_update_mobility = TRUE)
 	SetStun(0, FALSE)
 	SetKnockdown(0, FALSE)
@@ -523,7 +526,11 @@
 	SetUnconscious(0, FALSE)
 	if(should_update_mobility)
 		update_mobility()
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 //proc used to completely heal a mob.
 /mob/living/proc/fully_heal(admin_revive = 0)
 	restore_blood()
@@ -1079,13 +1086,30 @@
 	var/canstand_involuntary = conscious && !stat_softcrit && !knockdown && !chokehold && !paralyzed && (ignore_legs || has_legs) && !(buckled && buckled.buckle_lying)
 	var/canstand = canstand_involuntary && !resting
 
+<<<<<<< HEAD
 	if(canstand)
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
+=======
+	var/should_be_lying = !canstand
+	if(buckled)
+		if(buckled.buckle_lying != -1)
+			should_be_lying = buckled.buckle_lying
+	
+	if(should_be_lying)
+		mobility_flags &= ~(MOBILITY_UI | MOBILITY_PULL | MOBILITY_STAND)
+		if(buckled)
+			if(buckled.buckle_lying != -1)
+				lying = buckled.buckle_lying
+		if(!lying) //force them on the ground
+			lying = pick(90, 270)
+	else
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(!restrained)
 			mobility_flags |= (MOBILITY_UI | MOBILITY_PULL)
 		else
 			mobility_flags &= ~(MOBILITY_UI | MOBILITY_PULL)
+<<<<<<< HEAD
 	else
 		mobility_flags &= ~(MOBILITY_UI | MOBILITY_PULL)
 
@@ -1099,6 +1123,11 @@
 			mobility_flags |= MOBILITY_STAND //important to add this back, otherwise projectiles will pass through the mob while they're upright.
 			if(lying) //stand them back up
 				lying = 0
+=======
+		mobility_flags |= MOBILITY_STAND
+		lying = 0
+			
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	var/canitem = !paralyzed && !stun && conscious && !chokehold && !restrained && has_arms
 	if(canitem)

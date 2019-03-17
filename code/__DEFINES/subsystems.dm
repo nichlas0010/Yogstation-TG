@@ -1,7 +1,12 @@
 //Update this whenever the db schema changes
 //make sure you add an update to the schema_version stable in the db changelog
 #define DB_MAJOR_VERSION 5
+<<<<<<< HEAD
 #define DB_MINOR_VERSION 0
+=======
+#define DB_MINOR_VERSION 1
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
+
 
 //Timing subsystem
 //Don't run if there is an identical unique timer active
@@ -134,6 +139,7 @@
 		if(LAZYLEN(rm)){\
 			A.overlays -= rm;\
 			rm.Cut();\
+<<<<<<< HEAD
 		}\
 		if(LAZYLEN(ad)){\
 			A.overlays |= ad;\
@@ -142,6 +148,16 @@
 		if(LAZYLEN(po)){\
 			A.overlays |= po;\
 		}\
+=======
+		}\
+		if(LAZYLEN(ad)){\
+			A.overlays |= ad;\
+			ad.Cut();\
+		}\
+		if(LAZYLEN(po)){\
+			A.overlays |= po;\
+		}\
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		for(var/I in A.alternate_appearances){\
 			var/datum/atom_hud/alternate_appearance/AA = A.alternate_appearances[I];\
 			if(AA.transfer_overlays){\

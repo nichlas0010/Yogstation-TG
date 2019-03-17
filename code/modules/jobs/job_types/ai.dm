@@ -59,7 +59,15 @@
 
 /datum/job/ai/announce(mob/living/silicon/ai/AI)
 	. = ..()
+<<<<<<< HEAD
 	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "[AI] has been downloaded to an empty bluespace-networked AI core in [get_area(AI).name].")) //YOGS - removed the co-ordinates
 
 /datum/job/ai/config_check()
 	return CONFIG_GET(flag/allow_ai)
+=======
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "[AI] has been downloaded to an empty bluespace-networked AI core at [AREACOORD(AI)]."))
+
+/datum/job/ai/config_check()
+	return CONFIG_GET(flag/allow_ai)
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf

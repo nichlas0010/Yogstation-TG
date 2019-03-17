@@ -193,12 +193,18 @@
 	var/tagname = null
 
 /obj/item/clothing/neck/petcollar/mob_can_equip(mob/M, mob/equipper, slot, disable_warning = 0)
+<<<<<<< HEAD
 	if(ishuman(M))  // yogs start - lets catpeople wear collars
 		var/mob/living/carbon/human/T = M
 		if(iscatperson(T))
 			return TRUE
 		return FALSE // yogs end
 		
+=======
+	if(ishuman(M))
+		return FALSE
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 /obj/item/clothing/neck/petcollar/attack_self(mob/user)
 	tagname = copytext(sanitize(input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot") as null|text),1,MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"

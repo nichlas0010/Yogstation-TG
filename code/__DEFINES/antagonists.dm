@@ -29,7 +29,11 @@
 #define BLOB_REROLL_TIME 2400 //blob gets a free reroll every X time
 #define BLOB_SPREAD_COST 4
 #define BLOB_ATTACK_REFUND 2 //blob refunds this much if it attacks and doesn't spread
+<<<<<<< HEAD
 #define BLOB_REFLECTOR_COST 0 //yogs - reflectors are free
+=======
+#define BLOB_REFLECTOR_COST 15
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 
 //ERT Types

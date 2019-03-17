@@ -27,10 +27,17 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/set_overflow_role(new_overflow_role)
 	var/datum/job/new_overflow = GetJob(new_overflow_role)
 	var/cap = CONFIG_GET(number/overflow_cap)
+<<<<<<< HEAD
 
 	new_overflow.spawn_positions = cap
 	new_overflow.total_positions = cap
 
+=======
+
+	new_overflow.spawn_positions = cap
+	new_overflow.total_positions = cap
+
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(new_overflow_role != overflow_role)
 		var/datum/job/old_overflow = GetJob(overflow_role)
 		old_overflow.spawn_positions = initial(old_overflow.spawn_positions)
@@ -437,10 +444,13 @@ SUBSYSTEM_DEF(job)
 		job.radio_help_message(M)
 		if(job.req_admin_notify)
 			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+<<<<<<< HEAD
 		//YOGS start
 		if(job.space_law_notify)
 			to_chat(M, "<FONT color='red'><b>Space Law has been updated! </font><a href='https://wiki.yogstation.net/wiki/Space_Law'>Click here to view the updates.</a></b>")
 		//YOGS end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(M, "<FONT color='blue'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></font>")
 	if(ishuman(H))
@@ -449,9 +459,12 @@ SUBSYSTEM_DEF(job)
 		H.add_memory("Your account ID is [wageslave.account_id].")
 	if(job && H)
 		job.after_spawn(H, M, joined_late) // note: this happens before the mob has a key! M will always have a client, H might not.
+<<<<<<< HEAD
 
 	log_game("[H.real_name]/[M.client.ckey] joined the round as [H.job].") //yogs - Job logging
 	job.give_donor_stuff(H, M) // yogs - Donor Features
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	return H
 

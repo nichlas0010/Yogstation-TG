@@ -13,8 +13,11 @@
 					/obj/item/clothing/under/rank/yellowclown = 1,
 					/obj/item/clothing/under/rank/orangeclown = 1,
 					/obj/item/clothing/under/rank/purpleclown = 1,
+<<<<<<< HEAD
 					/obj/item/clothing/under/yogs/ronaldmcdonald = 1, // Yogs Change Added Ronald Costume
 					/obj/item/clothing/mask/yogs/ronald = 1, //Yogs Change Added Ronald Costume
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 					/obj/item/clothing/under/gladiator = 1,
 					/obj/item/clothing/head/helmet/gladiator = 1,
 					/obj/item/clothing/under/gimmick/rank/captain/suit = 1,
@@ -33,8 +36,11 @@
 					/obj/item/clothing/head/that = 1,
 					/obj/item/clothing/under/kilt = 1,
 					/obj/item/clothing/head/beret = 1,
+<<<<<<< HEAD
 					/obj/item/clothing/under/yogs/lederhosen = 1, //yogs
 					/obj/item/clothing/head/yogs/folkhat = 1, //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 					/obj/item/clothing/accessory/waistcoat = 1,
 					/obj/item/clothing/glasses/monocle =1,
 					/obj/item/clothing/head/bowler = 1,
@@ -123,7 +129,10 @@
 		              /obj/item/clothing/mask/muzzle = 2)
 	premium = list(/obj/item/clothing/suit/pirate/captain = 2,
 		           /obj/item/clothing/head/pirate/captain = 2,
+<<<<<<< HEAD
 		           /obj/item/clothing/under/yogs/soviet_dress_uniform = 1, //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 				   /obj/item/clothing/under/rank/rainbowclown = 1,
 		           /obj/item/clothing/head/helmet/roman/fake = 1,
 		           /obj/item/clothing/head/helmet/roman/legionnaire/fake = 1,

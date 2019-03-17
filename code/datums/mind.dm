@@ -592,10 +592,13 @@
 		add_antag_datum(/datum/antagonist/traitor)
 
 /datum/mind/proc/make_Changeling()
+<<<<<<< HEAD
 	// yogs start - Donor features, quiet round
 	if(quiet_round)
 		return
 	// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/datum/antagonist/changeling/C = has_antag_datum(/datum/antagonist/changeling)
 	if(!C)
 		C = add_antag_datum(/datum/antagonist/changeling)
@@ -621,7 +624,11 @@
 	if(!has_antag_datum(/datum/antagonist/cult,TRUE))
 		SSticker.mode.add_cultist(src,FALSE,equip=TRUE)
 		special_role = ROLE_CULTIST
+<<<<<<< HEAD
 		to_chat(current, "<font color=\"purple\"><b><i>You catch a glimpse of the Realm of Nar-Sie, The Geometer of Blood. You now see how flimsy your world is, you see that it should be open to the knowledge of Nar-Sie.</b></i></font>")
+=======
+		to_chat(current, "<font color=\"purple\"><b><i>You catch a glimpse of the Realm of Nar'Sie, The Geometer of Blood. You now see how flimsy your world is, you see that it should be open to the knowledge of Nar'Sie.</b></i></font>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		to_chat(current, "<font color=\"purple\"><b><i>Assist your new brethren in their dark dealings. Their goal is yours, and yours is theirs. You serve the Dark One above all else. Bring It back.</b></i></font>")
 
 /datum/mind/proc/make_Rev()

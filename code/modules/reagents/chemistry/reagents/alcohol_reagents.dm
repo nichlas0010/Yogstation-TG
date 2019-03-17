@@ -638,16 +638,25 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	id = "beepskysmash"
 	description = "Drink this and prepare for the LAW."
 	color = "#664300" // rgb: 102, 67, 0
+<<<<<<< HEAD
 	boozepwr = 120 //yogs - made the fist of the law even stronger to compensate for it no longer stunning
+=======
+	boozepwr = 90 //THE FIST OF THE LAW IS STRONG AND HARD
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	quality = DRINK_GOOD
 	metabolization_rate = 0.8
 	taste_description = "JUSTICE"
 	glass_icon_state = "beepskysmashglass"
 	glass_name = "Beepsky Smash"
 	glass_desc = "Heavy, hot and strong. Just like the Iron fist of the LAW."
+<<<<<<< HEAD
 	
 // yogs - removed for balance
 /*/datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
+=======
+
+/datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	if(M.has_trait(TRAIT_ALCOHOL_TOLERANCE))
 		M.Stun(30, 0) //this realistically does nothing to prevent chainstunning but will cause them to recover faster once it's out of their system
 	else

@@ -48,7 +48,11 @@
 	starting_node = TRUE
 	display_name = "Basic Tools"
 	description = "Basic mechanical, electronic, surgical and botanical tools."
+<<<<<<< HEAD
 	design_ids = list("screwdriver", "wrench", "wirecutters", "crowbar", "multitool", "welding_tool", "tscanner", "analyzer", "cable_coil", "pipe_painter", "airlock_painter", "surgical_drapes", "scalpel", "circular_saw", "surgicaldrill", "retractor", "cautery", "hemostat", "cultivator", "plant_analyzer", "shovel", "spade", "hatchet") // yogs - added surgical_drapes
+=======
+	design_ids = list("screwdriver", "wrench", "wirecutters", "crowbar", "multitool", "welding_tool", "tscanner", "analyzer", "cable_coil", "pipe_painter", "airlock_painter", "scalpel", "circular_saw", "surgicaldrill", "retractor", "cautery", "hemostat", "cultivator", "plant_analyzer", "shovel", "spade", "hatchet")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /////////////////////////Biotech/////////////////////////
 /datum/techweb_node/biotech
@@ -180,7 +184,11 @@
 	display_name = "Bluespace Travel"
 	description = "Application of Bluespace for static teleportation technology."
 	prereq_ids = list("practical_bluespace")
+<<<<<<< HEAD
 	design_ids = list("tele_station", "tele_hub", "teleconsole", "quantumpad", "launchpad", "launchpad_console", "bluespace_pod", "bluespace_pipe") // yogs - adds bluespace pipe
+=======
+	design_ids = list("tele_station", "tele_hub", "teleconsole", "quantumpad", "launchpad", "launchpad_console", "bluespace_pod")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -359,7 +367,11 @@
 	display_name = "Computer Consoles"
 	description = "Computers and how they work."
 	prereq_ids = list("datatheory")
+<<<<<<< HEAD
 	design_ids = list("cargo", "cargorequest", "libraryconsole", "mining", "crewconsole", "rdcamera", "comconsole", "idcardconsole", "seccamera", "stockexchange") //yogs - added stocks
+=======
+	design_ids = list("cargo", "cargorequest", "libraryconsole", "mining", "crewconsole", "rdcamera", "comconsole", "idcardconsole", "seccamera")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
 
@@ -535,7 +547,11 @@
 	id = "exp_tools"
 	display_name = "Experimental Tools"
 	description = "Highly advanced tools."
+<<<<<<< HEAD
 	design_ids = list("exwelder", "jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool", "tool_switcher") // yogs - tool switcher
+=======
+	design_ids = list("exwelder", "jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	prereq_ids = list("adv_engi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000

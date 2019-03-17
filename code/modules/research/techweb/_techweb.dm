@@ -27,7 +27,11 @@
 	SSresearch.techwebs += src
 	for(var/i in SSresearch.techweb_nodes_starting)
 		var/datum/techweb_node/DN = SSresearch.techweb_node_by_id(i)
+<<<<<<< HEAD
 		research_node(DN, TRUE, FALSE)
+=======
+		research_node(DN, TRUE, FALSE, FALSE)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	hidden_nodes = SSresearch.techweb_nodes_hidden.Copy()
 	return ..()
 
@@ -39,7 +43,11 @@
 	. = ..()
 	for(var/i in SSresearch.techweb_nodes)
 		var/datum/techweb_node/TN = SSresearch.techweb_nodes[i]
+<<<<<<< HEAD
 		research_node(TN, TRUE)
+=======
+		research_node(TN, TRUE, TRUE, FALSE)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	for(var/i in SSresearch.point_types)
 		research_points[i] = INFINITY
 	hidden_nodes = list()
@@ -113,7 +121,11 @@
 /datum/techweb/proc/copy_research_to(datum/techweb/receiver, unlock_hidden = TRUE)				//Adds any missing research to theirs.
 	for(var/i in researched_nodes)
 		CHECK_TICK
+<<<<<<< HEAD
 		receiver.research_node_id(i, TRUE, FALSE)
+=======
+		receiver.research_node_id(i, TRUE, FALSE, FALSE)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	for(var/i in researched_designs)
 		CHECK_TICK
 		receiver.add_design_by_id(i)
@@ -196,10 +208,15 @@
 /datum/techweb/proc/printout_points()
 	return techweb_point_display_generic(research_points)
 
+<<<<<<< HEAD
 /datum/techweb/proc/research_node_id(id, force, auto_update_points)
 	return research_node(SSresearch.techweb_node_by_id(id), force, auto_update_points)
+=======
+/datum/techweb/proc/research_node_id(id, force, auto_update_points, get_that_dosh_id)
+	return research_node(SSresearch.techweb_node_by_id(id), force, auto_update_points, get_that_dosh_id)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
-/datum/techweb/proc/research_node(datum/techweb_node/node, force = FALSE, auto_adjust_cost = TRUE)
+/datum/techweb/proc/research_node(datum/techweb_node/node, force = FALSE, auto_adjust_cost = TRUE, get_that_dosh = TRUE)
 	if(!istype(node))
 		return FALSE
 	update_node_status(node)
@@ -215,7 +232,11 @@
 	for(var/id in node.design_ids)
 		add_design_by_id(id)
 	update_node_status(node)
+<<<<<<< HEAD
 	if(!istype(src, /datum/techweb/admin))
+=======
+	if(get_that_dosh)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SCI)
 		if(D)
 			D.adjust_money(SSeconomy.techweb_bounty)
@@ -345,7 +366,7 @@
 
 /datum/techweb/specialized/autounlocking/proc/autounlock()
 	for(var/id in node_autounlock_ids)
-		research_node_id(id, TRUE, FALSE)
+		research_node_id(id, TRUE, FALSE, FALSE)
 	for(var/id in SSresearch.techweb_designs)
 		var/datum/design/D = SSresearch.techweb_design_by_id(id)
 		if(D.build_type & design_autounlock_buildtypes)

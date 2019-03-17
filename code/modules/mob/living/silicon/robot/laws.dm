@@ -79,5 +79,8 @@
 			if (length(temp) > 0)
 				laws.supplied[index] = temp
 
+<<<<<<< HEAD
 		update_law_history() //yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	picturesync()

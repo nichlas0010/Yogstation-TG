@@ -25,8 +25,12 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/item/shared_storage,
 		/obj/structure/extraction_point,
 		/obj/machinery/syndicatebomb,
+<<<<<<< HEAD
 		/obj/item/hilbertshotel,
 		/obj/structure/closet/bluespace // yogs - nope nice try
+=======
+		/obj/item/hilbertshotel
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	)))
 
 /obj/docking_port/mobile/supply

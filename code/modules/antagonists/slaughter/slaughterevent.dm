@@ -31,7 +31,11 @@
 		message_admins("No valid spawn locations found, aborting...")
 		return MAP_ERROR
 
+<<<<<<< HEAD
 	/*var/obj/effect/dummy/phased_mob/slaughter/holder = new /obj/effect/dummy/phased_mob/slaughter((pick(spawn_locs))) //yogs start - Bloodcrawl refactor
+=======
+	var/obj/effect/dummy/phased_mob/slaughter/holder = new /obj/effect/dummy/phased_mob/slaughter((pick(spawn_locs)))
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	var/mob/living/simple_animal/slaughter/S = new (holder)
 	S.holder = holder*/
 	var/obj/effect/dummy/crawling/holder = new(pick(spawn_locs))

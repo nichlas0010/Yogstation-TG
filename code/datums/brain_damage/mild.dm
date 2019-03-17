@@ -157,6 +157,7 @@
 	gain_text = "<span class='warning'>Your muscles feel oddly faint.</span>"
 	lose_text = "<span class='notice'>You feel in control of your muscles again.</span>"
 
+<<<<<<< HEAD
 /datum/brain_trauma/mild/muscle_spasms/on_life()
 	if(prob(7))
 		switch(rand(1,5))
@@ -207,6 +208,32 @@
 					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
+=======
+/datum/brain_trauma/mild/muscle_spasms/on_gain()
+	owner.apply_status_effect(STATUS_EFFECT_SPASMS)
+	..()
+
+/datum/brain_trauma/mild/muscle_spasms/on_lose()
+	owner.remove_status_effect(STATUS_EFFECT_SPASMS)
+	..()
+
+/datum/brain_trauma/mild/nervous_cough
+	name = "Nervous Cough"
+	desc = "Patient feels a constant need to cough."
+	scan_desc = "nervous cough"
+	gain_text = "<span class='warning'>Your throat itches incessantly...</span>"
+	lose_text = "<span class='notice'>Your throat stops itching.</span>"
+
+/datum/brain_trauma/mild/nervous_cough/on_life()
+	if(prob(12) && !owner.has_trait(TRAIT_SOOTHED_THROAT))
+		if(prob(5))
+			to_chat(owner, "<span notice='warning'>[pick("You have a coughing fit!", "You can't stop coughing!")]</span>")
+			owner.Immobilize(20)
+			owner.emote("cough")
+			addtimer(CALLBACK(owner, /mob/.proc/emote, "cough"), 6)
+			addtimer(CALLBACK(owner, /mob/.proc/emote, "cough"), 12)
+		owner.emote("cough")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	..()
 
 /datum/brain_trauma/mild/nervous_cough

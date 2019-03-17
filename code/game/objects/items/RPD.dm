@@ -335,6 +335,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	. = FALSE
 
 	if((mode&DESTROY_MODE) && istype(A, /obj/item/pipe) || istype(A, /obj/structure/disposalconstruct) || istype(A, /obj/structure/c_transit_tube) || istype(A, /obj/structure/c_transit_tube_pod) || istype(A, /obj/item/pipe_meter))
+<<<<<<< HEAD
 	// yogs start - disposable check
 		if(istype(A, /obj/item/pipe))
 			var/obj/item/pipe/P = A
@@ -342,6 +343,8 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 				to_chat(usr, "<span class='warning'>[src] is too valuable to dispose of!</span>")
 				return
 	// yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		to_chat(user, "<span class='notice'>You start destroying a pipe...</span>")
 		playsound(get_turf(src), 'sound/machines/click.ogg', 50, 1)
 		if(do_after(user, destroy_speed, target = A))

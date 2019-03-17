@@ -16,6 +16,7 @@
 			success = TRUE
 		if(iscyborg(user))
 			success = TRUE
+<<<<<<< HEAD
 
 // yogs start - tool switcher
 	if(istype(tool, /obj/item/storage/belt/tool_switcher))
@@ -24,6 +25,8 @@
 		if(!tool)
 			tool = S
 // yogs end
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 	if(accept_any_item)
 		if(tool && tool_check(user, tool))

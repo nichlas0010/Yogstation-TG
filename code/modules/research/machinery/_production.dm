@@ -209,7 +209,11 @@
 	l += "<div class='statusDisplay'><h3>Material Storage:</h3>"
 	for(var/mat_id in materials.mat_container.materials)
 		var/datum/material/M = materials.mat_container.materials[mat_id]
+<<<<<<< HEAD
 		l += "* [num2text(M.amount, 8)] of [M.name]: " // yogs - num2text
+=======
+		l += "* [M.amount] of [M.name]: "
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if(M.amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[M.id];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
 		if(M.amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='?src=[REF(src)];ejectsheet=[M.id];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
 		if(M.amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[M.id];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"

@@ -120,11 +120,15 @@
 	if (chamber_next_round && (magazine.max_ammo > 1))
 		chamber_round()
 
-/obj/item/gun/ballistic/proc/chamber_round()
+/obj/item/gun/ballistic/proc/chamber_round(keep_bullet = FALSE)
 	if (chambered || !magazine)
 		return
 	if (magazine.ammo_count())
+<<<<<<< HEAD
 		chambered = magazine.get_round((bolt_type == BOLT_TYPE_NO_BOLT))
+=======
+		chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		if (bolt_type != BOLT_TYPE_OPEN)
 			chambered.forceMove(src)
 
@@ -134,7 +138,11 @@
 	if (bolt_type == BOLT_TYPE_OPEN)
 		if(!bolt_locked)	//If it's an open bolt, racking again would do nothing
 			if (user)
+<<<<<<< HEAD
 				to_chat(user, "<span class='notice'>\The [src] is already ready to fire!</span>")
+=======
+				to_chat(user, "<span class='notice'>\The [src]'s [bolt_wording] is already cocked!</span>")
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 			return
 		bolt_locked = FALSE
 	if (user)
@@ -162,7 +170,11 @@
 			to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
 		playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
 		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
+<<<<<<< HEAD
 			chamber_round()
+=======
+			chamber_round(TRUE)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 		update_icon()
 		return TRUE
 	else
@@ -325,7 +337,11 @@
 
 /obj/item/gun/ballistic/examine(mob/user)
 	..()
+<<<<<<< HEAD
 	var/count_chambered = !((bolt_type == BOLT_TYPE_NO_BOLT) || (bolt_type == BOLT_TYPE_OPEN))
+=======
+	var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 	to_chat(user, "It has [get_ammo(count_chambered)] round\s remaining.")
 	if (!chambered)
 		to_chat(user, "It does not seem to have a round chambered.")

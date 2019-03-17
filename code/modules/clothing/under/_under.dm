@@ -17,7 +17,10 @@
 	var/mutantrace_variation = NO_MUTANTRACE_VARIATION //Are there special sprites for specific situations? Don't use this unless you need to.
 	var/freshly_laundered = FALSE
 	var/dodgy_colours = FALSE
+<<<<<<< HEAD
 	tearable = TRUE //all jumpsuits can be torn down and used for cloth in an emergency | yogs
+=======
+>>>>>>> 4c7ef0a78ddd5c35fa71189adf212504d8d99fdf
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
 	. = list()

@@ -30,9 +30,7 @@
 			SEND_SIGNAL(T, COMSIG_TRY_STORAGE_INSERT, O, user, TRUE)
 		T.update_icon()
 		do_animate()
-	else if(istype(W, /obj/item/wrench))
-		anchored = !anchored
-		W.play_tool_sound(src, 75)
+		return TRUE
 	else
 		return ..()
 
