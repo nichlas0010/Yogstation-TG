@@ -1,5 +1,9 @@
 // Powersink - used to drain station power
 
+#define POWERSINK_DISCONNECTED
+#define POWERSINK_CLAMPED
+#define POWERSINK_OPERATING
+
 /obj/item/powersink
 	desc = "A nulling power sink which drains energy from electrical systems."
 	name = "power sink"
@@ -17,12 +21,8 @@
 	var/drain_rate = 2000000	// amount of power to drain per tick
 	var/power_drained = 0 		// has drained this much power
 	var/max_power = 6e8		// maximum power that can be drained before exploding
-	var/mode = 0		// 0 = off, 1=clamped (off), 2=operating
+	var/mode = POWERSINK_DISCONNECTED		// 0 = off, 1=clamped (off), 2=operating
 	var/admins_warned = FALSE // stop spam, only warn the admins once that we are about to boom
-
-	var/const/DISCONNECTED = 0
-	var/const/CLAMPED_OFF = 1
-	var/const/OPERATING = 2
 
 	var/obj/structure/cable/attached		// the attached cable
 
@@ -33,22 +33,22 @@
 	if(value == mode)
 		return
 	switch(value)
-		if(DISCONNECTED)
+		if(POWERSINK_DISCONNECTED)
 			attached = null
-			if(mode == OPERATING)
+			if(mode == POWERSINK_OPERATING)
 				STOP_PROCESSING(SSobj, src)
 			anchored = FALSE
 			density = FALSE
 
-		if(CLAMPED_OFF)
+		if(POWERSINK_CLAMPED)
 			if(!attached)
 				return
-			if(mode == OPERATING)
+			if(mode == POWERSINK_OPERATING)
 				STOP_PROCESSING(SSobj, src)
 			anchored = TRUE
 			density = TRUE
 
-		if(OPERATING)
+		if(POWERSINK_OPERATING)
 			if(!attached)
 				return
 			START_PROCESSING(SSobj, src)
@@ -61,14 +61,14 @@
 
 /obj/item/powersink/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(mode == DISCONNECTED)
+		if(mode == POWERSINK_DISCONNECTED)
 			var/turf/T = loc
 			if(isturf(T) && !T.intact)
 				attached = locate() in T
 				if(!attached)
 					to_chat(user, "<span class='warning'>This device must be placed over an exposed, powered cable node!</span>")
 				else
-					set_mode(CLAMPED_OFF)
+					set_mode(POWERSINK_CLAMPED)
 					user.visible_message( \
 						"[user] attaches \the [src] to the cable.", \
 						"<span class='notice'>You attach \the [src] to the cable.</span>",
@@ -76,7 +76,7 @@
 			else
 				to_chat(user, "<span class='warning'>This device must be placed over an exposed, powered cable node!</span>")
 		else
-			set_mode(DISCONNECTED)
+			set_mode(POWERSINK_DISCONNECTED)
 			user.visible_message( \
 				"[user] detaches \the [src] from the cable.", \
 				"<span class='notice'>You detach \the [src] from the cable.</span>",
@@ -98,25 +98,25 @@
 		if(DISCONNECTED)
 			..()
 
-		if(CLAMPED_OFF)
+		if(POWERSINK_CLAMPED)
 			user.visible_message( \
 				"[user] activates \the [src]!", \
 				"<span class='notice'>You activate \the [src].</span>",
 				"<span class='italics'>You hear a click.</span>")
 			message_admins("Power sink activated by [ADMIN_LOOKUPFLW(user)] at [ADMIN_VERBOSEJMP(src)]")
 			log_game("Power sink activated by [key_name(user)] at [AREACOORD(src)]")
-			set_mode(OPERATING)
+			set_mode(POWERSINK_OPERATING)
 
-		if(OPERATING)
+		if(POWERSINK_OPERATING)
 			user.visible_message( \
 				"[user] deactivates \the [src]!", \
 				"<span class='notice'>You deactivate \the [src].</span>",
 				"<span class='italics'>You hear a click.</span>")
-			set_mode(CLAMPED_OFF)
+			set_mode(POWERSINK_CLAMPED)
 
 /obj/item/powersink/process()
 	if(!attached)
-		set_mode(DISCONNECTED)
+		set_mode(POWERSINK_DISCONNECTED)
 		return
 
 	var/datum/powernet/PN = attached.powernet
@@ -144,12 +144,22 @@
 					break
 
 	if(power_drained > max_power * 0.98)
-		if (!admins_warned)
-			admins_warned = TRUE
-			message_admins("Power sink at ([x],[y],[z] - <A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>) is 95% full. Explosion imminent.")
+		tell_admins()
 		playsound(src, 'sound/effects/screech.ogg', 100, 1, 1)
 
 	if(power_drained >= max_power)
-		STOP_PROCESSING(SSobj, src)
-		explosion(src.loc, 4,8,16,32)
-		qdel(src)
+		on_full()
+
+/obj/item/powersink/proc/tell_admins()
+	if(!admins_warned)
+		admins_warned = TRUE
+		message_admins("Power sink at ([x],[y],[z] - <A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>) is 95% full. Explosion imminent.")
+
+/obj/item/powersink/proc/on_full()
+	STOP_PROCESSING(SSobj, src)
+	explosion(src.loc, 4,8,16,32)
+	qdel(src)
+
+#undef POWERSINK_DISCONNECTED
+#undef POWERSINK_CLAMPED
+#undef POWERSINK_OPERATING

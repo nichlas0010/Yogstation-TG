@@ -655,6 +655,7 @@
 #include "code\game\machinery\navbeacon.dm"
 #include "code\game\machinery\newscaster.dm"
 #include "code\game\machinery\PDApainter.dm"
+#include "code\game\machinery\powervacuum.dm"
 #include "code\game\machinery\quantum_pad.dm"
 #include "code\game\machinery\recharger.dm"
 #include "code\game\machinery\rechargestation.dm"
