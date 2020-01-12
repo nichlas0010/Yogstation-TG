@@ -1,8 +1,8 @@
 // Powersink - used to drain station power
 
-#define POWERSINK_DISCONNECTED
-#define POWERSINK_CLAMPED
-#define POWERSINK_OPERATING
+#define POWERSINK_DISCONNECTED 0
+#define POWERSINK_CLAMPED 1
+#define POWERSINK_OPERATING 2
 
 /obj/item/powersink
 	desc = "A nulling power sink which drains energy from electrical systems."
@@ -21,13 +21,13 @@
 	var/drain_rate = 2000000	// amount of power to drain per tick
 	var/power_drained = 0 		// has drained this much power
 	var/max_power = 6e8		// maximum power that can be drained before exploding
-	var/mode = POWERSINK_DISCONNECTED		// 0 = off, 1=clamped (off), 2=operating
+	var/mode = POWERSINK_DISCONNECTED	// 0 is off, 1 is clamped (off), 2 is operating
 	var/admins_warned = FALSE // stop spam, only warn the admins once that we are about to boom
 
 	var/obj/structure/cable/attached		// the attached cable
 
 /obj/item/powersink/update_icon()
-	icon_state = "powersink[mode == OPERATING]"
+	icon_state = "powersink[mode == POWERSINK_OPERATING]"
 
 /obj/item/powersink/proc/set_mode(value)
 	if(value == mode)
@@ -95,7 +95,7 @@
 	if(.)
 		return
 	switch(mode)
-		if(DISCONNECTED)
+		if(POWERSINK_DISCONNECTED)
 			..()
 
 		if(POWERSINK_CLAMPED)
@@ -157,7 +157,7 @@
 
 /obj/item/powersink/proc/on_full()
 	STOP_PROCESSING(SSobj, src)
-	explosion(src.loc, 4,8,16,32)
+	explosion(get_turf(src), 4,8,16,32)
 	qdel(src)
 
 #undef POWERSINK_DISCONNECTED
