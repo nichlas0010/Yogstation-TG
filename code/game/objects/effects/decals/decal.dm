@@ -36,6 +36,11 @@
 	icon_state = "warningline"
 	layer = TURF_DECAL_LAYER
 
+/obj/effect/turf_decal/New(loc, chosen_dir) //Needs to be in New, since Initialize is called after ComponentInitialize() (for whatever reason)
+	if(chosen_dir)
+		dir = chosen_dir
+	..()
+
 /obj/effect/turf_decal/Initialize()
 	..()
 	return INITIALIZE_HINT_QDEL

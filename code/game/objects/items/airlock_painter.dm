@@ -15,6 +15,7 @@
 	usesound = 'sound/effects/spray2.ogg'
 
 	var/obj/item/toner/ink = null
+	var/ink_usage = 20 //How much ink the painter uses every time
 
 /obj/item/airlock_painter/Initialize()
 	. = ..()
@@ -24,11 +25,11 @@
 //Only call this if you are certain that the painter will be used right after this check!
 /obj/item/airlock_painter/proc/use_paint(mob/user)
 	if(can_use(user))
-		ink.charges--
+		ink.charges -= ink_usage
 		playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1)
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 //This proc only checks if the painter can be used.
 //Call this if you don't want the painter to be used right after this check, for example
@@ -36,12 +37,11 @@
 /obj/item/airlock_painter/proc/can_use(mob/user)
 	if(!ink)
 		to_chat(user, "<span class='notice'>There is no toner cartridge installed in [src]!</span>")
-		return 0
-	else if(ink.charges < 1)
+		return FALSE
+	else if(ink.charges < ink_usage)
 		to_chat(user, "<span class='notice'>[src] is out of ink!</span>")
-		return 0
-	else
-		return 1
+		return FALSE
+	return TRUE
 
 /obj/item/airlock_painter/suicide_act(mob/user)
 	var/obj/item/organ/lungs/L = user.getorganslot(ORGAN_SLOT_LUNGS)
