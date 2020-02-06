@@ -3,6 +3,11 @@
 	icon_state = "tile_corner"
 	layer = TURF_PLATING_DECAL_LAYER
 
+/obj/effect/turf_decal/tile/New(loc, chosen_dir, colour) //Needs to be in New, since Initialize is called after ComponentInitialize() (for whatever reason)
+	if(colour)
+		color = colour
+	..()
+
 /obj/effect/turf_decal/tile/trimline
 	name = "trim decal"
 
@@ -32,50 +37,50 @@
 
 #define TILEHELPER(Name, Color, Alpha) 							\
 	/obj/effect/turf_decal/tile/##Name {						\
-		name = Name + " corner"									\
-		color = Color											\
-		alpha = Alpha											\
+		name = Name + " corner";								\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/box/##Name {			\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/line/##Name {			\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/corner/##Name {		\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/end/##Name {			\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/filled/box/##Name {	\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/filled/line/##Name {	\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/filled/corner/##Name {	\
-		color = Color											\
-		alpha = Alpha											\
+		color = Color;											\
+		alpha = Alpha;											\
 	}															\
 																\
 	/obj/effect/turf_decal/tile/trimline/filled/end/##Name {	\
-		color = Color											\
-		alpha = Alpha											\
-	}														
+		color = Color;											\
+		alpha = Alpha;											\
+	}
 
 // Default alpha is 110. If you don't need a specific alpha value for whatever you're doing, make it 110.
 TILEHELPER("blue", "#52B4E9", 110)

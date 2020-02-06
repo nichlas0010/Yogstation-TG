@@ -5,6 +5,7 @@
 
 	var/obj/effect/turf_decal/chosen_decal = /obj/effect/turf_decal/tile/green //Green is the objectively best colour, any dissent is either based in opinion or pseudoscience.
 	var/chosen_dir = 2
+	var/chosen_colour
 
 /obj/item/airlock_painter/tile_painter/AltClick(mob/user) //Pretty much a copy paste of the airlock_painter's attack_self, but we use attack_self for selecting the decal
 	..()
@@ -24,7 +25,7 @@
 
 	var/turf/open/T = get_turf(A)
 	if(T && istype(T) && !istype(T, /turf/open/space) && use_paint(user) && do_after(user, 10, target = T))
-		new chosen_decal(T, chosen_dir)
+		new chosen_decal(T, chosen_dir chosen_colour)
 		
 /obj/item/airlock_painter/tile_painter/examine(mob/user)
 	.=..()
@@ -51,6 +52,9 @@
 							"red" = icon('icons/turf/decals.dmi', iconstate + "_red"),
 							"white" = icon('icons/turf/decals.dmi', iconstate + "_white"))
 	return options
+
+/obj/item/airlock_painter/tile_painter/proc/choose_custom_colour(user)
+	chosen_colour = input(user, "Choose your colour:") as color|null
 
 /obj/item/airlock_painter/tile_painter/proc/do_colours_warning(user, warning_type, first_part, second_part) // Not for warning the user, used for the warning line decals
 	var/list/options = get_colours(warning_type)
@@ -205,4 +209,15 @@
 				options[colourList[colourList.len]] = colourIcon
 			options["custom"] = icon('icons/turf/decals.dmi', replacetext(chosen, "/", "_"))
 			var/chosen2 = show_radial_menu(user, src, options)
+			if(!chosen2)
+				return
+			if(chosen2 == "custom")
+				chosen_decal = text2path(chosen)
+				choose_custom_colour(user)
+				choose_dir(user)
+			else
+				chosen_colour = null
+				chosen_decal = text2path(chosen+"/"+chosen2)
+				choose_dir(user)
+
 
