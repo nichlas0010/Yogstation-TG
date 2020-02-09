@@ -2,6 +2,7 @@
 	name = "tile decal"
 	icon_state = "tile_corner"
 	layer = TURF_PLATING_DECAL_LAYER
+	alpha = 110
 
 /obj/effect/turf_decal/tile/New(loc, chosen_dir, colour) //Needs to be in New, since Initialize is called after ComponentInitialize() (for whatever reason)
 	if(colour)

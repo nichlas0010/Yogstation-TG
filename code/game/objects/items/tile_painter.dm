@@ -36,6 +36,9 @@
 							"East" = icon(initial(chosen_decal.icon), initial(chosen_decal.icon_state), EAST),
 							"South" = icon(initial(chosen_decal.icon), initial(chosen_decal.icon_state), SOUTH),
 							"West" = icon(initial(chosen_decal.icon), initial(chosen_decal.icon_state), WEST))
+	if(chosen_colour && istype(/obj/effect/turf_decal/tile, chosen_decal))
+		for(var/i in options)
+			options[i].color = chosen_colour
 	var/chosen = show_radial_menu(user, src, options)
 	if(chosen)
 		chosen_dir = text2dir(chosen)
@@ -78,11 +81,16 @@
 							"decal" = icon('icons/mob/radial.dmi', "tile_painter_decal"), //Not very descriptive, but it's the caution/delivery/arrows ones
 							"tile" = icon('icons/mob/radial.dmi', "tile_painter_tile"),
 							"trimeline" = icon('icons/mob/radial.dmi', "tile_painter_trimline"))
+	if(istype(chosen_decal, /obj/effect/turf_decal/tile))
+		options["change colour"] = icon('icons/mob/radial.dmi', "tile_painter_colour")
 	var/chosen = show_radial_menu(user, src, options)
 	switch(chosen)
 		if("rotate")
 			choose_dir(user)
-		
+
+		if("change colour")
+			choose_custom_colour(user)
+
 		if("warning")
 			options = list("line" = icon('icons/turf/decals.dmi', "warningline"),
 							"corner" = icon('icons/turf/decals.dmi', "warninglinecorner"),
@@ -121,6 +129,8 @@
 				the amount of iconstates for the logo. Derelict has 16, ss13 has 14, so on. So, using all of this we can construct a radial menu of all the 
 				possible icon-states of the given logo, and let the user choose. We then set the decal to be the chosen icon-state, by converting the index of
 				the chosen state into its text form (1 into one, 2 into two), and constructing the decal path from that.
+
+				Also the arctic one is special, blame wjohn. I would fix it, but I don't really wanna touch maps tbh
 			*/
 			var/amount = 0
 			var/decalPath
@@ -201,23 +211,40 @@
 			if(!chosen)
 				return
 			chosen = replacetext(chosen, " ", "/")
-			options = list()
+			options = list("custom" = icon('icons/turf/decals.dmi', replacetext(chosen, "/", "_")))
 			for(var/obj/effect/turf_decal/tile/trimline/I in subtypesof(text2path("/obj/effect/turf_decal/tile/trimline/[chosen]")))
 				var/list/colourList = initial(I.type).splittext(colourName, "/")
 				var/icon/colourIcon = icon(I.icon, I.icon_state)
 				colourIcon.color = initial(I.color)
 				options[colourList[colourList.len]] = colourIcon
-			options["custom"] = icon('icons/turf/decals.dmi', replacetext(chosen, "/", "_"))
 			var/chosen2 = show_radial_menu(user, src, options)
 			if(!chosen2)
 				return
 			if(chosen2 == "custom")
 				chosen_decal = text2path(chosen)
 				choose_custom_colour(user)
-				choose_dir(user)
+				
 			else
 				chosen_colour = null
 				chosen_decal = text2path(chosen+"/"+chosen2)
-				choose_dir(user)
+			choose_dir(user)
+
+		if("tile")
+			options = list("custom" = icon('icons/turf/decals.dmi', "tile_corner")) 
+			for(var/obj/effect/turf_decal/tile/I in subtypesof(/obj/effect/turf_decal/tile) - subtypesof(/obj/effect/turf_decal/tile/trimline))
+				var/list/colourList = initial(I.type).splittext(colourName, "/")
+				var/icon/colourIcon = icon(I.icon, I.icon_state)
+				colourIcon.color = initial(I.color)
+				options[colourList[colourList.len]] = colourIcon
+			var/chosen2 = show_radial_menu(user, src, options)
+			if(!chosen2)
+				return
+			if(chosen2 == "custom")
+				chosen_decal = /obj/effect/turf_decal/tile
+				choose_custom_colour(user)
+			else
+				chosen_colour == null
+				chosen_decal = text2path("/obj/effect/turf_decal/tile/[chosen2]")
+			choose_dir(user)
 
 
