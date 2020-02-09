@@ -25,7 +25,7 @@
 
 	var/turf/open/T = get_turf(A)
 	if(T && istype(T) && !istype(T, /turf/open/space) && use_paint(user) && do_after(user, 10, target = T))
-		new chosen_decal(T, chosen_dir chosen_colour)
+		new chosen_decal(T, chosen_dir, chosen_colour)
 		
 /obj/item/airlock_painter/tile_painter/examine(mob/user)
 	.=..()
