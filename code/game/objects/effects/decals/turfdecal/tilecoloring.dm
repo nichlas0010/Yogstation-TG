@@ -38,7 +38,6 @@
 
 #define TILEHELPER(Name, Color, Alpha) 							\
 	/obj/effect/turf_decal/tile/##Name {						\
-		name = Name + " corner";								\
 		color = Color;											\
 		alpha = Alpha;											\
 	}															\
@@ -84,13 +83,13 @@
 	}
 
 // Default alpha is 110. If you don't need a specific alpha value for whatever you're doing, make it 110.
-TILEHELPER("blue", "#52B4E9", 110)
-TILEHELPER("green", "#9FED58", 110)
-TILEHELPER("yellow", "#EFB341", 110)
-TILEHELPER("red", "#DE3A3A", 110)
-TILEHELPER("bar", "#791500", 130)
-TILEHELPER("purple", "#D381C9", 110)
-TILEHELPER("brown", "#A46106", 110)
-TILEHELPER("neutral", "#D4D4D4", 50)
+TILEHELPER(blue, "#52B4E9", 110)
+TILEHELPER(green, "#9FED58", 110)
+TILEHELPER(yellow, "#EFB341", 110)
+TILEHELPER(red, "#DE3A3A", 110)
+TILEHELPER(bar, "#791500", 130)
+TILEHELPER(purple, "#D381C9", 110)
+TILEHELPER(brown, "#A46106", 110)
+TILEHELPER(neutral, "#D4D4D4", 50)
 
 #undef TILEHELPER

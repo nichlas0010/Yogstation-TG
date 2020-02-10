@@ -38,17 +38,18 @@
 							"West" = icon(initial(chosen_decal.icon), initial(chosen_decal.icon_state), WEST))
 	if(chosen_colour && istype(/obj/effect/turf_decal/tile, chosen_decal))
 		for(var/i in options)
-			options[i].color = chosen_colour
+			var/icon/I = options[i]
+			options[i] = I.Blend(chosen_colour, ICON_MULTIPLY)
 	var/chosen = show_radial_menu(user, src, options)
 	if(chosen)
 		chosen_dir = text2dir(chosen)
 
 /obj/item/airlock_painter/tile_painter/proc/do_colours(user, path, addition = "/", last_part, pathAddition) // Used when we append the colour to the end of the path
 	var/option = show_radial_menu(user, src, get_colours(initial(text2path(path+pathAddition).icon_state)))
-	var/addition = ""
+	var/adding = ""
 	if(option && option != "yellow")
-		addition = "[addition][option]"
-	chosen_decal = text2path(path+addition+last_part)
+		adding = "[addition][option]"
+	chosen_decal = text2path(path+adding+last_part)
 
 /obj/item/airlock_painter/tile_painter/proc/get_colours(iconstate)
 	var/list/options = list("yellow" = icon('icons/turf/decals.dmi', iconstate),
@@ -80,10 +81,10 @@
 							"logo" = icon('icons/mob/radial.dmi', "tile_painter_logo"),
 							"decal" = icon('icons/mob/radial.dmi', "tile_painter_decal"), //Not very descriptive, but it's the caution/delivery/arrows ones
 							"tile" = icon('icons/mob/radial.dmi', "tile_painter_tile"),
-							"trimeline" = icon('icons/mob/radial.dmi', "tile_painter_trimline"))
+							"trimline" = icon('icons/mob/radial.dmi', "tile_painter_trimline"))
 	if(istype(chosen_decal, /obj/effect/turf_decal/tile))
 		options["change colour"] = icon('icons/mob/radial.dmi', "tile_painter_colour")
-	var/chosen = show_radial_menu(user, src, options)
+	var/chosen = show_radial_menu(user, src, options, radius = 42)
 	switch(chosen)
 		if("rotate")
 			choose_dir(user)
@@ -97,7 +98,7 @@
 							"end" = icon('icons/turf/decals.dmi', "warn_end"),
 							"box" = icon('icons/turf/decals.dmi', "warn_box"),
 							"full" = icon('icons/turf/decals.dmi', "warn_full"))
-			var/chosen2 = show_radial_menu(user, src, options)
+			var/chosen2 = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen2)
 				return
 			switch(chosen2)
@@ -118,7 +119,7 @@
 							"starfury" = icon('icons/mob/radial.dmi', "tile_painter_starfury"),
 							"derelict" = icon('icons/mob/radial.dmi', "tile_painter_russian"),
 							"ss13" = icon('icons/mob/radial.dmi', "tile_painter_ss13"))
-			var/chosen2 = show_radial_menu(user, src, options)
+			var/chosen2 = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen2)
 				return
 			options = list()
@@ -136,7 +137,7 @@
 			var/decalPath
 			switch(chosen2)
 				if("raven")
-					amount = 14
+					amount = 9
 					chosen2 = "RAVEN"
 					decalPath = "raven"
 				if("starfury")
@@ -158,11 +159,11 @@
 					decalPath = "arctic"
 			for(var/i in 1 to amount)
 				options += list("[chosen2][i]" = icon('icons/turf/decals.dmi', "[chosen2][i]"))
-			var/chosen3 = show_radial_menu(user, src, options)
+			var/chosen3 = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen3)
 				return
-			to_chat(world, "/obj/effect/turf_decal/[decalPath]/[GLOB.numbers_as_words[options.Find(chosen3)]]")
-			chosen_decal = text2path("/obj/effect/turf_decal/[decalPath]/[GLOB.numbers_as_words[options.Find(chosen3)]]")
+			to_chat(world, "/obj/effect/turf_decal/[decalPath]/[lowertext(GLOB.numbers_as_words[options.Find(chosen3)])]")
+			chosen_decal = text2path("/obj/effect/turf_decal/[decalPath]/[lowertext(GLOB.numbers_as_words[options.Find(chosen3)])]")
 			choose_dir(user)
 
 		if("decal")
@@ -174,7 +175,7 @@
 							"arrows" = icon('icons/mob/radial.dmi', "tile_painter_arrows"),
 							"box" = icon('icons/mob/radial.dmi', "tile_painter_box"),
 							"box_corners" = icon('icons/mob/radial.dmi', "tile_painter_boxcorner"),)
-			chosen = show_radial_menu(user, src, options)
+			chosen = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen)
 				return
 			switch(chosen)
@@ -187,7 +188,7 @@
 					options = list( "centered" = icon('icons/turf/decals.dmi', "bot"),
 									"right" = icon('icons/turf/decals.dmi', "bot_right"),
 									"left" = icon('icons/turf/decals.dmi', "bot_left"))
-					chosen = show_radial_menu(user, src, options)
+					chosen = show_radial_menu(user, src, options, radius = 42)
 					if(!chosen)
 						return
 					if(chosen == "centered")
@@ -207,17 +208,21 @@
 							"filled line" = icon('icons/turf/decals.dmi', "trimline_fill"),
 							"filled corner" = icon('icons/turf/decals.dmi', "trimline_corner_fill"),
 							"filled end" = icon('icons/turf/decals.dmi', "trimline_end_fill"))
-			chosen = show_radial_menu(user, src, options)
+			chosen = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen)
 				return
 			chosen = replacetext(chosen, " ", "/")
-			options = list("custom" = icon('icons/turf/decals.dmi', replacetext(chosen, "/", "_")))
-			for(var/obj/effect/turf_decal/tile/trimline/I in subtypesof(text2path("/obj/effect/turf_decal/tile/trimline/[chosen]")))
-				var/list/colourList = initial(I.type).splittext(colourName, "/")
-				var/icon/colourIcon = icon(I.icon, I.icon_state)
-				colourIcon.color = initial(I.color)
+			if(chosen == "line")
+				options = list("custom" = icon('icons/turf/decals.dmi', ))
+			else
+				options = list("custom" = icon('icons/turf/decals.dmi', "trimline_[replacetext(chosen, "/", "_")]"))
+			for(var/i in subtypesof(text2path("/obj/effect/turf_decal/tile/trimline/[chosen]")))
+				var/obj/effect/turf_decal/tile/trimline/I = i
+				var/list/colourList = splittext("[I]", "/")
+				var/icon/colourIcon = icon(initial(I.icon), initial(I.icon_state))
+				colourIcon.Blend(initial(I.color), ICON_MULTIPLY)
 				options[colourList[colourList.len]] = colourIcon
-			var/chosen2 = show_radial_menu(user, src, options)
+			var/chosen2 = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen2)
 				return
 			if(chosen2 == "custom")
@@ -231,19 +236,20 @@
 
 		if("tile")
 			options = list("custom" = icon('icons/turf/decals.dmi', "tile_corner")) 
-			for(var/obj/effect/turf_decal/tile/I in subtypesof(/obj/effect/turf_decal/tile) - subtypesof(/obj/effect/turf_decal/tile/trimline))
-				var/list/colourList = initial(I.type).splittext(colourName, "/")
-				var/icon/colourIcon = icon(I.icon, I.icon_state)
-				colourIcon.color = initial(I.color)
+			for(var/i in subtypesof(/obj/effect/turf_decal/tile) - subtypesof(/obj/effect/turf_decal/tile/trimline))
+				var/obj/effect/turf_decal/tile/I = i
+				var/list/colourList = splittext("[I]", "/")
+				var/icon/colourIcon = icon(initial(I.icon), initial(I.icon_state))
+				colourIcon.Blend(initial(I.color), ICON_MULTIPLY)
 				options[colourList[colourList.len]] = colourIcon
-			var/chosen2 = show_radial_menu(user, src, options)
+			var/chosen2 = show_radial_menu(user, src, options, radius = 42)
 			if(!chosen2)
 				return
 			if(chosen2 == "custom")
 				chosen_decal = /obj/effect/turf_decal/tile
 				choose_custom_colour(user)
 			else
-				chosen_colour == null
+				chosen_colour = null
 				chosen_decal = text2path("/obj/effect/turf_decal/tile/[chosen2]")
 			choose_dir(user)
 
