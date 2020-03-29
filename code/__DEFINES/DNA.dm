@@ -50,6 +50,7 @@
 #define EXTRASTUN	/datum/mutation/human/extrastun
 #define GELADIKINESIS		/datum/mutation/human/geladikinesis
 #define CRYOKINESIS /datum/mutation/human/cryokinesis
+#define CUSTOMSPEECH	/datum/mutation/human/customspeech
 
 
 
