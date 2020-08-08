@@ -29,8 +29,8 @@ General Public License version 3.
 
 
 <h3 id="modules">Modules
-<aside>(48 modules,
-    420/6009 macros, 7%)</aside></h3>
+<aside>(49 modules,
+    426/6034 macros, 7.1%)</aside></h3>
 <ul class="index-tree">
     <li class="has-children"><span title="code">code</span><ul class="index-tree">
     <li class="has-children"><span title="code&#x2F;__DEFINES">__DEFINES</span><ul class="index-tree">
@@ -61,6 +61,7 @@ General Public License version 3.
     <li><a href="code/__DEFINES/obj_flags.html" title="code&#x2F;__DEFINES&#x2F;obj_flags.dm">obj_flags</a></li>
     <li><a href="code/__DEFINES/research.html" title="code&#x2F;__DEFINES&#x2F;research.dm">research</a></li>
     <li><a href="code/__DEFINES/subsystems.html" title="code&#x2F;__DEFINES&#x2F;subsystems.dm">subsystems</a> - Defines for subsystems and overlays</li>
+    <li><span class="no-substance">~yogs_defines&#x2F;</span><a href="code/__DEFINES/~yogs_defines/reactions.html" title="code&#x2F;__DEFINES&#x2F;~yogs_defines&#x2F;reactions.dm">reactions</a></li>
     </ul></li>
     <li><span class="no-substance">datums&#x2F;components&#x2F;</span><a href="code/datums/components/README.html" title="code&#x2F;datums&#x2F;components&#x2F;README.md">Datum Component System (DCS)</a></li>
     <li class="has-children"><span title="code&#x2F;game">game</span><ul class="index-tree">
@@ -107,7 +108,7 @@ transformations and other events that cause new languages to become available.</
 
 
 <h3 id="types">Types
-<aside>(144 detailed/576 documented/21588 total, 2.7%)</aside></h3>
+<aside>(156 detailed/593 documented/21594 total, 2.7%)</aside></h3>
 <ul class="index-tree">
     <li><a href="global.html" title="(global)">(global)</a></li>
     <li class="has-children"><a href="area.html" title="&#x2F;area">area</a> - A grouping of tiles into a logical space, mostly used by map editors<ul class="index-tree">
@@ -127,6 +128,7 @@ Syndicate infiltrator</li>
     </ul></li>
     <li class="has-children"><a href="atom.html" title="&#x2F;atom">atom</a> - The base type for nearly all physical objects in SS13<ul class="index-tree">
     <li class="has-children"><a href="atom/movable.html" title="&#x2F;atom&#x2F;movable">movable</a><ul class="index-tree">
+    <li><a href="atom/movable/emissive_blocker.html" title="&#x2F;atom&#x2F;movable&#x2F;emissive_blocker">emissive_blocker</a> - Internal atom that copies an appearance on to the blocker plane</li>
     <li><a href="atom/movable/lighting_object.html" title="&#x2F;atom&#x2F;movable&#x2F;lighting_object">lighting_object</a></li>
     </ul></li>
     </ul></li>
@@ -155,6 +157,9 @@ Syndicate infiltrator</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;AI_Module&#x2F;utility&#x2F;reactivate_cameras">Reactivate Camera Network</span> - Reactivate Camera Network: Reactivates up to 30 cameras across the station.</li>
     </ul></li>
     </ul></li>
+    <li><a href="datum/achievement.html" title="&#x2F;datum&#x2F;achievement">achievement</a> - Achievement datums</li>
+    <li><a href="datum/achievement_browser.html" title="&#x2F;datum&#x2F;achievement_browser">Achievement browser</a> - One is created for every person who wants to view their achievements.
+See: <a href="datum/controller/subsystem/achievements.html" title="/datum/controller/subsystem/achievements">/datum/controller/subsystem/achievements</a> and [/client/verb/checkachievements()]</li>
     <li class="has-children"><span title="&#x2F;datum&#x2F;action">action</span><ul class="index-tree">
     <li class="has-children"><span class="no-substance" title="&#x2F;datum&#x2F;action&#x2F;changeling">changeling</span><ul class="index-tree">
     <li class="has-children"><span class="no-substance" title="&#x2F;datum&#x2F;action&#x2F;changeling&#x2F;suit">suit</span><ul class="index-tree">
@@ -199,11 +204,12 @@ Syndicate infiltrator</li>
     <li><a href="datum/chatOutput.html" title="&#x2F;datum&#x2F;chatOutput">chatOutput</a> - The chatOutput datum exists to handle the goonchat browser.
 On client, created on Client/New()</li>
     <li><a href="datum/chatmessage.html" title="&#x2F;datum&#x2F;chatmessage">Chat Message Overlay</a> - Datum for generating a message overlay on the map</li>
-    <li class="has-children"><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction">chemical_reaction</span><ul class="index-tree">
+    <li class="has-children"><span title="&#x2F;datum&#x2F;chemical_reaction">chemical_reaction</span><ul class="index-tree">
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;acetone">acetone</span> - Other goon stuff</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;american">American Cheese Block</span> - CHEESE</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;ammonia">Ammonia</span> - Cleaning and hydroponics</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;bluemilk">Blue Cheese Milk</span> - CHEESEMILK</li>
+    <li><a href="datum/chemical_reaction/dilithium.html" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;dilithium">Dilithium Gas Creation</a></li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;goldschlager">Goldschlager</span> - COCKTAILS</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;sbiten">Sbiten</span> - DRINKS THAT REQUIRED IMPROVED SPRITES BELOW:: -Agouri</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;chemical_reaction&#x2F;surfactant">Foam surfactant</span> - foam and foam precursor</li>
@@ -241,6 +247,7 @@ Set our target list with the new set we've generated.</li>
     <li class="has-children"><span title="&#x2F;datum&#x2F;controller">controller</span><ul class="index-tree">
     <li><a href="datum/controller/global_vars.html" title="&#x2F;datum&#x2F;controller&#x2F;global_vars">Global Variables</a></li>
     <li class="has-children"><a href="datum/controller/subsystem.html" title="&#x2F;datum&#x2F;controller&#x2F;subsystem">fire coderbus</a><ul class="index-tree">
+    <li><a href="datum/controller/subsystem/achievements.html" title="&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;achievements">Achievements</a></li>
     <li><a href="datum/controller/subsystem/job.html" title="&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;job">Jobs</a></li>
     <li><a href="datum/controller/subsystem/sun.html" title="&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;sun">Sun</a></li>
     <li><a href="datum/controller/subsystem/tgui.html" title="&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;tgui">tgui</a></li>
@@ -378,7 +385,10 @@ this is the way to do it cleanly and properly.</li>
     <li><span class="no-substance" title="&#x2F;datum&#x2F;religion_rites&#x2F;synthconversion">Synthetic Conversion</span> - Technophiles</li>
     </ul></li>
     <li><a href="datum/religion_sect.html" title="&#x2F;datum&#x2F;religion_sect">Religious Sect Base Type</a></li>
-    <li><span class="no-substance">round_event&#x2F;</span><a href="datum/round_event/stray_cargo.html" title="&#x2F;datum&#x2F;round_event&#x2F;stray_cargo">stray_cargo</a> - Spawns a cargo pod containing a random cargo supply pack on a random area of the station</li>
+    <li class="has-children"><span title="&#x2F;datum&#x2F;round_event">round_event</span><ul class="index-tree">
+    <li><a href="datum/round_event/pirates.html" title="&#x2F;datum&#x2F;round_event&#x2F;pirates">pirates</a></li>
+    <li><a href="datum/round_event/stray_cargo.html" title="&#x2F;datum&#x2F;round_event&#x2F;stray_cargo">stray_cargo</a> - Spawns a cargo pod containing a random cargo supply pack on a random area of the station</li>
+    </ul></li>
     <li class="has-children"><span class="no-substance" title="&#x2F;datum&#x2F;round_event_control">round_event_control</span><ul class="index-tree">
     <li><span class="no-substance" title="&#x2F;datum&#x2F;round_event_control&#x2F;spawn_swarmer">Spawn Swarmer Beacon</span> - Places that shouldn't explode
 Subtypes from the above that actually should explode.</li>
@@ -636,6 +646,7 @@ It's attacks are as follows:</li>
     </ul></li>
     </ul></li>
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;coin">coin</span> - Coin</li>
+    <li><span class="no-substance">gps&#x2F;</span><a href="obj/item/gps/pirate.html" title="&#x2F;obj&#x2F;item&#x2F;gps&#x2F;pirate">Pirate GPS</a></li>
     <li class="has-children"><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;grenade">grenade</span><ul class="index-tree">
     <li><span class="no-substance">chem_grenade&#x2F;</span><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;grenade&#x2F;chem_grenade&#x2F;metalfoam">metal foam grenade</span> - PREMADE GRENADES</li>
     <li><span class="no-substance">plastic&#x2F;</span><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;grenade&#x2F;plastic&#x2F;c4">C4</span> - The Explosives</li>
@@ -818,6 +829,7 @@ This has a shitload of vars on it, and I'm sorry for that, but it does make maki
 Enables crew to create requests, crew can sign up to perform the request, and the requester can chose who to pay-out.</li>
     <li class="has-children"><span title="&#x2F;obj&#x2F;machinery&#x2F;computer">computer</span><ul class="index-tree">
     <li><a href="obj/machinery/computer/aifixer.html" title="&#x2F;obj&#x2F;machinery&#x2F;computer&#x2F;aifixer">\improper AI system integrity restorer</a></li>
+    <li><a href="obj/machinery/computer/bsa_control.html" title="&#x2F;obj&#x2F;machinery&#x2F;computer&#x2F;bsa_control">bluespace artillery control</a></li>
     <li><a href="obj/machinery/computer/camera_advanced.html" title="&#x2F;obj&#x2F;machinery&#x2F;computer&#x2F;camera_advanced">advanced camera console</a></li>
     <li><a href="obj/machinery/computer/scan_consolenew.html" title="&#x2F;obj&#x2F;machinery&#x2F;computer&#x2F;scan_consolenew">DNA Console</a></li>
     <li><a href="obj/machinery/computer/security.html" title="&#x2F;obj&#x2F;machinery&#x2F;computer&#x2F;security">security camera console</a></li>
@@ -871,6 +883,16 @@ It is also implicitly used to allocate a rectangle on the map, which will
 be used for auto-scaling the map.</li>
     <li><span class="no-substance" title="&#x2F;obj&#x2F;screen&#x2F;map_view">map_view</span> - A screen object, which acts as a container for turfs and other things
 you want to show on the map, which you usually attach to &quot;vis_contents&quot;.</li>
+    <li class="has-children"><span title="&#x2F;obj&#x2F;screen&#x2F;plane_master">plane_master</span><ul class="index-tree">
+    <li><a href="obj/screen/plane_master/emissive.html" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;emissive">emissive plane master</a> - Things placed on this mask the lighting plane. Doesn't render directly.</li>
+    <li><a href="obj/screen/plane_master/emissive_blocker.html" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;emissive_blocker">emissive blocker plane master</a> - Things placed on this layer mask the emissive layer. Doesn't render directly</li>
+    <li><a href="obj/screen/plane_master/emissive_unblockable.html" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;emissive_unblockable">unblockable emissive plane master</a> - Things placed on this always mask the lighting plane. Doesn't render directly.</li>
+    <li><span class="no-substance" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;floor">floor plane master</span> - Contains just the floor</li>
+    <li><span class="no-substance" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;game_world">game world plane master</span> - Contains most things in the game world</li>
+    <li><span class="no-substance" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;lighting">lighting plane master</span> - Contains all lighting objects</li>
+    <li><span class="no-substance" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;openspace">open space plane master</span> - Things rendered on &quot;openspace&quot;; holes in multi-z</li>
+    <li><span class="no-substance" title="&#x2F;obj&#x2F;screen&#x2F;plane_master&#x2F;parallax">parallax plane master</span> - Contains space parallax</li>
+    </ul></li>
     </ul></li>
     <li><span class="no-substance">singularity&#x2F;</span><span class="no-substance" title="&#x2F;obj&#x2F;singularity&#x2F;wizard">tear in the fabric of reality</span> - TEAR IN REALITY</li>
     <li class="has-children"><span title="&#x2F;obj&#x2F;structure">structure</span><ul class="index-tree">
@@ -906,6 +928,7 @@ uranium</li>
     </ul></li>
     <li><a href="obj/structure/swarmer.html" title="&#x2F;obj&#x2F;structure&#x2F;swarmer">swarmer ui</a></li>
     <li><a href="obj/structure/swarmer_beacon.html" title="&#x2F;obj&#x2F;structure&#x2F;swarmer_beacon">Swarmer Beacon</a> - Beacon which creates sentient player swarmers.</li>
+    <li><a href="obj/structure/table.html" title="&#x2F;obj&#x2F;structure&#x2F;table">table</a></li>
     </ul></li>
     <li><span class="no-substance">vehicle&#x2F;ridden&#x2F;scooter&#x2F;</span><a href="obj/vehicle/ridden/scooter/skateboard.html" title="&#x2F;obj&#x2F;vehicle&#x2F;ridden&#x2F;scooter&#x2F;skateboard">improvised skateboard</a></li>
     </ul></li>
@@ -935,7 +958,7 @@ uranium</li>
 </main>
 <footer>
     yogstation.dme
-    <a href="https://github.com/nichlas0010/Yogstation-TG/tree/1d8234eefb021cfa783d322850ebe0a1417b2097">1d8234e</a>
+    <a href="https://github.com/nichlas0010/Yogstation-TG/tree/e246b4930a8ffbdabaac6f865c102b308a3344c9">e246b49</a>
         (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.2.1</a></footer>
 </body>
 </html>
