@@ -47,6 +47,8 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/currentrun = src.currentrun
 	while(currentrun.len)
 		var/client/C = currentrun[currentrun.len]
+		if(!winexists(C, "statbrowser"))
+			continue
 		C << output(url_encode(C.statpanel), "statbrowser:tab_change") // work around desyncs
 		currentrun.len--
 		var/ping_str = url_encode("Ping: [round(C.lastping, 1)]ms (Average: [round(C.avgping, 1)]ms)")
