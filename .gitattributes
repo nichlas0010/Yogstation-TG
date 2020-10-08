@@ -1,11 +1,12 @@
-*.dmm eol=crlf
-*.dm eol=crlf
-*.dme eol=crlf
-*.md eol=crlf
-*.txt eol=crlf
-*.html eol=crlf
+# Later lines have higher priority
+**\*.dmm eol=crlf
+**\*.dm eol=crlf
+**\*.dme eol=crlf
+**\*.md eol=crlf
+**\*.txt eol=crlf
+**\*.html eol=crlf
 #this breaks if its in crlf
-code/__DEFINES/rust_g.dm eol=lf
+code\__DEFINES\rust_g.dm eol=lf
 
 
 # merger hooks, run tools/hooks/install.bat or install.sh to set up
